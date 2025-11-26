@@ -21,6 +21,12 @@ import DefenseProtocol from './components/DefenseProtocol';
 import BrazilFocus from './components/BrazilFocus';
 import ExpertPanel from './components/ExpertPanel';
 import CallToAdventure from './components/CallToAdventure';
+import DeepScience from './components/DeepScience';
+import ConsumerAI from './components/ConsumerAI';
+import ContentCrisis from './components/ContentCrisis';
+import RoboticsRevolution from './components/RoboticsRevolution';
+import GlobalRegulation from './components/GlobalRegulation';
+import MarketPulse from './components/MarketPulse';
 
 const App: React.FC = () => {
   return (
@@ -41,38 +47,52 @@ const App: React.FC = () => {
         
         <main className="flex flex-col relative z-20">
           <ImpactStats />
-          
+
           {/* THE MACRO CONTEXT - WHERE ARE WE? */}
           <EvolutionaryScale />
 
-          {/* Layer 1: Hardware & Speed */}
+          {/* Layer 1: Hardware & Infrastructure */}
           <PhysicalLayer />
           <ComparisonChart />
-          
+
           <div className="relative">
             <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent"></div>
             <Timeline />
           </div>
 
-          {/* Layer 2: Business & Org Structure */}
+          {/* Layer 2: The Bright Side - Science & Consumer */}
+          <DeepScience />
+          <ConsumerAI />
+          <RoboticsRevolution />
+
+          {/* Layer 3: Business & Economy */}
+          <MarketPulse />
           <NewEconomy />
           <MultiAgentOrg />
-          
-          {/* Layer 3: The Reality Check */}
+
+          {/* Layer 4: The Reality Check - Risks & Cases */}
           <TheGap />
           <RealWorldCases />
           <DefenseProtocol />
+
+          {/* Layer 5: The Content Crisis */}
+          <ContentCrisis />
+
+          {/* Layer 6: Governance & Regulation */}
+          <GlobalRegulation />
+
+          {/* Layer 7: Regional Focus */}
           <BrazilFocus />
-          
-          {/* Layer 4: Tactical Guide & Future */}
+
+          {/* Layer 7: Tactical Guide & Future */}
           <ProfessionsGuide />
           <FuturePredictions />
           <SkillsRadar />
           <ToolsGrid />
-          
+
           {/* Meta-Analysis: Expert Perspectives */}
           <ExpertPanel />
-          
+
           {/* Appendix */}
           <Glossary />
 

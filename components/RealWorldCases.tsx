@@ -1,5 +1,5 @@
 import React from 'react';
-import { Factory, AlertTriangle, ShieldAlert, Cpu, CheckCircle } from 'lucide-react';
+import { Factory, AlertTriangle, ShieldAlert, Cpu, CheckCircle, Package, Ghost, Heart, User } from 'lucide-react';
 import { CaseStudy } from '../types';
 
 const cases: CaseStudy[] = [
@@ -113,11 +113,11 @@ const RealWorldCases: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {cases.map((item, index) => {
           const styles = colorMap[item.color] || defaultStyle;
-          
+
           return (
             <div key={index} className={`group relative bg-[#0a1120] rounded-3xl p-6 border transition-all duration-300 flex flex-col ${styles.border} ${styles.bg}`}>
               <div className={`absolute top-0 left-0 w-full h-1 ${styles.bar} transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500`}></div>
-              
+
               <div className="flex justify-between items-start mb-6">
                 <div className={`w-12 h-12 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform ${styles.iconBg}`}>
                   {item.icon}
@@ -139,7 +139,7 @@ const RealWorldCases: React.FC = () => {
                 </span>
                 <h4 className="text-xl font-bold text-white">{item.title}</h4>
               </div>
-              
+
               <p className="text-slate-400 leading-relaxed text-xs flex-grow">
                 {item.description}
               </p>
@@ -150,6 +150,74 @@ const RealWorldCases: React.FC = () => {
             </div>
           );
         })}
+      </div>
+
+      {/* Edge Cases - The WTF Moments */}
+      <div className="mt-16 pt-12 border-t border-white/5">
+        <div className="text-center mb-10">
+          <div className="inline-flex items-center gap-2 text-yellow-400 font-mono text-xs font-bold uppercase tracking-widest mb-2">
+            <Ghost size={14} />
+            Casos Bizarros
+          </div>
+          <h3 className="text-2xl md:text-3xl font-display font-bold text-white">
+            O <span className="text-yellow-400">WTF</span> do Ano
+          </h3>
+          <p className="text-slate-500 mt-2 text-sm max-w-xl mx-auto">
+            Histórias que parecem ficção científica mas aconteceram em 2025.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          {/* Doritos */}
+          <div className="bg-yellow-950/10 border border-yellow-500/20 rounded-2xl p-6 hover:border-yellow-500/40 transition-all">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 bg-yellow-900/30 rounded-lg flex items-center justify-center text-yellow-400">
+                <Package size={20} />
+              </div>
+              <div>
+                <h4 className="text-white font-bold">Caso Doritos</h4>
+                <span className="text-yellow-400 text-[10px] font-mono uppercase">EUA • Varejo</span>
+              </div>
+            </div>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              Sistema de visão computacional de supermercado identificou saco de <strong className="text-white">Doritos</strong> como uma potencial <strong className="text-yellow-400">arma de fogo</strong>. A IA viu formato triangular + cor escura do saco e acionou o alarme. Falso positivo absurdo que expõe os limites da visão sem contexto.
+            </p>
+          </div>
+
+          {/* Dublin Halloween */}
+          <div className="bg-purple-950/10 border border-purple-500/20 rounded-2xl p-6 hover:border-purple-500/40 transition-all">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 bg-purple-900/30 rounded-lg flex items-center justify-center text-purple-400">
+                <Ghost size={20} />
+              </div>
+              <div>
+                <h4 className="text-white font-bold">Fantasma de Dublin</h4>
+                <span className="text-purple-400 text-[10px] font-mono uppercase">Irlanda • Segurança</span>
+              </div>
+            </div>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              Na noite de Halloween, sistema de vigilância de Dublin reportou <strong className="text-white">"invasor fantasma"</strong> em prédio comercial. Era uma fantasia flutuante deixada perto de um ventilador. A IA não entende o conceito de <strong className="text-purple-400">"fantasia"</strong>.
+            </p>
+          </div>
+
+          {/* Lu do Magalu */}
+          <div className="bg-green-950/10 border border-green-500/20 rounded-2xl p-6 hover:border-green-500/40 transition-all">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 bg-green-900/30 rounded-lg flex items-center justify-center text-green-400">
+                <User size={20} />
+              </div>
+              <div>
+                <h4 className="text-white font-bold">Lu do Magalu</h4>
+                <span className="text-green-400 text-[10px] font-mono uppercase">Brasil • Marketing</span>
+              </div>
+            </div>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              A influenciadora virtual brasileira atingiu <strong className="text-white">8 milhões de seguidores</strong>. Faz posts, responde comentários, tem "opinião". Muitos seguidores não sabem (ou não se importam) que ela é 100% sintética. O <strong className="text-green-400">primeiro grande caso brasileiro</strong> de persona IA.
+            </p>
+          </div>
+
+        </div>
       </div>
     </section>
   );

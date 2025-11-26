@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code, Users, Briefcase, TrendingUp, TrendingDown, Bot, DollarSign } from 'lucide-react';
+import { Code, Users, Briefcase, TrendingUp, TrendingDown, Bot, DollarSign, Sparkles, Scale, ShieldCheck } from 'lucide-react';
 import { ProfessionGuide } from '../types';
 
 const guides: ProfessionGuide[] = [
@@ -26,6 +26,31 @@ const guides: ProfessionGuide[] = [
     onRise: "Editor Estratégico",
     keySkill: "Curadoria & Verdade",
     description: "O mercado de freelancers para tarefas simples (texto, tradução) colapsou. O valor está na edição de alto nível e verificação de fatos em um mundo de conteúdo sintético."
+  }
+];
+
+// Profissões Emergentes 2026 (da pesquisa)
+const emergingProfessions = [
+  {
+    title: "Designer de Personalidade de Agentes",
+    icon: <Sparkles size={24} />,
+    description: "Cria a 'alma' e o tom de voz da IA corporativa. Define como o agente se comunica, suas limitações éticas e sua persona.",
+    keySkill: "Psicologia + Prompt Engineering",
+    color: "purple"
+  },
+  {
+    title: "Auditor de Viés Algorítmico",
+    icon: <Scale size={24} />,
+    description: "O 'compliance' que garante que a IA não está sendo racista, sexista ou alucinando dados críticos. Essencial para regulação.",
+    keySkill: "Ética + Data Science",
+    color: "blue"
+  },
+  {
+    title: "Gerente de Cibersegurança Pessoal",
+    icon: <ShieldCheck size={24} />,
+    description: "Protege famílias e executivos de sequestros virtuais, deepfakes e clonagem de voz. O 'guarda-costas' digital de alto padrão.",
+    keySkill: "Segurança + Gestão de Crise",
+    color: "red"
   }
 ];
 
@@ -92,6 +117,43 @@ const ProfessionsGuide: React.FC = () => {
 
             </div>
           ))}
+        </div>
+
+        {/* Profissões Emergentes 2026 */}
+        <div className="mt-20 pt-16 border-t border-white/5">
+          <div className="text-center mb-12">
+            <h3 className="text-sm font-bold text-purple-400 uppercase tracking-widest mb-2 font-mono">Novíssimas Carreiras</h3>
+            <h4 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
+              Profissões <span className="text-purple-400">Emergentes</span> 2026
+            </h4>
+            <p className="text-slate-400 max-w-2xl mx-auto">
+              Carreiras que não existiam há 2 anos e agora pagam salários de 6 dígitos. Confirmadas pelo mercado em 2025.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {emergingProfessions.map((prof, index) => {
+              const colorClasses: Record<string, { bg: string; border: string; iconBg: string; text: string }> = {
+                purple: { bg: 'bg-purple-950/20', border: 'border-purple-500/30', iconBg: 'bg-purple-900/30', text: 'text-purple-400' },
+                blue: { bg: 'bg-blue-950/20', border: 'border-blue-500/30', iconBg: 'bg-blue-900/30', text: 'text-blue-400' },
+                red: { bg: 'bg-red-950/20', border: 'border-red-500/30', iconBg: 'bg-red-900/30', text: 'text-red-400' }
+              };
+              const colors = colorClasses[prof.color];
+
+              return (
+                <div key={index} className={`${colors.bg} ${colors.border} border rounded-2xl p-6 hover:scale-105 transition-transform`}>
+                  <div className={`w-12 h-12 ${colors.iconBg} rounded-xl flex items-center justify-center ${colors.text} mb-4`}>
+                    {prof.icon}
+                  </div>
+                  <h5 className="text-white font-bold text-lg mb-3">{prof.title}</h5>
+                  <p className="text-slate-400 text-sm leading-relaxed mb-4">{prof.description}</p>
+                  <div className={`inline-block px-3 py-1 ${colors.bg} border ${colors.border} rounded text-[10px] ${colors.text} font-mono uppercase tracking-wide`}>
+                    {prof.keySkill}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

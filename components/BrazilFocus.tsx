@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Building2, GraduationCap, ShieldAlert, Briefcase } from 'lucide-react';
+import { MapPin, Building2, GraduationCap, ShieldAlert, Briefcase, BookOpen, Wheat, Landmark, AlertTriangle, CheckCircle, Clock } from 'lucide-react';
 
 const BrazilFocus: React.FC = () => {
   return (
@@ -84,6 +84,113 @@ const BrazilFocus: React.FC = () => {
             </p>
           </div>
 
+        </div>
+
+        {/* Educação: Entre o Caos e a Inovação */}
+        <div className="mb-16">
+          <div className="text-center mb-10">
+            <h3 className="text-sm font-bold text-blue-400 uppercase tracking-widest mb-2 font-mono flex items-center justify-center gap-2">
+              <BookOpen size={14} />
+              Educação & Trabalho
+            </h3>
+            <h4 className="text-2xl md:text-3xl font-display font-bold text-white">
+              Entre o <span className="text-red-400">Caos</span> e a <span className="text-emerald-400">Inovação</span>
+            </h4>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* MEC */}
+            <div className="bg-red-950/10 border border-red-500/20 rounded-2xl p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 bg-red-900/30 rounded-lg text-red-400">
+                  <AlertTriangle size={20} />
+                </div>
+                <span className="text-red-400 text-xs font-mono uppercase tracking-wider">MEC</span>
+              </div>
+              <h5 className="text-white font-bold mb-2">Sem Diretrizes Claras</h5>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                O ministério ainda luta para lançar orientações oficiais sobre uso de IA nas escolas. Vácuo de política pública.
+              </p>
+            </div>
+
+            {/* Rede Pública */}
+            <div className="bg-emerald-950/10 border border-emerald-500/20 rounded-2xl p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 bg-emerald-900/30 rounded-lg text-emerald-400">
+                  <CheckCircle size={20} />
+                </div>
+                <span className="text-emerald-400 text-xs font-mono uppercase tracking-wider">Rede Pública</span>
+              </div>
+              <h5 className="text-white font-bold mb-2">Adaptando na Prática</h5>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                Professores já usam IA via WhatsApp (Nova Escola) para criar planos de aula em segundos. Inovação vem da base.
+              </p>
+            </div>
+
+            {/* USP & FGV */}
+            <div className="bg-blue-950/10 border border-blue-500/20 rounded-2xl p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 bg-blue-900/30 rounded-lg text-blue-400">
+                  <GraduationCap size={20} />
+                </div>
+                <span className="text-blue-400 text-xs font-mono uppercase tracking-wider">USP & FGV</span>
+              </div>
+              <h5 className="text-white font-bold mb-2">Pioneiras em Letramento</h5>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                "Letramento em IA" agora é compulsório. Nova regra: trabalhos escritos exigem defesa oral para validar autoria.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Setores Beneficiados */}
+        <div className="mb-16">
+          <div className="text-center mb-10">
+            <h3 className="text-sm font-bold text-green-400 uppercase tracking-widest mb-2 font-mono">Oportunidades Nacionais</h3>
+            <h4 className="text-2xl md:text-3xl font-display font-bold text-white">
+              Setores Mais <span className="text-green-400">Beneficiados</span>
+            </h4>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Agronegócio */}
+            <div className="bg-green-950/20 border border-green-500/20 rounded-2xl p-8 relative overflow-hidden group hover:border-green-500/40 transition-colors">
+              <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                <Wheat size={80} />
+              </div>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-3 bg-green-900/30 rounded-xl text-green-400">
+                  <Wheat size={24} />
+                </div>
+                <div>
+                  <h5 className="text-white font-bold text-lg">Agronegócio</h5>
+                  <span className="text-green-400 text-xs font-mono">Maior PIB do Brasil</span>
+                </div>
+              </div>
+              <p className="text-slate-300 text-sm leading-relaxed">
+                IA para prever safras, otimizar irrigação, combater pragas e personalizar insumos. O campo brasileiro está se tornando um laboratório de precisão.
+              </p>
+            </div>
+
+            {/* Sistema Financeiro */}
+            <div className="bg-yellow-950/20 border border-yellow-500/20 rounded-2xl p-8 relative overflow-hidden group hover:border-yellow-500/40 transition-colors">
+              <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                <Landmark size={80} />
+              </div>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-3 bg-yellow-900/30 rounded-xl text-yellow-400">
+                  <Landmark size={24} />
+                </div>
+                <div>
+                  <h5 className="text-white font-bold text-lg">Sistema Financeiro</h5>
+                  <span className="text-yellow-400 text-xs font-mono">Pix + Open Finance</span>
+                </div>
+              </div>
+              <p className="text-slate-300 text-sm leading-relaxed">
+                Crédito personalizado em tempo real. O Pix processa 800+ milhões de transações/mês. Open Finance + IA = revolução no acesso a crédito.
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Regulatory Context Box */}

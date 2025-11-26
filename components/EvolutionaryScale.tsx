@@ -65,6 +65,11 @@ const EvolutionaryScale: React.FC = () => {
            <p className="text-slate-400 max-w-2xl mx-auto text-lg leading-relaxed font-light">
              Note como os intervalos de tempo encolhem. Levamos milênios para sair da caverna, décadas para conectar o mundo, e apenas <strong className="text-white">3 anos</strong> para criar inteligência sintética.
            </p>
+           <div className="mt-6 inline-flex items-center gap-3 px-5 py-3 bg-cyan-950/30 border border-cyan-500/20 rounded-xl">
+             <span className="text-cyan-400 text-sm font-medium">
+               Estamos vivendo <strong className="text-white">30 anos de mudança industrial</strong> comprimidos em <strong className="text-white">36 meses</strong>.
+             </span>
+           </div>
         </div>
 
         <div className="relative">

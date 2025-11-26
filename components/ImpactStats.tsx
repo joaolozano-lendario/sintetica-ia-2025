@@ -1,5 +1,5 @@
 import React from 'react';
-import { TrendingUp, TrendingDown, Zap, UserCheck, BarChart3, Database } from 'lucide-react';
+import { TrendingUp, TrendingDown, Zap, UserCheck, BarChart3, Database, Users } from 'lucide-react';
 
 const ImpactStats: React.FC = () => {
   return (
@@ -26,7 +26,7 @@ const ImpactStats: React.FC = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 relative z-10">
         
         {/* Card 1 - Energy */}
         <div className="glass-panel p-8 rounded-2xl border border-white/5 hover:border-yellow-500/50 transition-all duration-300 group">
@@ -81,6 +81,20 @@ const ImpactStats: React.FC = () => {
           <h3 className="text-2xl font-display font-bold text-white mb-2 tracking-tight">61% Java</h3>
           <p className="text-xs text-slate-400 leading-relaxed">
             Porcentagem de código Java no GitHub gerado inteiramente por IA em 2025. O humano virou apenas auditor.
+          </p>
+        </div>
+
+        {/* Card 5 - AI Adoption */}
+        <div className="glass-panel p-8 rounded-2xl border border-white/5 hover:border-cyan-500/50 transition-all duration-300 group">
+           <div className="flex justify-between items-start mb-6">
+            <div className="p-3 bg-cyan-950/30 rounded-lg text-cyan-400 group-hover:scale-110 transition-transform">
+              <Users size={24} />
+            </div>
+            <span className="text-[10px] font-mono text-slate-500 uppercase">Adoção EUA</span>
+          </div>
+          <h3 className="text-3xl font-display font-bold text-white mb-2 tracking-tight">39,4%</h3>
+          <p className="text-xs text-slate-400 leading-relaxed">
+            Trabalhadores americanos usando IA diariamente em 2025. O PC levou 30 anos para atingir esse nível.
           </p>
         </div>
 

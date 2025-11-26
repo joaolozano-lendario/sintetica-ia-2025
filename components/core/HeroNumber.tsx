@@ -141,9 +141,9 @@ const HeroNumber: React.FC<HeroNumberProps> = ({
     <div
       ref={ref}
       className={`
-        relative p-8 md:p-12 rounded-3xl border backdrop-blur-sm
+        relative p-6 md:p-10 rounded-3xl border backdrop-blur-sm overflow-hidden
         bg-slate-900/30 ${styles.border}
-        transition-all duration-700
+        transition-all duration-700 h-full
         ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
       `}
     >
@@ -151,27 +151,27 @@ const HeroNumber: React.FC<HeroNumberProps> = ({
       <div className={`absolute inset-0 ${styles.glow} blur-3xl rounded-3xl opacity-50`} />
 
       <div className="relative z-10">
-        {/* Número gigante */}
-        <div className={`text-6xl md:text-8xl lg:text-9xl font-display font-bold ${styles.number} leading-none mb-4`}>
+        {/* Número gigante - responsivo para caber no card */}
+        <div className={`text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-bold ${styles.number} leading-none mb-4 break-words`}>
           {displayNumber}
         </div>
 
         {/* Label */}
-        <p className="text-xl md:text-2xl text-white font-medium mb-6">
+        <p className="text-lg md:text-xl text-white font-medium mb-5">
           {label}
         </p>
 
         {/* Divider */}
-        <div className="w-16 h-px bg-white/10 mb-6" />
+        <div className="w-12 h-px bg-white/10 mb-5" />
 
         {/* Analogia */}
-        <blockquote className="text-slate-300 text-base md:text-lg leading-relaxed italic">
+        <blockquote className="text-slate-300 text-sm md:text-base leading-relaxed italic">
           "{analogy}"
         </blockquote>
 
         {/* Fonte */}
         {source && (
-          <cite className="block mt-4 text-xs text-slate-500 font-mono not-italic">
+          <cite className="block mt-3 text-[10px] md:text-xs text-slate-500 font-mono not-italic">
             Fonte: {source}
           </cite>
         )}

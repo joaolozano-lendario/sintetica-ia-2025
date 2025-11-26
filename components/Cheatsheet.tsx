@@ -1,122 +1,256 @@
-import React from 'react';
-import { AlertCircle, TrendingUp, Zap, Shield, Brain, Bot, MousePointer } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { AlertCircle, TrendingUp, Zap, Shield, Brain, Bot, ChevronDown } from 'lucide-react';
 
-// Color Styles Map
-const colorStyles: Record<string, string> = {
-  cyan: "bg-cyan-950/30 text-cyan-400 border-cyan-500/20 group-hover:bg-cyan-500 group-hover:text-black hover:shadow-[0_0_30px_rgba(6,182,212,0.3)]",
-  purple: "bg-purple-950/30 text-purple-400 border-purple-500/20 group-hover:bg-purple-500 group-hover:text-black hover:shadow-[0_0_30px_rgba(168,85,247,0.3)]",
-  emerald: "bg-emerald-950/30 text-emerald-400 border-emerald-500/20 group-hover:bg-emerald-500 group-hover:text-black hover:shadow-[0_0_30px_rgba(16,185,129,0.3)]",
-  blue: "bg-blue-950/30 text-blue-400 border-blue-500/20 group-hover:bg-blue-500 group-hover:text-black hover:shadow-[0_0_30px_rgba(59,130,246,0.3)]",
-  orange: "bg-orange-950/30 text-orange-400 border-orange-500/20 group-hover:bg-orange-500 group-hover:text-black hover:shadow-[0_0_30px_rgba(249,115,22,0.3)]"
-};
+// =============================================================================
+// CHEATSHEET - Os 5 Pilares do Novo Mundo
+// Premium cards com scroll-triggered animations
+// =============================================================================
 
-// Decoration Gradients Map
-const decorationStyles: Record<string, string> = {
-  cyan: "via-cyan-500/50",
-  purple: "via-purple-500/50",
-  emerald: "via-emerald-500/50",
-  blue: "via-blue-500/50",
-  orange: "via-orange-500/50"
-};
-
-// Icon Mapping
 const iconMap: Record<string, React.ReactNode> = {
-  bot: <Bot size={24} />,
-  brain: <Brain size={24} />,
-  zap: <Zap size={24} />,
-  shield: <Shield size={24} />,
-  trending: <TrendingUp size={24} />
+  bot: <Bot size={22} />,
+  brain: <Brain size={22} />,
+  zap: <Zap size={22} />,
+  shield: <Shield size={22} />,
+  trending: <TrendingUp size={22} />
+};
+
+interface PillarCardProps {
+  iconKey: string;
+  text: string;
+  sub: string;
+  color: string;
+  index: number;
+}
+
+const PillarCard: React.FC<PillarCardProps> = ({ iconKey, text, sub, color, index }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const colorStyles: Record<string, {
+    icon: string;
+    iconBg: string;
+    border: string;
+    glow: string;
+    line: string;
+  }> = {
+    cyan: {
+      icon: 'text-cyan-400',
+      iconBg: 'bg-cyan-950/50 border-cyan-500/30',
+      border: 'hover:border-cyan-500/40',
+      glow: 'hover:shadow-[0_0_40px_rgba(6,182,212,0.1)]',
+      line: 'via-cyan-500/40'
+    },
+    purple: {
+      icon: 'text-purple-400',
+      iconBg: 'bg-purple-950/50 border-purple-500/30',
+      border: 'hover:border-purple-500/40',
+      glow: 'hover:shadow-[0_0_40px_rgba(168,85,247,0.1)]',
+      line: 'via-purple-500/40'
+    },
+    emerald: {
+      icon: 'text-emerald-400',
+      iconBg: 'bg-emerald-950/50 border-emerald-500/30',
+      border: 'hover:border-emerald-500/40',
+      glow: 'hover:shadow-[0_0_40px_rgba(16,185,129,0.1)]',
+      line: 'via-emerald-500/40'
+    },
+    blue: {
+      icon: 'text-blue-400',
+      iconBg: 'bg-blue-950/50 border-blue-500/30',
+      border: 'hover:border-blue-500/40',
+      glow: 'hover:shadow-[0_0_40px_rgba(59,130,246,0.1)]',
+      line: 'via-blue-500/40'
+    },
+    orange: {
+      icon: 'text-orange-400',
+      iconBg: 'bg-orange-950/50 border-orange-500/30',
+      border: 'hover:border-orange-500/40',
+      glow: 'hover:shadow-[0_0_40px_rgba(249,115,22,0.1)]',
+      line: 'via-orange-500/40'
+    }
+  };
+
+  const styles = colorStyles[color] || colorStyles.cyan;
+
+  return (
+    <div
+      ref={ref}
+      className={`
+        group relative p-7 rounded-2xl border border-white/[0.06]
+        bg-gradient-to-b from-slate-900/70 to-slate-900/40 backdrop-blur-sm
+        transition-all duration-500 hover:-translate-y-1
+        ${styles.border} ${styles.glow}
+        ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
+      `}
+      style={{ transitionDelay: `${index * 100}ms` }}
+    >
+      {/* Hover glow background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+      <div className="relative z-10">
+        {/* Icon */}
+        <div className={`
+          w-12 h-12 rounded-xl flex items-center justify-center mb-5
+          border ${styles.iconBg} ${styles.icon}
+          transition-all duration-300 group-hover:scale-110
+        `}>
+          {iconMap[iconKey]}
+        </div>
+
+        {/* Title */}
+        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-white/90 transition-colors">
+          {text}
+        </h3>
+
+        {/* Description */}
+        <p className="text-slate-400 text-sm leading-relaxed group-hover:text-slate-300 transition-colors">
+          {sub}
+        </p>
+      </div>
+
+      {/* Bottom decorative line */}
+      <div className={`
+        absolute bottom-0 left-6 right-6 h-px rounded-full
+        bg-gradient-to-r from-transparent ${styles.line} to-transparent
+        opacity-0 group-hover:opacity-100 transition-all duration-500
+      `} />
+
+      {/* Corner accent */}
+      <div className={`
+        absolute top-0 right-0 w-24 h-24 rounded-tr-2xl
+        bg-gradient-to-bl from-white/[0.02] to-transparent
+        opacity-0 group-hover:opacity-100 transition-opacity duration-500
+      `} />
+    </div>
+  );
 };
 
 const highlights = [
   {
     iconKey: "zap",
     text: "A Muralha Energética",
-    sub: "A física venceu o software. Com a demanda projetada para crescer 30x até 2035, Big Techs estão comprando usinas nucleares (Westinghouse). Sem energia, não há IA.",
+    sub: "A física venceu o software. Com a demanda projetada para crescer 30x até 2035, Big Techs estão comprando usinas nucleares. Sem energia, não há IA.",
     color: "emerald"
   },
   {
     iconKey: "brain",
     text: "Novembro Vermelho",
-    sub: "Gemini 3, GPT-5.1 e Claude 4.5 Opus lançados simultaneamente. O foco mudou de 'gerar texto' para 'raciocínio profundo' (Sistema 2) e agentes que agem sozinhos.",
+    sub: "Gemini 3, GPT-5.1 e Claude 4.5 Opus lançados simultaneamente. O foco mudou de 'gerar texto' para 'raciocínio profundo' e agentes autônomos.",
     color: "purple"
   },
   {
     iconKey: "bot",
     text: "Materialização Robótica",
-    sub: "Sai o CGI, entra o metal. A BMW validou robôs Figure 02 operando turnos completos em Spartanburg com 99% de sucesso. A mão de obra humanoide virou commodity.",
+    sub: "Sai o CGI, entra o metal. A BMW validou robôs Figure 02 operando turnos completos com 99% de sucesso. Mão de obra humanoide virou commodity.",
     color: "cyan"
   },
   {
     iconKey: "trending",
     text: "A Morte do SaaS",
-    sub: "O modelo 'Service-as-Software' substitui a venda de licenças. Empresas não pagam mais por assento humano, mas pelo resultado entregue pelo agente.",
+    sub: "O modelo 'Service-as-Software' substitui a venda de licenças. Empresas não pagam mais por assento humano, mas pelo resultado do agente.",
     color: "orange"
   },
   {
     iconKey: "shield",
     text: "Guerra dos Chips",
-    sub: "Hegemonia fragmentada. Meta e Google provaram independência com chips próprios (TPUs), causando um crash de $250 bi na Nvidia. Soberania de silício é o novo ouro.",
+    sub: "Hegemonia fragmentada. Meta e Google provaram independência com chips próprios, causando crash de $250 bi na Nvidia. Soberania de silício é o novo ouro.",
     color: "blue"
   }
 ];
 
 const Cheatsheet: React.FC = () => {
+  const [headerVisible, setHeaderVisible] = useState(false);
+  const headerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setHeaderVisible(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (headerRef.current) {
+      observer.observe(headerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="cheatsheet" className="py-24 px-4 bg-[#050b14] border-b border-white/5 relative overflow-hidden">
-      
-      {/* Top Divider with Glow */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent"></div>
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-cyan-400/20 blur-sm"></div>
+    <section id="cheatsheet" className="py-20 px-4 bg-[#050b14] relative overflow-hidden">
+
+      {/* Background atmosphere */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cyan-500/5 blur-[150px] rounded-full" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-purple-500/5 blur-[120px] rounded-full" />
+      </div>
+
+      {/* Top divider */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-           <div className="space-y-4">
-             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/30 border border-cyan-500/20 text-cyan-400 text-xs font-mono uppercase tracking-widest">
-                <AlertCircle size={14} />
-                <span>Executive Summary • Nov 2025</span>
-             </div>
-             <h2 className="text-4xl md:text-5xl font-display font-bold text-white leading-tight">
-               Os 5 Pilares do <br /> <span className="text-slate-500">Novo Mundo</span>
-             </h2>
-           </div>
-           <p className="text-slate-400 max-w-sm text-sm md:text-right leading-relaxed border-l-2 border-slate-700 pl-4 md:border-l-0 md:pl-0">
-             Síntese tática do relatório "Grande Ponto de Inflexão". O que você precisa saber para não ser obsoleto em 2026.
-           </p>
+
+        {/* Header */}
+        <div
+          ref={headerRef}
+          className={`
+            flex flex-col md:flex-row md:items-end justify-between gap-8 mb-14
+            transition-all duration-1000
+            ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
+          `}
+        >
+          <div className="space-y-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-950/40 border border-cyan-500/20 text-cyan-400 text-xs font-mono uppercase tracking-widest">
+              <AlertCircle size={14} />
+              <span>Executive Summary</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-white leading-[1.1]">
+              Os 5 Pilares do <br />
+              <span className="text-slate-500">Novo Mundo</span>
+            </h2>
+          </div>
+          <p className="text-slate-500 max-w-sm text-sm md:text-right leading-relaxed">
+            Síntese tática do relatório "Grande Ponto de Inflexão". O que você precisa saber para não ser obsoleto em 2026.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {highlights.map((item, index) => {
-            const isLarge = index === 0 || index === 1;
-            const style = colorStyles[item.color];
-            const decoration = decorationStyles[item.color];
-            
-            return (
-              <div 
-                key={index} 
-                className={`group relative p-8 bg-[#0f172a] hover:bg-[#1e293b] rounded-3xl border border-white/5 transition-all duration-300 hover:-translate-y-1 ${isLarge ? 'md:col-span-1' : ''}`}
-              >
-                 <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 border ${style}`}>
-                    {iconMap[item.iconKey]}
-                 </div>
-                 
-                 <h3 className="text-2xl font-bold text-white mb-3">{item.text}</h3>
-                 <p className="text-slate-400 text-sm leading-relaxed group-hover:text-slate-200 transition-colors">
-                   {item.sub}
-                 </p>
-
-                 {/* Decorative Line on Hover */}
-                 <div className={`absolute bottom-0 left-8 right-8 h-px bg-gradient-to-r from-transparent ${decoration} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
-              </div>
-            );
-          })}
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {highlights.map((item, index) => (
+            <PillarCard
+              key={index}
+              {...item}
+              index={index}
+            />
+          ))}
         </div>
-        
-        <div className="mt-16 flex flex-col items-center justify-center opacity-50">
-            <p className="text-xs font-mono text-slate-500 uppercase tracking-widest flex items-center gap-2 mb-2">
-                Scroll para Análise Profunda
-            </p>
-            <MousePointer className="text-slate-500 animate-bounce" size={16} />
+
+        {/* Scroll indicator */}
+        <div className="mt-16 flex flex-col items-center justify-center">
+          <p className="text-[10px] font-mono text-slate-600 uppercase tracking-[0.3em] mb-3">
+            Análise Profunda
+          </p>
+          <ChevronDown className="text-slate-600 w-5 h-5 animate-bounce" />
         </div>
       </div>
     </section>

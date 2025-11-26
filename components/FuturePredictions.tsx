@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Telescope, TrendingUp, Anchor, AlertTriangle, Sparkles } from 'lucide-react';
+import { Telescope, TrendingUp, Anchor, AlertTriangle, Sparkles, Globe } from 'lucide-react';
 
 const FuturePredictions: React.FC = () => {
   return (
@@ -22,7 +22,7 @@ const FuturePredictions: React.FC = () => {
            </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           
           {/* Card 1: The Opportunity */}
           <div className="group relative bg-gradient-to-b from-emerald-950/20 to-[#050b14] p-8 rounded-[2rem] border border-white/5 hover:border-emerald-500/30 transition-all duration-500">
@@ -71,7 +71,7 @@ const FuturePredictions: React.FC = () => {
             <div className="w-14 h-14 rounded-2xl bg-red-900/30 flex items-center justify-center text-red-400 mb-6 border border-red-500/20 group-hover:scale-110 transition-transform">
               <AlertTriangle size={28} />
             </div>
-            
+
             <span className="block text-xs font-bold text-red-500 uppercase tracking-widest mb-2">O Maior Desafio</span>
             <h3 className="text-2xl font-bold text-white mb-4">A Crise de Significado</h3>
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
@@ -80,6 +80,26 @@ const FuturePredictions: React.FC = () => {
             <div className="p-4 bg-black/40 rounded-xl border border-white/5">
               <p className="text-red-200/80 text-xs italic">
                 "A competência técnica deixou de ser o diferencial humano."
+              </p>
+            </div>
+          </div>
+
+          {/* Card 4: Splinternet */}
+          <div className="group relative bg-gradient-to-b from-blue-950/20 to-[#050b14] p-8 rounded-[2rem] border border-white/5 hover:border-blue-500/30 transition-all duration-500">
+             <div className="absolute inset-0 bg-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-[2rem]"></div>
+
+            <div className="w-14 h-14 rounded-2xl bg-blue-900/30 flex items-center justify-center text-blue-400 mb-6 border border-blue-500/20 group-hover:scale-110 transition-transform">
+              <Globe size={28} />
+            </div>
+
+            <span className="block text-xs font-bold text-blue-500 uppercase tracking-widest mb-2">A Fragmentação</span>
+            <h3 className="text-2xl font-bold text-white mb-4">A Splinternet</h3>
+            <p className="text-slate-400 text-sm leading-relaxed mb-6">
+              A "Internet Aberta" está morrendo. Voltaremos a valorizar comunidades fechadas, Discords privados e newsletters verificadas. A busca do Google mudará: em vez de 10 links azuis, uma resposta sintetizada.
+            </p>
+            <div className="p-4 bg-black/40 rounded-xl border border-white/5">
+              <p className="text-blue-200/80 text-xs italic">
+                "Sites de conteúdo raso serão extintos. Só sobrevive quem tem profundidade."
               </p>
             </div>
           </div>

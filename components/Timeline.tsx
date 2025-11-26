@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { TimelineEvent } from '../types';
-import { Brain, Globe, Cpu, Bot, Gavel, Search, ShieldCheck, HelpCircle } from 'lucide-react';
+import { Brain, Globe, Cpu, Bot, Gavel, Search, ShieldCheck, HelpCircle, Video } from 'lucide-react';
 
 const events: TimelineEvent[] = [
   {
@@ -35,6 +35,16 @@ const events: TimelineEvent[] = [
   },
   {
     id: 4,
+    month: 'SET',
+    title: 'A Era do Vídeo Sintético',
+    headline: 'OpenAI Sora 2',
+    description: 'Lançamento do Sora 2: vídeo com áudio sincronizado e física realista. Não é mais "CGI óbvio" - é indistinguível de filmagem real. O custo de produção audiovisual colapsou. Hollywood entrou em pânico.',
+    icon: 'video',
+    category: 'Agentes',
+    impact: 'Qualquer pessoa pode criar um comercial de TV em 10 minutos.'
+  },
+  {
+    id: 5,
     month: 'OUT',
     title: 'Robôs no Chão de Fábrica',
     headline: 'BMW & Figure AI',
@@ -44,7 +54,7 @@ const events: TimelineEvent[] = [
     impact: 'A mão de obra robótica torna-se comercialmente viável.'
   },
   {
-    id: 5,
+    id: 6,
     month: 'NOV',
     title: 'O Novembro Vermelho',
     headline: 'Gemini 3 vs GPT-5.1',
@@ -54,7 +64,7 @@ const events: TimelineEvent[] = [
     impact: 'Consolidação de Agentes de Raciocínio (S2) confiáveis.'
   },
   {
-    id: 6,
+    id: 7,
     month: 'NOV',
     title: 'O Crash da Nvidia',
     headline: 'Fragmentação do Mercado',
@@ -64,7 +74,7 @@ const events: TimelineEvent[] = [
     impact: 'Hardware torna-se heterogêneo; Google TPU e Huawei ascendem.'
   },
   {
-    id: 7,
+    id: 8,
     month: 'DEZ',
     title: 'O Fim da Verdade',
     headline: 'Eleições & Deepfakes',
@@ -74,7 +84,7 @@ const events: TimelineEvent[] = [
     impact: 'Necessidade urgente de identidade digital criptográfica.'
   },
   {
-    id: 8,
+    id: 9,
     month: 'FUTURO',
     title: 'O Horizonte AGI',
     headline: 'Previsão: 2026/2027',
@@ -92,7 +102,8 @@ const iconMap: Record<string, React.ReactNode> = {
   brain: <Brain size={20} />,
   shield: <ShieldCheck size={20} />,
   gavel: <Gavel size={20} />,
-  search: <Search size={20} />
+  search: <Search size={20} />,
+  video: <Video size={20} />
 };
 
 const Timeline: React.FC = () => {

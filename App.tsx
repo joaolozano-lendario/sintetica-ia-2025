@@ -20,6 +20,7 @@ import FuturePredictions from './components/FuturePredictions';
 import DefenseProtocol from './components/DefenseProtocol';
 import BrazilFocus from './components/BrazilFocus';
 import ExpertPanel from './components/ExpertPanel';
+import CallToAdventure from './components/CallToAdventure';
 
 const App: React.FC = () => {
   return (
@@ -74,6 +75,9 @@ const App: React.FC = () => {
           
           {/* Appendix */}
           <Glossary />
+
+          {/* Emotional Closing */}
+          <CallToAdventure />
         </main>
 
         <Footer />

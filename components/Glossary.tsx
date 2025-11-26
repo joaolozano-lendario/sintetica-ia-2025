@@ -26,6 +26,18 @@ const terms: GlossaryTerm[] = [
   {
     term: "Alquimia Sintética",
     definition: "O processo de usar dados gerados por IA de alta qualidade para treinar modelos ainda melhores, superando a escassez de dados humanos na internet (Data Wall)."
+  },
+  {
+    term: "Slop",
+    definition: "Conteúdo de baixa qualidade gerado em massa por IA. Inunda feeds, resultados de busca e comunicações corporativas, criando ruído informacional e degradando a qualidade geral da internet."
+  },
+  {
+    term: "Workslop",
+    definition: "Trabalho lixo gerado por IA no ambiente corporativo - e-mails automáticos ruins, códigos com bugs, relatórios genéricos. A armadilha de gerar volume em vez de valor."
+  },
+  {
+    term: "Arquiteto de Fluxos",
+    definition: "O perfil profissional de elite em 2026. Não executa tarefas - orquestra agentes autônomos, cura resultados de IA e conecta sistemas complexos. Vende resultado, não tempo."
   }
 ];
 

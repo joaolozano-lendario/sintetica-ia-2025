@@ -6,7 +6,7 @@ export interface TimelineEvent {
   title: string;
   headline: string;
   description: string;
-  icon: 'brain' | 'globe' | 'chip' | 'robot' | 'gavel' | 'search' | 'shield';
+  icon: 'brain' | 'globe' | 'chip' | 'robot' | 'gavel' | 'search' | 'shield' | 'video';
   category: 'Infraestrutura' | 'Agentes' | 'Regulação' | 'Soberania' | 'Futuro';
   impact: string;
 }

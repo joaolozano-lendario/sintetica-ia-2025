@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { BadgeCheck, ShieldCheck, Users } from 'lucide-react';
 
 const TheGap: React.FC = () => {
   return (
@@ -46,6 +47,48 @@ const TheGap: React.FC = () => {
               </div>
             </div>
 
+          </div>
+        </div>
+
+        {/* Economia da Autenticidade - Nova Seção */}
+        <div className="mt-12 pt-12 border-t border-white/10">
+          <div className="text-center mb-8">
+            <h3 className="text-sm font-bold text-emerald-400 uppercase tracking-widest mb-2 font-mono flex items-center justify-center gap-2">
+              <BadgeCheck size={14} />
+              A Contratendência
+            </h3>
+            <h4 className="text-2xl md:text-3xl font-display font-bold text-white">
+              A Economia da <span className="text-emerald-400">Autenticidade</span>
+            </h4>
+            <p className="text-slate-400 mt-4 max-w-xl mx-auto">
+              Em resposta à saturação de conteúdo sintético ("Slop"), surge uma nova valorização do humano verificável.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-emerald-950/10 border border-emerald-500/20 rounded-xl p-5 text-center">
+              <div className="w-10 h-10 bg-emerald-900/30 rounded-lg mx-auto mb-3 flex items-center justify-center text-emerald-400">
+                <BadgeCheck size={20} />
+              </div>
+              <h5 className="text-white font-bold text-sm mb-2">Selo "Feito por Humano"</h5>
+              <p className="text-slate-400 text-xs">Artesanato e criações com certificado de origem humana tornam-se premium.</p>
+            </div>
+
+            <div className="bg-blue-950/10 border border-blue-500/20 rounded-xl p-5 text-center">
+              <div className="w-10 h-10 bg-blue-900/30 rounded-lg mx-auto mb-3 flex items-center justify-center text-blue-400">
+                <ShieldCheck size={20} />
+              </div>
+              <h5 className="text-white font-bold text-sm mb-2">Verificação Biométrica</h5>
+              <p className="text-slate-400 text-xs">Conteúdo com prova criptográfica de autoria humana ganha confiança.</p>
+            </div>
+
+            <div className="bg-purple-950/10 border border-purple-500/20 rounded-xl p-5 text-center">
+              <div className="w-10 h-10 bg-purple-900/30 rounded-lg mx-auto mb-3 flex items-center justify-center text-purple-400">
+                <Users size={20} />
+              </div>
+              <h5 className="text-white font-bold text-sm mb-2">Eventos Presenciais</h5>
+              <p className="text-slate-400 text-xs">O "olho no olho" torna-se prova de humanidade. Comunidades físicas valorizam.</p>
+            </div>
           </div>
         </div>
       </div>

@@ -10,7 +10,7 @@
 import React, { useState, useEffect } from 'react';
 
 // Core Components (novo sistema)
-import { Act, Breather, ProgressNav } from './components/core';
+import { Act, Breather, ProgressNav, HeroNumbersGrid } from './components/core';
 import { acts } from './lib/theme';
 
 // Original Components (preservados 100%)
@@ -122,6 +122,12 @@ const App: React.FC = () => {
             <Cheatsheet />
           </section>
 
+          {/* Os 5 Números Âncora - Deep Dive recommendation */}
+          <section id="hero-numbers" data-section="hero-numbers">
+            <HeroNumbersGrid />
+          </section>
+
+          {/* ImpactStats original mantido para dados complementares */}
           <section id="stats" data-section="stats">
             <ImpactStats />
           </section>

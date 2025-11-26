@@ -114,7 +114,8 @@ export const acts: ActDefinition[] = [
     theme: 'cool',
     sections: [
       { id: 'cheatsheet', component: 'Cheatsheet', title: 'Os 5 Pilares' },
-      { id: 'stats', component: 'ImpactStats', title: 'Números Brutos' },
+      { id: 'hero-numbers', component: 'HeroNumbersGrid', title: 'Os 5 Números' },
+      { id: 'stats', component: 'ImpactStats', title: 'Mais Dados' },
       { id: 'timeline', component: 'Timeline', title: 'Cronologia 2025' }
     ],
     breatherAfter: {

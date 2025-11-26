@@ -123,11 +123,11 @@ const RealWorldCases: React.FC = () => {
                   {item.icon}
                 </div>
                 {item.color === 'red' || item.color === 'purple' ? (
-                  <div className={`px-2 py-1 rounded-full flex items-center gap-1 text-[10px] font-bold uppercase ${styles.badgeBg} ${styles.badgeBorder} border text-red-400`}>
+                  <div className={`px-2 py-1 rounded-full flex items-center gap-1 text-xs font-bold uppercase ${styles.badgeBg} ${styles.badgeBorder} border text-red-400`}>
                     <AlertTriangle size={10} /> Alerta
                   </div>
                 ) : (
-                  <div className={`px-2 py-1 rounded-full flex items-center gap-1 text-[10px] font-bold uppercase ${styles.badgeBg} ${styles.badgeBorder} border ${styles.text}`}>
+                  <div className={`px-2 py-1 rounded-full flex items-center gap-1 text-xs font-bold uppercase ${styles.badgeBg} ${styles.badgeBorder} border ${styles.text}`}>
                     <CheckCircle size={10} /> Validado
                   </div>
                 )}
@@ -144,7 +144,7 @@ const RealWorldCases: React.FC = () => {
                 {item.description}
               </p>
 
-              <div className="mt-6 pt-4 border-t border-white/5 text-[10px] text-slate-600 font-mono uppercase">
+              <div className="mt-6 pt-4 border-t border-white/5 text-xs text-slate-600 font-mono uppercase">
                  {item.source}
               </div>
             </div>
@@ -177,7 +177,7 @@ const RealWorldCases: React.FC = () => {
               </div>
               <div>
                 <h4 className="text-white font-bold">Caso Doritos</h4>
-                <span className="text-yellow-400 text-[10px] font-mono uppercase">EUA • Varejo</span>
+                <span className="text-yellow-400 text-xs font-mono uppercase">EUA • Varejo</span>
               </div>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed">
@@ -193,7 +193,7 @@ const RealWorldCases: React.FC = () => {
               </div>
               <div>
                 <h4 className="text-white font-bold">Fantasma de Dublin</h4>
-                <span className="text-purple-400 text-[10px] font-mono uppercase">Irlanda • Segurança</span>
+                <span className="text-purple-400 text-xs font-mono uppercase">Irlanda • Segurança</span>
               </div>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed">
@@ -209,7 +209,7 @@ const RealWorldCases: React.FC = () => {
               </div>
               <div>
                 <h4 className="text-white font-bold">Lu do Magalu</h4>
-                <span className="text-green-400 text-[10px] font-mono uppercase">Brasil • Marketing</span>
+                <span className="text-green-400 text-xs font-mono uppercase">Brasil • Marketing</span>
               </div>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed">

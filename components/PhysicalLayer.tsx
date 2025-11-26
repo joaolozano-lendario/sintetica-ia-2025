@@ -4,7 +4,7 @@ import { Zap, Cpu, Database, Server, Radio, Droplets } from 'lucide-react';
 
 const PhysicalLayer: React.FC = () => {
   return (
-    <section className="py-24 px-4 bg-[#020617] border-y border-white/5 relative overflow-hidden">
+    <section className="py-24 px-4 bg-[#0f172a] border-y border-white/5 relative overflow-hidden">
       
       {/* Background Matrix Effect */}
       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-5"></div>
@@ -55,8 +55,8 @@ const PhysicalLayer: React.FC = () => {
                 Em 2025, a Westinghouse emergiu como peça-chave, usando a própria IA (sistema WNEXUS) para projetar reatores nucleares mais rápidos. É a máquina construindo a bateria que a alimenta.
               </p>
               <div className="mt-4 flex gap-2">
-                 <span className="text-[10px] bg-emerald-900/40 text-emerald-300 px-2 py-1 rounded border border-emerald-500/20">123 GW até 2035</span>
-                 <span className="text-[10px] bg-emerald-900/40 text-emerald-300 px-2 py-1 rounded border border-emerald-500/20">Energia de Base</span>
+                 <span className="text-xs bg-emerald-900/40 text-emerald-300 px-2 py-1 rounded border border-emerald-500/20">123 GW até 2035</span>
+                 <span className="text-xs bg-emerald-900/40 text-emerald-300 px-2 py-1 rounded border border-emerald-500/20">Energia de Base</span>
               </div>
             </div>
 
@@ -94,7 +94,7 @@ const PhysicalLayer: React.FC = () => {
                 <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
                   <div className="h-full bg-emerald-500 w-[95%]"></div>
                 </div>
-                <p className="text-[10px] text-slate-500">Projeto Stargate: $500Bi, 10GW de capacidade. Texas, Novo México e Ohio.</p>
+                <p className="text-xs text-slate-500">Projeto Stargate: $500Bi, 10GW de capacidade. Texas, Novo México e Ohio.</p>
               </div>
 
               <div className="space-y-4">
@@ -105,7 +105,7 @@ const PhysicalLayer: React.FC = () => {
                 <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
                   <div className="h-full bg-red-500 w-[85%]"></div>
                 </div>
-                <p className="text-[10px] text-slate-500">Huawei Ascend 910C + DeepSeek (Otimização Extrema de Software).</p>
+                <p className="text-xs text-slate-500">Huawei Ascend 910C + DeepSeek (Otimização Extrema de Software).</p>
               </div>
 
               <div className="space-y-4">
@@ -116,7 +116,7 @@ const PhysicalLayer: React.FC = () => {
                 <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
                   <div className="h-full bg-yellow-500 w-[60%]"></div>
                 </div>
-                 <p className="text-[10px] text-slate-500">Arábia Saudita/EAU (G42) investem bilhões em "Sovereign AI" para não depender do Ocidente.</p>
+                 <p className="text-xs text-slate-500">Arábia Saudita/EAU (G42) investem bilhões em "Sovereign AI" para não depender do Ocidente.</p>
               </div>
 
             </div>

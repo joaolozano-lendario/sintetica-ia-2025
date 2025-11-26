@@ -88,7 +88,7 @@ const EvolutionaryScale: React.FC = () => {
                 <div className={`ml-12 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pl-16 text-left' : 'md:pr-16 md:text-right'}`}>
                    
                    {era.active && (
-                     <div className={`inline-flex items-center gap-2 px-3 py-1 bg-cyan-500 text-black font-bold text-[10px] uppercase tracking-widest rounded-full mb-4 animate-pulse ${index % 2 !== 0 ? 'md:ml-auto' : ''}`}>
+                     <div className={`inline-flex items-center gap-2 px-3 py-1 bg-cyan-500 text-black font-bold text-xs uppercase tracking-widest rounded-full mb-4 animate-pulse ${index % 2 !== 0 ? 'md:ml-auto' : ''}`}>
                        <MapPin size={12} /> {era.highlight}
                      </div>
                    )}

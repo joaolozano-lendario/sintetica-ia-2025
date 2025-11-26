@@ -12,7 +12,7 @@ const Hero: React.FC = () => {
       <div className="max-w-6xl mx-auto space-y-8 z-10 pt-8 md:pt-12">
 
         {/* System Status Badges */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-[10px] font-mono tracking-[0.2em] uppercase mb-4 opacity-80">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-xs font-mono tracking-widest uppercase mb-4 opacity-80">
           <span className="flex items-center gap-2 px-3 py-1 bg-red-950/30 border border-red-900/50 rounded text-red-500 shadow-[0_0_15px_rgba(239,68,68,0.2)]">
             <div className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></div>
             Status Global: Ponto de Inflexão

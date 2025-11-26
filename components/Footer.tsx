@@ -3,7 +3,7 @@ import { Cpu, UserCheck, Zap } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="py-12 px-4 border-t border-white/5 bg-[#02040a] text-center relative overflow-hidden">
+    <footer className="py-12 px-4 border-t border-white/5 bg-[#050b14] text-center relative overflow-hidden">
       {/* Footer background glow */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[200px] bg-cyan-900/20 blur-[100px] rounded-full pointer-events-none"></div>
 
@@ -35,11 +35,11 @@ const Footer: React.FC = () => {
                 <UserCheck size={14} />
             </div>
             <p className="text-white font-bold text-sm">João Lozano</p>
-            <p className="text-cyan-500 text-[10px] uppercase tracking-widest font-mono">Curadoria & Inteligência</p>
+            <p className="text-cyan-500 text-xs uppercase tracking-widest font-mono">Curadoria & Inteligência</p>
           </div>
         </div>
         
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between text-[10px] text-slate-600 font-mono uppercase tracking-widest">
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between text-xs text-slate-600 font-mono uppercase tracking-widest">
           <p>VERSION: INFLECTION_POINT_V4.0</p>
           <p>© 2025 The Great Inflection Report</p>
         </div>

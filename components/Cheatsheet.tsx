@@ -63,7 +63,7 @@ const highlights = [
 
 const Cheatsheet: React.FC = () => {
   return (
-    <section id="cheatsheet" className="py-24 px-4 bg-[#0b1221] border-b border-white/5 relative overflow-hidden">
+    <section id="cheatsheet" className="py-24 px-4 bg-[#050b14] border-b border-white/5 relative overflow-hidden">
       
       {/* Top Divider with Glow */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent"></div>
@@ -113,7 +113,7 @@ const Cheatsheet: React.FC = () => {
         </div>
         
         <div className="mt-16 flex flex-col items-center justify-center opacity-50">
-            <p className="text-[10px] font-mono text-slate-500 uppercase tracking-[0.2em] flex items-center gap-2 mb-2">
+            <p className="text-xs font-mono text-slate-500 uppercase tracking-widest flex items-center gap-2 mb-2">
                 Scroll para Análise Profunda
             </p>
             <MousePointer className="text-slate-500 animate-bounce" size={16} />

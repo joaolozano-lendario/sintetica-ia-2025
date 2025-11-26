@@ -181,7 +181,7 @@ const Timeline: React.FC = () => {
                   
                   {/* Category Badge */}
                   <div className="absolute top-8 right-8">
-                     <span className="px-3 py-1 rounded-full border border-white/10 bg-white/5 text-[10px] font-mono text-slate-400 uppercase tracking-widest">
+                     <span className="px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs font-mono text-slate-400 uppercase tracking-widest">
                        {event.category}
                      </span>
                   </div>

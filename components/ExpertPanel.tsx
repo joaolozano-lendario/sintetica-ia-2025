@@ -49,7 +49,7 @@ const toneColors = {
 
 const ExpertPanel: React.FC = () => {
   return (
-    <section className="py-24 px-4 bg-gradient-to-b from-[#050b14] via-[#0a0f1a] to-[#050b14] relative overflow-hidden">
+    <section className="py-24 px-4 bg-[#050b14] relative overflow-hidden">
 
       {/* Background effect */}
       <div className="absolute inset-0 opacity-30">
@@ -106,7 +106,7 @@ const ExpertPanel: React.FC = () => {
                 <div className="mb-6">
                   <div className="flex items-center justify-between mb-2">
                     <h3 className="text-xl font-bold text-white">{expert.name}</h3>
-                    <span className={`text-[10px] font-mono uppercase tracking-wider ${colors.text} ${colors.bg} px-2 py-1 rounded border ${colors.border}`}>
+                    <span className={`text-xs font-mono uppercase tracking-wider ${colors.text} ${colors.bg} px-2 py-1 rounded border ${colors.border}`}>
                       {colors.label}
                     </span>
                   </div>
@@ -120,7 +120,7 @@ const ExpertPanel: React.FC = () => {
 
                 {/* Key Insight */}
                 <div className={`${colors.bg} border ${colors.border} rounded-xl p-4`}>
-                  <p className="text-[10px] font-mono uppercase tracking-wider text-slate-500 mb-1">Insight-Chave</p>
+                  <p className="text-xs font-mono uppercase tracking-wider text-slate-500 mb-1">Insight-Chave</p>
                   <p className={`${colors.text} font-medium text-sm italic`}>
                     "{expert.keyInsight}"
                   </p>

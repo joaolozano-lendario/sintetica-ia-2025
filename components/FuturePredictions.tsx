@@ -4,7 +4,7 @@ import { Telescope, TrendingUp, Anchor, AlertTriangle, Sparkles, Globe } from 'l
 
 const FuturePredictions: React.FC = () => {
   return (
-    <section className="py-24 px-4 bg-[#02040a] relative">
+    <section className="py-24 px-4 bg-[#050b14] relative">
       <div className="max-w-7xl mx-auto">
         
         <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
@@ -25,8 +25,8 @@ const FuturePredictions: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           
           {/* Card 1: The Opportunity */}
-          <div className="group relative bg-gradient-to-b from-emerald-950/20 to-[#050b14] p-8 rounded-[2rem] border border-white/5 hover:border-emerald-500/30 transition-all duration-500">
-            <div className="absolute inset-0 bg-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-[2rem]"></div>
+          <div className="group relative bg-gradient-to-b from-emerald-950/20 to-[#050b14] p-8 rounded-3xl border border-white/5 hover:border-emerald-500/30 transition-all duration-500">
+            <div className="absolute inset-0 bg-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl"></div>
             
             <div className="w-14 h-14 rounded-2xl bg-emerald-900/30 flex items-center justify-center text-emerald-400 mb-6 border border-emerald-500/20 group-hover:scale-110 transition-transform">
               <TrendingUp size={28} />
@@ -45,8 +45,8 @@ const FuturePredictions: React.FC = () => {
           </div>
 
           {/* Card 2: The Counter-Trend */}
-          <div className="group relative bg-gradient-to-b from-orange-950/20 to-[#050b14] p-8 rounded-[2rem] border border-white/5 hover:border-orange-500/30 transition-all duration-500">
-             <div className="absolute inset-0 bg-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-[2rem]"></div>
+          <div className="group relative bg-gradient-to-b from-orange-950/20 to-[#050b14] p-8 rounded-3xl border border-white/5 hover:border-orange-500/30 transition-all duration-500">
+             <div className="absolute inset-0 bg-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl"></div>
 
             <div className="w-14 h-14 rounded-2xl bg-orange-900/30 flex items-center justify-center text-orange-400 mb-6 border border-orange-500/20 group-hover:scale-110 transition-transform">
               <Anchor size={28} />
@@ -65,8 +65,8 @@ const FuturePredictions: React.FC = () => {
           </div>
 
           {/* Card 3: The Danger */}
-          <div className="group relative bg-gradient-to-b from-red-950/20 to-[#050b14] p-8 rounded-[2rem] border border-white/5 hover:border-red-500/30 transition-all duration-500">
-             <div className="absolute inset-0 bg-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-[2rem]"></div>
+          <div className="group relative bg-gradient-to-b from-red-950/20 to-[#050b14] p-8 rounded-3xl border border-white/5 hover:border-red-500/30 transition-all duration-500">
+             <div className="absolute inset-0 bg-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl"></div>
 
             <div className="w-14 h-14 rounded-2xl bg-red-900/30 flex items-center justify-center text-red-400 mb-6 border border-red-500/20 group-hover:scale-110 transition-transform">
               <AlertTriangle size={28} />
@@ -85,8 +85,8 @@ const FuturePredictions: React.FC = () => {
           </div>
 
           {/* Card 4: Splinternet */}
-          <div className="group relative bg-gradient-to-b from-blue-950/20 to-[#050b14] p-8 rounded-[2rem] border border-white/5 hover:border-blue-500/30 transition-all duration-500">
-             <div className="absolute inset-0 bg-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-[2rem]"></div>
+          <div className="group relative bg-gradient-to-b from-blue-950/20 to-[#050b14] p-8 rounded-3xl border border-white/5 hover:border-blue-500/30 transition-all duration-500">
+             <div className="absolute inset-0 bg-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl"></div>
 
             <div className="w-14 h-14 rounded-2xl bg-blue-900/30 flex items-center justify-center text-blue-400 mb-6 border border-blue-500/20 group-hover:scale-110 transition-transform">
               <Globe size={28} />

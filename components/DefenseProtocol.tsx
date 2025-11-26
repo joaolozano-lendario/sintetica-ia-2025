@@ -4,8 +4,8 @@ import { ShieldAlert, Key, Lock, Fingerprint } from 'lucide-react';
 
 const DefenseProtocol: React.FC = () => {
   return (
-    <section className="py-12 px-4 max-w-7xl mx-auto">
-      <div className="bg-red-950/10 border border-red-500/20 rounded-[2rem] p-8 md:p-12 relative overflow-hidden">
+    <section className="py-24 px-4 max-w-7xl mx-auto">
+      <div className="bg-red-950/10 border border-red-500/20 rounded-3xl p-8 md:p-12 relative overflow-hidden">
         
         {/* Background Alarm Effect */}
         <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-red-600/5 blur-[100px] rounded-full pointer-events-none"></div>

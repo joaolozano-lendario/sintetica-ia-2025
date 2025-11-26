@@ -3,7 +3,7 @@ import { Dna, Atom, CloudRain, Microscope, FlaskConical, Heart } from 'lucide-re
 
 const DeepScience: React.FC = () => {
   return (
-    <section className="py-24 px-4 bg-gradient-to-b from-[#050b14] via-[#0a1a2e] to-[#050b14] relative overflow-hidden">
+    <section className="py-24 px-4 bg-[#050b14] relative overflow-hidden">
 
       {/* Background Effect */}
       <div className="absolute inset-0 opacity-20">
@@ -44,7 +44,7 @@ const DeepScience: React.FC = () => {
               <div className="flex-1 space-y-4">
                 <div className="flex flex-wrap items-center gap-3">
                   <h3 className="text-2xl md:text-3xl font-bold text-white font-display">AlphaFold 3</h3>
-                  <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-1 bg-blue-900/50 text-blue-300 rounded border border-blue-500/30">Google DeepMind</span>
+                  <span className="text-xs font-mono uppercase tracking-wider px-2 py-1 bg-blue-900/50 text-blue-300 rounded border border-blue-500/30">Google DeepMind</span>
                 </div>
 
                 <p className="text-slate-300 leading-relaxed">
@@ -112,7 +112,7 @@ const DeepScience: React.FC = () => {
           {/* Flood Hub Brazil */}
           <div className="bg-cyan-950/20 border border-cyan-500/20 rounded-3xl p-8 relative overflow-hidden group hover:border-cyan-500/40 transition-all">
             <div className="absolute top-4 right-4">
-              <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-1 bg-green-900/50 text-green-300 rounded border border-green-500/30">
+              <span className="text-xs font-mono uppercase tracking-wider px-2 py-1 bg-green-900/50 text-green-300 rounded border border-green-500/30">
                 Caso Brasil
               </span>
             </div>

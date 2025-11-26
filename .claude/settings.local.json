@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__ide__getDiagnostics",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nfeat(sintetica-2025): major content expansion - 6 new sections + enriched components\n\nNew components added:\n- DeepScience: AlphaFold 3, GNoME (2.2M crystals), Flood Hub Brazil\n- ConsumerAI: iPhone 17, Galaxy S25, Ray-Ban Meta, Project Jarvis, failed devices\n- RoboticsRevolution: Tesla Optimus ($20-30k), Figure 02, 1M robots by 2028\n- ContentCrisis: 74.2% web content is AI-generated, dead internet theory\n- GlobalRegulation: AI Act (EU), Executive Order (US), CAC (China), PL 2338 (Brazil)\n- MarketPulse: OpenAI $300Bi, Anthropic $60Bi, 78% adoption vs 1% maturity\n\nEnriched components:\n- Hero: Added 3 impact cards (time to 100M, physical cost, work impact)\n- RealWorldCases: Added WTF section (Doritos, Dublin ghost, Lu do Magalu)\n\nFixed:\n- index.html: Added missing script entry point for Vite\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push:*)"
+    ]
+  },
+  "disabledMcpjsonServers": [
+    "supabase"
+  ]
+}

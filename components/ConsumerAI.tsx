@@ -3,7 +3,7 @@ import { Smartphone, Glasses, Watch, Cpu, Sparkles, AlertCircle, XCircle } from 
 
 const ConsumerAI: React.FC = () => {
   return (
-    <section className="py-24 px-4 bg-[#0a0f1a] relative overflow-hidden border-y border-white/5">
+    <section className="py-24 px-4 bg-[#0f172a] relative overflow-hidden border-y border-white/5">
 
       {/* Background */}
       <div className="absolute inset-0 opacity-10">
@@ -35,7 +35,7 @@ const ConsumerAI: React.FC = () => {
               <div className="w-14 h-14 bg-purple-900/30 rounded-2xl flex items-center justify-center text-purple-400 group-hover:scale-110 transition-transform">
                 <Smartphone size={28} />
               </div>
-              <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-1 bg-slate-800 text-slate-400 rounded border border-white/10">Apple</span>
+              <span className="text-xs font-mono uppercase tracking-wider px-2 py-1 bg-slate-800 text-slate-400 rounded border border-white/10">Apple</span>
             </div>
 
             <h3 className="text-xl font-bold text-white mb-2 font-display">iPhone 17 & Apple Intelligence</h3>
@@ -68,7 +68,7 @@ const ConsumerAI: React.FC = () => {
               <div className="w-14 h-14 bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
                 <Smartphone size={28} />
               </div>
-              <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-1 bg-slate-800 text-slate-400 rounded border border-white/10">Samsung</span>
+              <span className="text-xs font-mono uppercase tracking-wider px-2 py-1 bg-slate-800 text-slate-400 rounded border border-white/10">Samsung</span>
             </div>
 
             <h3 className="text-xl font-bold text-white mb-2 font-display">Galaxy S25 & Galaxy AI</h3>
@@ -101,7 +101,7 @@ const ConsumerAI: React.FC = () => {
               <div className="w-14 h-14 bg-cyan-900/30 rounded-2xl flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
                 <Glasses size={28} />
               </div>
-              <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-1 bg-slate-800 text-slate-400 rounded border border-white/10">Wearables</span>
+              <span className="text-xs font-mono uppercase tracking-wider px-2 py-1 bg-slate-800 text-slate-400 rounded border border-white/10">Wearables</span>
             </div>
 
             <h3 className="text-xl font-bold text-white mb-2 font-display">Ray-Ban Meta & Cia</h3>
@@ -149,7 +149,7 @@ const ConsumerAI: React.FC = () => {
               O "agente de navegador" do Google: uma IA que <strong className="text-white">controla seu Chrome</strong> para realizar tarefas. Comprar passagens, agendar reuniões, preencher formulários — você dá a ordem, o Jarvis executa.
             </p>
 
-            <div className="text-[10px] font-mono uppercase tracking-wider text-emerald-400/70">
+            <div className="text-xs font-mono uppercase tracking-wider text-emerald-400/70">
               Status: Disponível para testers Gemini Advanced
             </div>
           </div>

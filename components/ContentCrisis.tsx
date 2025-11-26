@@ -3,7 +3,7 @@ import { Ghost, TrendingDown, Search, Users, MessageSquare, Lock, AlertTriangle 
 
 const ContentCrisis: React.FC = () => {
   return (
-    <section className="py-24 px-4 bg-[#02040a] relative overflow-hidden">
+    <section className="py-24 px-4 bg-[#0f172a] relative overflow-hidden">
 
       {/* Eerie Background */}
       <div className="absolute inset-0 opacity-20">

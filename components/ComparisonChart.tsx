@@ -37,8 +37,8 @@ const ComparisonChart: React.FC = () => {
              <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/10 to-cyan-500/10 blur-2xl rounded-full"></div>
              <div className="glass-panel p-8 rounded-2xl relative">
                 <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
-                   <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Tecnologia</span>
-                   <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Tempo até 100M</span>
+                   <span className="text-xs font-mono text-slate-500 uppercase tracking-widest">Tecnologia</span>
+                   <span className="text-xs font-mono text-slate-500 uppercase tracking-widest">Tempo até 100M</span>
                 </div>
                 
                 <div className="space-y-6">
@@ -83,7 +83,7 @@ const ComparisonChart: React.FC = () => {
 
         {/* Analogy Section - Railways vs Cities */}
         <div className="relative pt-12 border-t border-white/5">
-           <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#050b14] px-4 text-slate-500 font-mono text-[10px] uppercase tracking-widest border border-white/10 rounded-full py-1">
+           <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#050b14] px-4 text-slate-500 font-mono text-xs uppercase tracking-widest border border-white/10 rounded-full py-1">
              Como entender o momento atual?
            </div>
 
@@ -102,7 +102,7 @@ const ComparisonChart: React.FC = () => {
                <p className="text-slate-400 leading-relaxed mb-4 text-sm">
                  Imagine o século 19. Todo o dinheiro estava em construir ferrovias e produzir aço. Quem ganhou dinheiro? Os barões do aço (NVIDIA). O mundo estava sendo preparado, mas a "viagem" ainda era para poucos.
                </p>
-               <div className="text-[10px] bg-slate-800/50 inline-block px-3 py-1 rounded text-slate-400 border border-slate-700 font-mono uppercase tracking-wide">
+               <div className="text-xs bg-slate-800/50 inline-block px-3 py-1 rounded text-slate-400 border border-slate-700 font-mono uppercase tracking-wide">
                  Foco: Infraestrutura & Chips
                </div>
              </div>
@@ -121,7 +121,7 @@ const ComparisonChart: React.FC = () => {
                <p className="text-slate-300 leading-relaxed mb-4 text-sm">
                  Agora que os trilhos existem, surgem as cidades ao redor das estações. O valor migra para quem constrói hospitais, escolas e lojas (Apps de IA). Não precisamos de mais trilhos, precisamos de destinos.
                </p>
-               <div className="text-[10px] bg-cyan-950/50 inline-block px-3 py-1 rounded text-cyan-400 border border-cyan-500/30 font-mono uppercase tracking-wide">
+               <div className="text-xs bg-cyan-950/50 inline-block px-3 py-1 rounded text-cyan-400 border border-cyan-500/30 font-mono uppercase tracking-wide">
                  Foco: Aplicação & Solução Real
                </div>
              </div>

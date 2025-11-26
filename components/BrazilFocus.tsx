@@ -3,7 +3,7 @@ import { MapPin, Building2, GraduationCap, ShieldAlert, Briefcase, BookOpen, Whe
 
 const BrazilFocus: React.FC = () => {
   return (
-    <section className="py-24 px-4 bg-gradient-to-b from-[#0a1120] to-[#050b14] relative overflow-hidden">
+    <section className="py-24 px-4 bg-[#050b14] relative overflow-hidden">
 
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-full h-full opacity-5">
@@ -34,7 +34,7 @@ const BrazilFocus: React.FC = () => {
               <div className="p-3 bg-green-950/30 rounded-lg text-green-400 group-hover:scale-110 transition-transform">
                 <Building2 size={24} />
               </div>
-              <span className="text-[10px] font-mono text-slate-500 uppercase">Adoção</span>
+              <span className="text-xs font-mono text-slate-500 uppercase">Adoção</span>
             </div>
             <h3 className="text-3xl font-display font-bold text-white mb-2 tracking-tight">72%</h3>
             <p className="text-xs text-slate-400 leading-relaxed">
@@ -48,7 +48,7 @@ const BrazilFocus: React.FC = () => {
               <div className="p-3 bg-blue-950/30 rounded-lg text-blue-400 group-hover:scale-110 transition-transform">
                 <GraduationCap size={24} />
               </div>
-              <span className="text-[10px] font-mono text-slate-500 uppercase">Investimento</span>
+              <span className="text-xs font-mono text-slate-500 uppercase">Investimento</span>
             </div>
             <h3 className="text-2xl font-display font-bold text-white mb-2 tracking-tight">R$14.7 Bi</h3>
             <p className="text-xs text-slate-400 leading-relaxed">
@@ -62,7 +62,7 @@ const BrazilFocus: React.FC = () => {
               <div className="p-3 bg-red-950/30 rounded-lg text-red-400 group-hover:scale-110 transition-transform">
                 <ShieldAlert size={24} />
               </div>
-              <span className="text-[10px] font-mono text-slate-500 uppercase">Fraude</span>
+              <span className="text-xs font-mono text-slate-500 uppercase">Fraude</span>
             </div>
             <h3 className="text-2xl font-display font-bold text-white mb-2 tracking-tight">28 Mi</h3>
             <p className="text-xs text-slate-400 leading-relaxed">
@@ -76,7 +76,7 @@ const BrazilFocus: React.FC = () => {
               <div className="p-3 bg-yellow-950/30 rounded-lg text-yellow-400 group-hover:scale-110 transition-transform">
                 <Briefcase size={24} />
               </div>
-              <span className="text-[10px] font-mono text-slate-500 uppercase">Salário BR</span>
+              <span className="text-xs font-mono text-slate-500 uppercase">Salário BR</span>
             </div>
             <h3 className="text-xl font-display font-bold text-white mb-2 tracking-tight">R$19k-27k</h3>
             <p className="text-xs text-slate-400 leading-relaxed">
@@ -205,9 +205,9 @@ const BrazilFocus: React.FC = () => {
                 O Brasil debate sua própria regulação de IA. O PL 2338/2023 propõe classificação de risco, transparência obrigatória e direitos do cidadão frente a decisões automatizadas. Inspirado no AI Act europeu, mas adaptado à realidade brasileira.
               </p>
               <div className="flex flex-wrap gap-2">
-                <span className="text-[10px] bg-yellow-900/40 text-yellow-300 px-3 py-1 rounded-full border border-yellow-500/20">Em Tramitação</span>
-                <span className="text-[10px] bg-slate-800 text-slate-300 px-3 py-1 rounded-full border border-slate-600">Senado Federal</span>
-                <span className="text-[10px] bg-slate-800 text-slate-300 px-3 py-1 rounded-full border border-slate-600">2025-2026</span>
+                <span className="text-xs bg-yellow-900/40 text-yellow-300 px-3 py-1 rounded-full border border-yellow-500/20">Em Tramitação</span>
+                <span className="text-xs bg-slate-800 text-slate-300 px-3 py-1 rounded-full border border-slate-600">Senado Federal</span>
+                <span className="text-xs bg-slate-800 text-slate-300 px-3 py-1 rounded-full border border-slate-600">2025-2026</span>
               </div>
             </div>
           </div>

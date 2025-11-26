@@ -3,7 +3,7 @@ import { Scale, Globe, Flag, Calendar, AlertTriangle, CheckCircle, Clock } from 
 
 const GlobalRegulation: React.FC = () => {
   return (
-    <section className="py-24 px-4 bg-[#050a12] relative overflow-hidden border-y border-white/5">
+    <section className="py-24 px-4 bg-[#0f172a] relative overflow-hidden border-y border-white/5">
 
       {/* Background */}
       <div className="absolute inset-0 opacity-10">
@@ -33,7 +33,7 @@ const GlobalRegulation: React.FC = () => {
           <div className="bg-blue-950/20 border border-blue-500/20 rounded-3xl p-8 relative overflow-hidden group hover:border-blue-500/40 transition-all">
             <div className="absolute top-4 right-4 flex items-center gap-1">
               <CheckCircle size={12} className="text-emerald-400" />
-              <span className="text-[10px] font-mono uppercase tracking-wider text-emerald-400">Aprovado</span>
+              <span className="text-xs font-mono uppercase tracking-wider text-emerald-400">Aprovado</span>
             </div>
 
             <div className="flex items-center gap-3 mb-6">
@@ -78,7 +78,7 @@ const GlobalRegulation: React.FC = () => {
           <div className="bg-slate-800/30 border border-white/10 rounded-3xl p-8 relative overflow-hidden group hover:border-slate-600 transition-all">
             <div className="absolute top-4 right-4 flex items-center gap-1">
               <Clock size={12} className="text-yellow-400" />
-              <span className="text-[10px] font-mono uppercase tracking-wider text-yellow-400">Em Revisão</span>
+              <span className="text-xs font-mono uppercase tracking-wider text-yellow-400">Em Revisão</span>
             </div>
 
             <div className="flex items-center gap-3 mb-6">
@@ -123,7 +123,7 @@ const GlobalRegulation: React.FC = () => {
           <div className="bg-red-950/10 border border-red-500/20 rounded-3xl p-8 relative overflow-hidden group hover:border-red-500/40 transition-all">
             <div className="absolute top-4 right-4 flex items-center gap-1">
               <CheckCircle size={12} className="text-emerald-400" />
-              <span className="text-[10px] font-mono uppercase tracking-wider text-emerald-400">Em Vigor</span>
+              <span className="text-xs font-mono uppercase tracking-wider text-emerald-400">Em Vigor</span>
             </div>
 
             <div className="flex items-center gap-3 mb-6">
@@ -178,7 +178,7 @@ const GlobalRegulation: React.FC = () => {
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-4">
                 <h3 className="text-2xl font-bold text-white">PL 2338/2023</h3>
-                <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-1 bg-yellow-900/50 text-yellow-300 rounded border border-yellow-500/30">
+                <span className="text-xs font-mono uppercase tracking-wider px-2 py-1 bg-yellow-900/50 text-yellow-300 rounded border border-yellow-500/30">
                   Em Tramitação
                 </span>
               </div>
@@ -189,19 +189,19 @@ const GlobalRegulation: React.FC = () => {
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div className="bg-black/20 rounded-lg p-3 border border-white/5">
-                  <p className="text-slate-500 text-[10px] font-mono uppercase">Autor</p>
+                  <p className="text-slate-500 text-xs font-mono uppercase">Autor</p>
                   <p className="text-white text-sm font-medium">Senado</p>
                 </div>
                 <div className="bg-black/20 rounded-lg p-3 border border-white/5">
-                  <p className="text-slate-500 text-[10px] font-mono uppercase">Status</p>
+                  <p className="text-slate-500 text-xs font-mono uppercase">Status</p>
                   <p className="text-yellow-400 text-sm font-medium">Comissões</p>
                 </div>
                 <div className="bg-black/20 rounded-lg p-3 border border-white/5">
-                  <p className="text-slate-500 text-[10px] font-mono uppercase">Previsão</p>
+                  <p className="text-slate-500 text-xs font-mono uppercase">Previsão</p>
                   <p className="text-white text-sm font-medium">2025-2026</p>
                 </div>
                 <div className="bg-black/20 rounded-lg p-3 border border-white/5">
-                  <p className="text-slate-500 text-[10px] font-mono uppercase">Modelo</p>
+                  <p className="text-slate-500 text-xs font-mono uppercase">Modelo</p>
                   <p className="text-blue-400 text-sm font-medium">EU-inspired</p>
                 </div>
               </div>

@@ -3,7 +3,7 @@ import { Bot, Factory, Home, DollarSign, Calendar, TrendingUp, Truck, Heart } fr
 
 const RoboticsRevolution: React.FC = () => {
   return (
-    <section className="py-24 px-4 bg-gradient-to-b from-[#0a0f1a] to-[#050b14] relative overflow-hidden">
+    <section className="py-24 px-4 bg-[#0f172a] relative overflow-hidden">
 
       {/* Background */}
       <div className="absolute inset-0 opacity-10">
@@ -32,7 +32,7 @@ const RoboticsRevolution: React.FC = () => {
           {/* Tesla Optimus */}
           <div className="bg-orange-950/20 border border-orange-500/20 rounded-3xl p-8 relative overflow-hidden group hover:border-orange-500/40 transition-all">
             <div className="absolute top-4 right-4">
-              <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-1 bg-orange-900/50 text-orange-300 rounded border border-orange-500/30">
+              <span className="text-xs font-mono uppercase tracking-wider px-2 py-1 bg-orange-900/50 text-orange-300 rounded border border-orange-500/30">
                 Consumer 2026-2027
               </span>
             </div>
@@ -80,7 +80,7 @@ const RoboticsRevolution: React.FC = () => {
           {/* Figure AI Industrial */}
           <div className="bg-emerald-950/20 border border-emerald-500/20 rounded-3xl p-8 relative overflow-hidden group hover:border-emerald-500/40 transition-all">
             <div className="absolute top-4 right-4">
-              <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-1 bg-emerald-900/50 text-emerald-300 rounded border border-emerald-500/30">
+              <span className="text-xs font-mono uppercase tracking-wider px-2 py-1 bg-emerald-900/50 text-emerald-300 rounded border border-emerald-500/30">
                 Industrial 2025
               </span>
             </div>

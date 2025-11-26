@@ -28,8 +28,8 @@ const ToolsGrid: React.FC = () => {
         {tools.map((tool, index) => (
           <div key={index} className="glass-panel p-6 rounded-xl border border-white/5 hover:border-cyan-500/30 transition-all hover:-translate-y-1 group">
             <div className="flex justify-between items-start mb-4">
-              <span className="text-[10px] font-bold text-slate-400 bg-slate-900 px-2 py-1 rounded uppercase tracking-wider border border-white/5">{tool.category}</span>
-              <span className={`text-[10px] font-bold px-2 py-1 rounded border uppercase tracking-wider ${tool.access === 'Open Source' ? 'text-emerald-400 border-emerald-500/30 bg-emerald-900/10' : 'text-purple-400 border-purple-500/30 bg-purple-900/10'}`}>
+              <span className="text-xs font-bold text-slate-400 bg-slate-900 px-2 py-1 rounded uppercase tracking-wider border border-white/5">{tool.category}</span>
+              <span className={`text-xs font-bold px-2 py-1 rounded border uppercase tracking-wider ${tool.access === 'Open Source' ? 'text-emerald-400 border-emerald-500/30 bg-emerald-900/10' : 'text-purple-400 border-purple-500/30 bg-purple-900/10'}`}>
                 {tool.access}
               </span>
             </div>

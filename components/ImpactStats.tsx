@@ -34,7 +34,7 @@ const ImpactStats: React.FC = () => {
             <div className="p-3 bg-yellow-950/30 rounded-lg text-yellow-400 group-hover:scale-110 transition-transform">
               <Zap size={24} />
             </div>
-            <span className="text-[10px] font-mono text-slate-500 uppercase">Energia</span>
+            <span className="text-xs font-mono text-slate-500 uppercase">Energia</span>
           </div>
           <h3 className="text-3xl font-display font-bold text-white mb-2 tracking-tight">30x</h3>
           <p className="text-xs text-slate-400 leading-relaxed">
@@ -48,7 +48,7 @@ const ImpactStats: React.FC = () => {
             <div className="p-3 bg-red-950/30 rounded-lg text-red-400 group-hover:scale-110 transition-transform">
               <TrendingDown size={24} />
             </div>
-            <span className="text-[10px] font-mono text-slate-500 uppercase">Nvidia Crash</span>
+            <span className="text-xs font-mono text-slate-500 uppercase">Nvidia Crash</span>
           </div>
           <h3 className="text-3xl font-display font-bold text-white mb-2 tracking-tight">-$250 Bi</h3>
           <p className="text-xs text-slate-400 leading-relaxed">
@@ -62,7 +62,7 @@ const ImpactStats: React.FC = () => {
             <div className="p-3 bg-emerald-950/30 rounded-lg text-emerald-400 group-hover:scale-110 transition-transform">
               <UserCheck size={24} />
             </div>
-            <span className="text-[10px] font-mono text-slate-500 uppercase">Novo Salário</span>
+            <span className="text-xs font-mono text-slate-500 uppercase">Novo Salário</span>
           </div>
           <h3 className="text-3xl font-display font-bold text-white mb-2 tracking-tight">$200k</h3>
           <p className="text-xs text-slate-400 leading-relaxed">
@@ -76,7 +76,7 @@ const ImpactStats: React.FC = () => {
             <div className="p-3 bg-purple-950/30 rounded-lg text-purple-400 group-hover:scale-110 transition-transform">
               <Database size={24} />
             </div>
-            <span className="text-[10px] font-mono text-slate-500 uppercase">Código Sintético</span>
+            <span className="text-xs font-mono text-slate-500 uppercase">Código Sintético</span>
           </div>
           <h3 className="text-2xl font-display font-bold text-white mb-2 tracking-tight">61% Java</h3>
           <p className="text-xs text-slate-400 leading-relaxed">
@@ -90,7 +90,7 @@ const ImpactStats: React.FC = () => {
             <div className="p-3 bg-cyan-950/30 rounded-lg text-cyan-400 group-hover:scale-110 transition-transform">
               <Users size={24} />
             </div>
-            <span className="text-[10px] font-mono text-slate-500 uppercase">Adoção EUA</span>
+            <span className="text-xs font-mono text-slate-500 uppercase">Adoção EUA</span>
           </div>
           <h3 className="text-3xl font-display font-bold text-white mb-2 tracking-tight">39,4%</h3>
           <p className="text-xs text-slate-400 leading-relaxed">

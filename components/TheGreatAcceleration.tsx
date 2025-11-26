@@ -4,7 +4,7 @@ import { Rocket, Wifi, TrendingUp, Clock, Info } from 'lucide-react';
 
 const TheGreatAcceleration: React.FC = () => {
   return (
-    <section id="acceleration" className="py-24 px-4 bg-[#080f1e] relative overflow-hidden border-b border-white/5">
+    <section id="acceleration" className="py-24 px-4 bg-[#050b14] relative overflow-hidden border-b border-white/5">
       {/* Background Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(56,189,248,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(56,189,248,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
 
@@ -38,7 +38,7 @@ const TheGreatAcceleration: React.FC = () => {
                </svg>
                
                <div className="absolute top-[40%] right-0 p-3 bg-slate-800 rounded-xl border border-slate-600 shadow-xl">
-                 <p className="text-[10px] text-slate-400 font-mono uppercase">Velocidade</p>
+                 <p className="text-xs text-slate-400 font-mono uppercase">Velocidade</p>
                  <p className="text-xl font-bold text-white">1x (Linear)</p>
                </div>
             </div>
@@ -71,7 +71,7 @@ const TheGreatAcceleration: React.FC = () => {
                </svg>
                
                <div className="absolute top-0 right-0 p-4 bg-cyan-950 rounded-xl border border-cyan-500 shadow-[0_0_30px_rgba(34,211,238,0.3)] animate-pulse">
-                 <p className="text-[10px] text-cyan-400 font-mono uppercase">Velocidade</p>
+                 <p className="text-xs text-cyan-400 font-mono uppercase">Velocidade</p>
                  <p className="text-3xl font-bold text-white">25x (Vertical)</p>
                </div>
             </div>

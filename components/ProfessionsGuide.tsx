@@ -92,14 +92,14 @@ const ProfessionsGuide: React.FC = () => {
 
               <div className="space-y-6">
                 <div className="bg-red-950/10 p-4 rounded-xl border border-red-900/20 group-hover:border-red-900/40 transition-colors">
-                  <div className="flex items-center gap-2 text-red-500 text-[10px] font-bold uppercase tracking-wider mb-1">
+                  <div className="flex items-center gap-2 text-red-500 text-xs font-bold uppercase tracking-wider mb-1">
                     <TrendingDown size={12} /> Colapso
                   </div>
                   <p className="text-red-200/80 font-medium text-sm">{guide.atRisk}</p>
                 </div>
 
                 <div className="bg-emerald-950/10 p-4 rounded-xl border border-emerald-900/20 group-hover:border-emerald-900/40 transition-colors">
-                  <div className="flex items-center gap-2 text-emerald-500 text-[10px] font-bold uppercase tracking-wider mb-1">
+                  <div className="flex items-center gap-2 text-emerald-500 text-xs font-bold uppercase tracking-wider mb-1">
                     <TrendingUp size={12} /> Explosão
                   </div>
                   <p className="text-emerald-100 font-bold text-lg">{guide.onRise}</p>
@@ -109,7 +109,7 @@ const ProfessionsGuide: React.FC = () => {
                   <p className="text-slate-400 text-sm leading-relaxed mb-4">
                     {guide.description}
                   </p>
-                  <div className="inline-block px-3 py-1 bg-cyan-950/30 border border-cyan-500/20 rounded text-[10px] text-cyan-300 font-mono uppercase tracking-wide">
+                  <div className="inline-block px-3 py-1 bg-cyan-950/30 border border-cyan-500/20 rounded text-xs text-cyan-300 font-mono uppercase tracking-wide">
                     Skill: {guide.keySkill}
                   </div>
                 </div>
@@ -147,7 +147,7 @@ const ProfessionsGuide: React.FC = () => {
                   </div>
                   <h5 className="text-white font-bold text-lg mb-3">{prof.title}</h5>
                   <p className="text-slate-400 text-sm leading-relaxed mb-4">{prof.description}</p>
-                  <div className={`inline-block px-3 py-1 ${colors.bg} border ${colors.border} rounded text-[10px] ${colors.text} font-mono uppercase tracking-wide`}>
+                  <div className={`inline-block px-3 py-1 ${colors.bg} border ${colors.border} rounded text-xs ${colors.text} font-mono uppercase tracking-wide`}>
                     {prof.keySkill}
                   </div>
                 </div>

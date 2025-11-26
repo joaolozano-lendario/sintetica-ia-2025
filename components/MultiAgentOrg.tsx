@@ -4,7 +4,7 @@ import { User, Bot, GitMerge, Music } from 'lucide-react';
 
 const MultiAgentOrg: React.FC = () => {
   return (
-    <section className="py-24 px-4 bg-[#080f1d] border-b border-white/5 overflow-hidden">
+    <section className="py-24 px-4 bg-[#0f172a] border-b border-white/5 overflow-hidden">
       <div className="max-w-6xl mx-auto text-center mb-16">
         <h2 className="text-sm font-bold text-cyan-400 uppercase tracking-widest mb-2 font-mono">Estrutura Organizacional 2026</h2>
         <h3 className="text-3xl md:text-5xl font-display font-bold text-white">
@@ -23,7 +23,7 @@ const MultiAgentOrg: React.FC = () => {
                 <Music size={16} />
                 <span className="text-xs font-bold uppercase">A Analogia</span>
             </div>
-            <p className="text-[10px] text-slate-300 leading-relaxed">
+            <p className="text-xs text-slate-300 leading-relaxed">
                 Pense em uma orquestra. Antes, você tocava o violino, o piano e a bateria sozinho (multitarefa ruim). Agora, você segura a batuta. Os agentes são os músicos virtuosos. Seu trabalho é garantir que eles toquem no mesmo ritmo.
             </p>
         </div>

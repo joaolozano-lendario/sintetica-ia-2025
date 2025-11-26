@@ -5,7 +5,7 @@ import { BadgeCheck, ShieldCheck, Users } from 'lucide-react';
 const TheGap: React.FC = () => {
   return (
     <section className="py-24 px-4 max-w-5xl mx-auto">
-      <div className="glass-panel rounded-[2.5rem] p-8 md:p-16 border border-white/10 relative overflow-hidden">
+      <div className="glass-panel rounded-3xl p-8 md:p-16 border border-white/10 relative overflow-hidden">
         {/* Abstract Background */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-red-900/10 rounded-full blur-[120px] pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-900/10 rounded-full blur-[120px] pointer-events-none translate-y-1/2 -translate-x-1/2"></div>

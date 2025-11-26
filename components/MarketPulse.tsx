@@ -3,7 +3,7 @@ import { DollarSign, TrendingUp, Building2, Users, Briefcase, ArrowUpRight } fro
 
 const MarketPulse: React.FC = () => {
   return (
-    <section className="py-24 px-4 bg-[#02040a] relative overflow-hidden">
+    <section className="py-24 px-4 bg-[#050b14] relative overflow-hidden">
 
       {/* Background */}
       <div className="absolute inset-0 opacity-20">

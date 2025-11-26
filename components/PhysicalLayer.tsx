@@ -55,7 +55,7 @@ const PhysicalLayer: React.FC = () => {
                 Em 2025, a Westinghouse emergiu como peça-chave, usando a própria IA (sistema WNEXUS) para projetar reatores nucleares mais rápidos. É a máquina construindo a bateria que a alimenta.
               </p>
               <div className="mt-4 flex gap-2">
-                 <span className="text-[10px] bg-emerald-900/40 text-emerald-300 px-2 py-1 rounded border border-emerald-500/20">400 GW Necessários</span>
+                 <span className="text-[10px] bg-emerald-900/40 text-emerald-300 px-2 py-1 rounded border border-emerald-500/20">123 GW até 2035</span>
                  <span className="text-[10px] bg-emerald-900/40 text-emerald-300 px-2 py-1 rounded border border-emerald-500/20">Energia de Base</span>
               </div>
             </div>
@@ -94,7 +94,7 @@ const PhysicalLayer: React.FC = () => {
                 <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
                   <div className="h-full bg-emerald-500 w-[95%]"></div>
                 </div>
-                <p className="text-[10px] text-slate-500">Projeto Stargate de $100Bi + Desregulamentação Nuclear.</p>
+                <p className="text-[10px] text-slate-500">Projeto Stargate: $500Bi, 10GW de capacidade. Texas, Novo México e Ohio.</p>
               </div>
 
               <div className="space-y-4">

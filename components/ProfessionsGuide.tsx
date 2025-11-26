@@ -9,7 +9,7 @@ const guides: ProfessionGuide[] = [
     atRisk: "Programador Júnior",
     onRise: "Arquiteto de Agentes",
     keySkill: "Orquestração de Fluxo",
-    description: "46% de todo código novo já é gerado por IA (GitHub Octoverse). O valor migrou de 'escrever sintaxe' para 'arquitetar sistemas' onde agentes programam."
+    description: "41-61% de todo código novo é gerado por IA - sendo Java com 61% (GitHub Octoverse 2025). O valor migrou de 'escrever sintaxe' para 'arquitetar sistemas' onde agentes programam."
   },
   {
     area: "Gestão & Estratégia",
@@ -50,8 +50,8 @@ const ProfessionsGuide: React.FC = () => {
                <DollarSign size={64} />
              </div>
              <p className="text-emerald-400 text-xs font-bold uppercase tracking-widest mb-1">Salário Médio (EUA)</p>
-             <p className="text-4xl font-display font-bold text-white">$130k - $200k</p>
-             <p className="text-emerald-200/60 text-xs mt-2 max-w-[200px]">Para AI Agent Managers. Posições sênior em Big Tech ultrapassam $300k.</p>
+             <p className="text-4xl font-display font-bold text-white">$128k - $300k</p>
+             <p className="text-emerald-200/60 text-xs mt-2 max-w-[200px]">Para AI Agent Managers. Média $200k-$260k, posições sênior em Big Tech no topo do range.</p>
           </div>
         </div>
 

@@ -18,6 +18,8 @@ import Footer from './components/Footer';
 import EvolutionaryScale from './components/EvolutionaryScale';
 import FuturePredictions from './components/FuturePredictions';
 import DefenseProtocol from './components/DefenseProtocol';
+import BrazilFocus from './components/BrazilFocus';
+import ExpertPanel from './components/ExpertPanel';
 
 const App: React.FC = () => {
   return (
@@ -59,12 +61,16 @@ const App: React.FC = () => {
           <TheGap />
           <RealWorldCases />
           <DefenseProtocol />
+          <BrazilFocus />
           
           {/* Layer 4: Tactical Guide & Future */}
           <ProfessionsGuide />
           <FuturePredictions />
           <SkillsRadar />
           <ToolsGrid />
+          
+          {/* Meta-Analysis: Expert Perspectives */}
+          <ExpertPanel />
           
           {/* Appendix */}
           <Glossary />

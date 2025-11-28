@@ -12,4 +12,3 @@ export { default as SectionWrapper } from './SectionWrapper';
 export { default as HeroNumber, HeroNumbersGrid } from './HeroNumber';
 export { default as GlossaryModal } from './GlossaryModal';
 export { default as ToolsDrawer } from './ToolsDrawer';
-export { default as AnatomicalMap } from './AnatomicalMap';

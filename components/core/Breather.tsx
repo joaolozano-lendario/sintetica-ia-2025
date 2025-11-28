@@ -13,6 +13,8 @@ import { BreatherConfig } from '../../lib/theme';
 
 interface BreatherProps extends BreatherConfig {
   className?: string;
+  question?: string;
+  subtext?: string;
 }
 
 const Breather: React.FC<BreatherProps> = ({
@@ -21,6 +23,8 @@ const Breather: React.FC<BreatherProps> = ({
   author,
   stat,
   statLabel,
+  question,
+  subtext,
   className = ''
 }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -343,6 +347,72 @@ const Breather: React.FC<BreatherProps> = ({
             >
               ...
             </span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Question: Pergunta retórica que prepara próximo ato (Da Vinci - meandros)
+  // "Como meandros de um rio — guiam mas não param"
+  if (type === 'question') {
+    return (
+      <div
+        ref={ref}
+        className={`
+          relative min-h-[45vh] flex items-center justify-center
+          bg-gradient-to-b from-[#020408] via-[#030810] to-[#050b14]
+          ${className}
+        `}
+      >
+        {/* Atmospheric layers */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Flowing gradient - like water */}
+          <div className="absolute inset-0 bg-gradient-to-r from-cyan-950/10 via-transparent to-purple-950/10" />
+
+          {/* Central glow */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[250px] bg-cyan-500/5 blur-[120px] rounded-full" />
+
+          {/* Flow lines - horizontal */}
+          <div className="absolute top-1/3 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+          <div className="absolute bottom-1/3 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+        </div>
+
+        <div className="relative z-10 max-w-3xl mx-auto px-8 text-center">
+          {/* The Question - larger, more prominent */}
+          <p
+            className={`
+              text-2xl md:text-3xl lg:text-4xl text-white/90 font-light leading-relaxed
+              transition-all duration-1000
+              ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
+            `}
+          >
+            {question || content}
+          </p>
+
+          {/* Subtext - invitation to continue */}
+          {subtext && (
+            <p
+              className={`
+                mt-6 text-sm md:text-base text-cyan-400/70 font-mono tracking-wide
+                transition-all duration-1000 delay-500
+                ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
+              `}
+            >
+              {subtext}
+            </p>
+          )}
+
+          {/* Flowing arrow down */}
+          <div
+            className={`
+              mt-10 flex flex-col items-center gap-1
+              transition-all duration-1000 delay-700
+              ${isVisible ? 'opacity-60' : 'opacity-0'}
+            `}
+          >
+            <div className="w-px h-8 bg-gradient-to-b from-cyan-500/30 to-transparent" />
+            <div className="w-2 h-2 border-r border-b border-cyan-500/40 rotate-45 -mt-1" />
           </div>
         </div>
       </div>

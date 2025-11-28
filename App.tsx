@@ -1,50 +1,48 @@
 /**
- * SINTÉTICA 2025 - App Principal
+ * SINTÉTICA 2025 - App Principal v4.0
  *
- * Estrutura narrativa em 5 Atos + Prólogo + Epílogo
- * Baseado nas recomendações do Conselho Jobs-Nicolas-Frost
+ * ROUNDTABLE EDITION: Jobs-Lozano-DaVinci
+ *
+ * Mudanças v4:
+ * - Condensação de 26 → 17 seções (proporção 1-3-3-3-3-3-1)
+ * - Breathers com tipo "question" (meandros - Da Vinci)
+ * - "One More Thing" no CallToAdventure (Jobs)
+ * - Glossary e Tools como modais (Codex - Da Vinci)
+ * - Estrutura narrativa otimizada para scroll depth
  *
  * "Não estamos criando páginas. Estamos contando uma história." — Jobs
  */
 
 import React, { useState, useEffect } from 'react';
 
-// Core Components (novo sistema)
-import { Act, Breather, ProgressNav } from './components/core';
+// Core Components (sistema v4)
+import { Act, Breather, ProgressNav, GlossaryModal, ToolsDrawer } from './components/core';
 import { acts } from './lib/theme';
 
 // Original Components (preservados 100%)
 import Hero from './components/Hero';
 import Cheatsheet from './components/Cheatsheet';
 import Timeline from './components/Timeline';
-import ComparisonChart from './components/ComparisonChart';
 import SkillsRadar from './components/SkillsRadar';
 import RealWorldCases from './components/RealWorldCases';
 import TheGap from './components/TheGap';
-import ProfessionsGuide from './components/ProfessionsGuide';
-import ToolsGrid from './components/ToolsGrid';
 import PhysicalLayer from './components/PhysicalLayer';
 import NewEconomy from './components/NewEconomy';
 import MultiAgentOrg from './components/MultiAgentOrg';
-import Glossary from './components/Glossary';
 import Footer from './components/Footer';
 import EvolutionaryScale from './components/EvolutionaryScale';
-import FuturePredictions from './components/FuturePredictions';
 import DefenseProtocol from './components/DefenseProtocol';
 import BrazilFocus from './components/BrazilFocus';
-import ExpertPanel from './components/ExpertPanel';
 import CallToAdventure from './components/CallToAdventure';
-import DeepScience from './components/DeepScience';
 import ConsumerAI from './components/ConsumerAI';
-import ContentCrisis from './components/ContentCrisis';
 import RoboticsRevolution from './components/RoboticsRevolution';
-import GlobalRegulation from './components/GlobalRegulation';
-import MarketPulse from './components/MarketPulse';
-import TheCompression from './components/TheCompression';
 import AntifragileProfessional from './components/AntifragileProfessional';
+import TheCompression from './components/TheCompression';
 
 const App: React.FC = () => {
   const [currentSection, setCurrentSection] = useState('hero');
+  const [isGlossaryOpen, setIsGlossaryOpen] = useState(false);
+  const [isToolsOpen, setIsToolsOpen] = useState(false);
 
   // Intersection Observer para detectar seção atual
   useEffect(() => {
@@ -88,11 +86,21 @@ const App: React.FC = () => {
         onNavigate={setCurrentSection}
       />
 
+      {/* Modais - Codex (Da Vinci) */}
+      <GlossaryModal
+        isOpen={isGlossaryOpen}
+        onClose={() => setIsGlossaryOpen(false)}
+      />
+      <ToolsDrawer
+        isOpen={isToolsOpen}
+        onClose={() => setIsToolsOpen(false)}
+      />
+
       {/* Main Content */}
       <div className="relative z-10 flex flex-col">
 
         {/* ════════════════════════════════════════════════════════════════
-            PRÓLOGO: O CHOQUE
+            PRÓLOGO: O CHOQUE (1 seção)
             Temperatura: cold | Mood: Impacto inicial
         ════════════════════════════════════════════════════════════════ */}
         <Act
@@ -107,8 +115,15 @@ const App: React.FC = () => {
           </section>
         </Act>
 
+        {/* Breather: Question (meandro - Da Vinci) */}
+        <Breather
+          type="question"
+          question="O que acontece quando 30 anos de mudança se comprimem em 30 meses?"
+          subtext="Continue para descobrir."
+        />
+
         {/* ════════════════════════════════════════════════════════════════
-            ATO I: A FUNDAÇÃO
+            ATO I: A FUNDAÇÃO (3 seções)
             Temperatura: cool | Mood: Estabelecer contexto
         ════════════════════════════════════════════════════════════════ */}
         <Act
@@ -119,7 +134,6 @@ const App: React.FC = () => {
           theme="cool"
           showHeader={true}
         >
-          {/* The Compression - PRIMEIRO após Hero (Jobs + Lozano) */}
           <section id="compression" data-section="compression">
             <TheCompression />
           </section>
@@ -134,14 +148,15 @@ const App: React.FC = () => {
           </section>
         </Act>
 
-        {/* Manifesto I: Após A Fundação */}
+        {/* Breather: Question (meandro) */}
         <Breather
-          type="manifesto"
-          content="Você não está lendo sobre o futuro. Você está lendo o presente que ainda não percebeu."
+          type="question"
+          question="Mas onde toda essa inteligência vai rodar?"
+          subtext="A resposta exige concreto, urânio e robôs."
         />
 
         {/* ════════════════════════════════════════════════════════════════
-            ATO II: A MATERIALIZAÇÃO
+            ATO II: A MATERIALIZAÇÃO (3 seções)
             Temperatura: neutral | Mood: O mundo físico da IA
         ════════════════════════════════════════════════════════════════ */}
         <Act
@@ -160,24 +175,20 @@ const App: React.FC = () => {
             <PhysicalLayer />
           </section>
 
-          <section id="comparison" data-section="comparison">
-            <ComparisonChart />
-          </section>
-
           <section id="robotics" data-section="robotics">
             <RoboticsRevolution />
           </section>
         </Act>
 
-        {/* Manifesto II: Após A Materialização - mantém o stat mas adiciona contexto humano */}
+        {/* Breather: Stat */}
         <Breather
           type="stat"
           stat="30x"
-          statLabel="Crescimento de demanda energética até 2035. A IA deixou de ser código. Agora ela precisa de eletricidade, água e aço. Isso muda tudo."
+          statLabel="Crescimento de demanda energética até 2035. A IA deixou de ser código — agora ela precisa de eletricidade, água e aço."
         />
 
         {/* ════════════════════════════════════════════════════════════════
-            ATO III: A TRANSFORMAÇÃO
+            ATO III: A TRANSFORMAÇÃO (3 seções)
             Temperatura: cool | Mood: O mundo digital transformado
         ════════════════════════════════════════════════════════════════ */}
         <Act
@@ -188,16 +199,8 @@ const App: React.FC = () => {
           theme="cool"
           showHeader={true}
         >
-          <section id="science" data-section="science">
-            <DeepScience />
-          </section>
-
           <section id="consumer" data-section="consumer">
             <ConsumerAI />
-          </section>
-
-          <section id="market" data-section="market">
-            <MarketPulse />
           </section>
 
           <section id="economy" data-section="economy">
@@ -209,14 +212,15 @@ const App: React.FC = () => {
           </section>
         </Act>
 
-        {/* Manifesto III: Após A Transformação */}
+        {/* Breather: Question (meandro) */}
         <Breather
-          type="manifesto"
-          content="O trabalho não vai desaparecer. Vai se transformar. A pergunta é: você vai junto?"
+          type="question"
+          question="Tudo isso parece promissor. Mas qual é o custo?"
+          subtext="Nem tudo que brilha é ouro sintético."
         />
 
         {/* ════════════════════════════════════════════════════════════════
-            ATO IV: A TENSÃO
+            ATO IV: A TENSÃO (3 seções)
             Temperatura: hot | Mood: Riscos e desafios
         ════════════════════════════════════════════════════════════════ */}
         <Act
@@ -231,10 +235,6 @@ const App: React.FC = () => {
             <TheGap />
           </section>
 
-          <section id="content" data-section="content">
-            <ContentCrisis />
-          </section>
-
           <section id="cases" data-section="cases">
             <RealWorldCases />
           </section>
@@ -242,20 +242,16 @@ const App: React.FC = () => {
           <section id="defense" data-section="defense">
             <DefenseProtocol />
           </section>
-
-          <section id="regulation" data-section="regulation">
-            <GlobalRegulation />
-          </section>
         </Act>
 
-        {/* Manifesto IV: Após A Tensão - O risco real */}
+        {/* Breather: Manifesto */}
         <Breather
           type="manifesto"
           content="O risco não é a IA ser muito inteligente. É você não saber distinguir o real do sintético. A curadoria da verdade virou skill de sobrevivência."
         />
 
         {/* ════════════════════════════════════════════════════════════════
-            ATO V: O HORIZONTE
+            ATO V: O HORIZONTE (3 seções)
             Temperatura: cool | Mood: Futuro e preparação
         ════════════════════════════════════════════════════════════════ */}
         <Act
@@ -270,40 +266,24 @@ const App: React.FC = () => {
             <BrazilFocus />
           </section>
 
-          {/* Profissional Anti-Frágil - PRIMEIRO do Ato V (Jobs + Lozano) */}
           <section id="antifragile" data-section="antifragile">
             <AntifragileProfessional />
-          </section>
-
-          <section id="professions" data-section="professions">
-            <ProfessionsGuide />
-          </section>
-
-          <section id="future" data-section="future">
-            <FuturePredictions />
           </section>
 
           <section id="skills" data-section="skills">
             <SkillsRadar />
           </section>
-
-          <section id="tools" data-section="tools">
-            <ToolsGrid />
-          </section>
-
-          <section id="experts" data-section="experts">
-            <ExpertPanel />
-          </section>
         </Act>
 
-        {/* Manifesto V: Após O Horizonte - A escolha final */}
+        {/* Breather: Question (meandro final) */}
         <Breather
-          type="manifesto"
-          content="Você tem escolha. Resistir ou surfar. O relatório termina aqui. Sua decisão começa agora."
+          type="question"
+          question="Você está pronto para o próximo passo?"
+          subtext="O relatório termina. Sua jornada começa."
         />
 
         {/* ════════════════════════════════════════════════════════════════
-            EPÍLOGO: O CONVITE
+            EPÍLOGO: O CONVITE (1 seção + One More Thing)
             Temperatura: cold | Mood: Fechamento emocional
         ════════════════════════════════════════════════════════════════ */}
         <Act
@@ -314,11 +294,10 @@ const App: React.FC = () => {
           theme="cold"
         >
           <section id="adventure" data-section="adventure">
-            <CallToAdventure />
-          </section>
-
-          <section id="glossary" data-section="glossary">
-            <Glossary />
+            <CallToAdventure
+              onOpenGlossary={() => setIsGlossaryOpen(true)}
+              onOpenTools={() => setIsToolsOpen(true)}
+            />
           </section>
         </Act>
 

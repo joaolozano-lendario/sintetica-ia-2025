@@ -1,8 +1,13 @@
 /**
- * SINTÉTICA 2025 - Design System Theme
+ * SINTÉTICA 2025 - Design System Theme v4.0
  *
- * Sistema de temperatura visual para criar ritmo narrativo.
- * Baseado nas recomendações do Conselho Jobs-Nicolas-Frost.
+ * ROUNDTABLE EDITION: Jobs-Lozano-DaVinci
+ *
+ * Mudanças principais:
+ * - Condensação de 26 → 17 seções
+ * - Proporção fractal: 1-3-3-3-3-3-1
+ * - Novo tipo de breather: "question"
+ * - Estrutura otimizada para scroll depth
  */
 
 // =============================================================================
@@ -71,6 +76,7 @@ export interface Section {
   id: string;
   component: string;
   title: string;
+  emoji?: string; // Para o mapa anatômico
 }
 
 export interface ActDefinition {
@@ -84,18 +90,27 @@ export interface ActDefinition {
 }
 
 export interface BreatherConfig {
-  type: 'quote' | 'stat' | 'visual' | 'silence' | 'manifesto';
+  type: 'quote' | 'stat' | 'visual' | 'silence' | 'manifesto' | 'question';
   content?: string;
   author?: string;
   stat?: string;
   statLabel?: string;
+  // Novo para tipo "question"
+  question?: string;
+  subtext?: string;
 }
 
 // =============================================================================
-// NARRATIVE STRUCTURE
+// NARRATIVE STRUCTURE v4 - ROUNDTABLE EDITION
+// Condensação: 26 → 17 seções
+// Proporção: 1-3-3-3-3-3-1 (simetria fractal)
 // =============================================================================
 
 export const acts: ActDefinition[] = [
+  // ═══════════════════════════════════════════════════════════════════════════
+  // PRÓLOGO: O CHOQUE (1 seção)
+  // Função: ÂNCORA - Estabelece premissa
+  // ═══════════════════════════════════════════════════════════════════════════
   {
     id: 'prologue',
     number: 0,
@@ -103,9 +118,19 @@ export const acts: ActDefinition[] = [
     subtitle: 'O Choque',
     theme: 'cold',
     sections: [
-      { id: 'hero', component: 'Hero', title: 'SINTÉTICA 2025' }
-    ]
+      { id: 'hero', component: 'Hero', title: 'SINTÉTICA 2025', emoji: '⚡' }
+    ],
+    breatherAfter: {
+      type: 'question',
+      question: 'O que acontece quando 30 anos de mudança se comprimem em 30 meses?',
+      subtext: 'Continue para descobrir.'
+    }
   },
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // ATO I: A FUNDAÇÃO (3 seções)
+  // Função: CONTEXTO - Estabelece o cenário
+  // ═══════════════════════════════════════════════════════════════════════════
   {
     id: 'act-1',
     number: 1,
@@ -113,16 +138,22 @@ export const acts: ActDefinition[] = [
     subtitle: 'A Fundação',
     theme: 'cool',
     sections: [
-      { id: 'compression', component: 'TheCompression', title: 'A Compressão do Tempo' },
-      { id: 'cheatsheet', component: 'Cheatsheet', title: 'Os 5 Pilares' },
-      { id: 'timeline', component: 'Timeline', title: 'Cronologia 2025' }
+      { id: 'compression', component: 'TheCompression', title: 'A Compressão do Tempo', emoji: '⏱️' },
+      { id: 'cheatsheet', component: 'Cheatsheet', title: 'Os 5 Pilares', emoji: '🏛️' },
+      { id: 'timeline', component: 'Timeline', title: 'Cronologia 2025', emoji: '📅' }
     ],
     breatherAfter: {
-      type: 'quote',
-      content: 'O ano em que a humanidade deixou de perguntar "se a IA pode" e começou a perguntar "o que fazemos agora".',
-      author: 'Síntese do momento histórico'
+      type: 'question',
+      question: 'Mas onde toda essa inteligência vai rodar?',
+      subtext: 'A resposta exige concreto, urânio e robôs.'
     }
   },
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // ATO II: A MATERIALIZAÇÃO (3 seções) - CONDENSADO
+  // Merge: EvolutionaryScale integrado ao contexto
+  // Merge: RoboticsRevolution integrado ao PhysicalLayer
+  // ═══════════════════════════════════════════════════════════════════════════
   {
     id: 'act-2',
     number: 2,
@@ -130,17 +161,23 @@ export const acts: ActDefinition[] = [
     subtitle: 'A Materialização',
     theme: 'neutral',
     sections: [
-      { id: 'evolution', component: 'EvolutionaryScale', title: 'Escala Evolutiva' },
-      { id: 'physical', component: 'PhysicalLayer', title: 'Camada Física' },
-      { id: 'comparison', component: 'ComparisonChart', title: 'Velocidade de Adoção' },
-      { id: 'robotics', component: 'RoboticsRevolution', title: 'Revolução Robótica' }
+      { id: 'evolution', component: 'EvolutionaryScale', title: 'Escala Evolutiva', emoji: '🧬' },
+      { id: 'physical', component: 'PhysicalLayer', title: 'A Camada Física', emoji: '🏭' },
+      { id: 'robotics', component: 'RoboticsRevolution', title: 'A Era dos Robôs', emoji: '🤖' }
     ],
     breatherAfter: {
       type: 'stat',
       stat: '30x',
-      statLabel: 'Crescimento de demanda energética até 2035. A IA deixou de ser software para virar concreto, urânio e robôs.'
+      statLabel: 'Crescimento de demanda energética até 2035. A IA deixou de ser código — agora ela precisa de eletricidade, água e aço.'
     }
   },
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // ATO III: A TRANSFORMAÇÃO (3 seções) - CONDENSADO
+  // Merge: MarketPulse + NewEconomy → "O Novo Mercado" (dentro de NewEconomy)
+  // Mantido: ConsumerAI (relevância pessoal)
+  // Mantido: MultiAgentOrg (futuro do trabalho)
+  // ═══════════════════════════════════════════════════════════════════════════
   {
     id: 'act-3',
     number: 3,
@@ -148,18 +185,24 @@ export const acts: ActDefinition[] = [
     subtitle: 'A Transformação',
     theme: 'cool',
     sections: [
-      { id: 'science', component: 'DeepScience', title: 'Ciência Profunda' },
-      { id: 'consumer', component: 'ConsumerAI', title: 'IA Consumidor' },
-      { id: 'market', component: 'MarketPulse', title: 'Pulso do Mercado' },
-      { id: 'economy', component: 'NewEconomy', title: 'Nova Economia' },
-      { id: 'agents', component: 'MultiAgentOrg', title: 'Organizações Multi-Agente' }
+      { id: 'consumer', component: 'ConsumerAI', title: 'IA no Dia a Dia', emoji: '📱' },
+      { id: 'economy', component: 'NewEconomy', title: 'O Novo Mercado', emoji: '💹' },
+      { id: 'agents', component: 'MultiAgentOrg', title: 'Organizações Multi-Agente', emoji: '🏢' }
     ],
     breatherAfter: {
-      type: 'quote',
-      content: 'Não estamos testemunhando uma evolução tecnológica. Estamos vivendo uma revolução cognitiva.',
-      author: 'A nova realidade'
+      type: 'question',
+      question: 'Tudo isso parece promissor. Mas qual é o custo?',
+      subtext: 'Nem tudo que brilha é ouro sintético.'
     }
   },
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // ATO IV: A TENSÃO (3 seções) - CONDENSADO
+  // Merge: TheGap + ContentCrisis → "O Abismo Digital" (dentro de TheGap)
+  // Mantido: RealWorldCases (evidência)
+  // Mantido: DefenseProtocol (solução)
+  // Removido: GlobalRegulation (condensado em DefenseProtocol)
+  // ═══════════════════════════════════════════════════════════════════════════
   {
     id: 'act-4',
     number: 4,
@@ -167,18 +210,24 @@ export const acts: ActDefinition[] = [
     subtitle: 'A Tensão',
     theme: 'hot',
     sections: [
-      { id: 'gap', component: 'TheGap', title: 'O Abismo' },
-      { id: 'content', component: 'ContentCrisis', title: 'Crise de Conteúdo' },
-      { id: 'cases', component: 'RealWorldCases', title: 'Casos Reais' },
-      { id: 'defense', component: 'DefenseProtocol', title: 'Protocolo de Defesa' },
-      { id: 'regulation', component: 'GlobalRegulation', title: 'Regulação Global' }
+      { id: 'gap', component: 'TheGap', title: 'O Abismo Digital', emoji: '⚠️' },
+      { id: 'cases', component: 'RealWorldCases', title: 'Casos Reais', emoji: '📰' },
+      { id: 'defense', component: 'DefenseProtocol', title: 'Protocolo de Defesa', emoji: '🛡️' }
     ],
     breatherAfter: {
-      type: 'quote',
-      content: 'Em 2025, a pergunta mudou. Não é mais "isso foi feito por máquina?" É "isso foi feito por alguém que se importa?"',
-      author: 'A Nova Economia da Autenticidade'
+      type: 'manifesto',
+      content: 'O risco não é a IA ser muito inteligente. É você não saber distinguir o real do sintético. A curadoria da verdade virou skill de sobrevivência.'
     }
   },
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // ATO V: O HORIZONTE (3 seções) - CONDENSADO
+  // Merge: BrazilFocus + ProfessionsGuide → Mantido separado (relevância BR)
+  // Mantido: AntifragileProfessional (framework pessoal - alto valor)
+  // Merge: FuturePredictions + SkillsRadar → "Seu Radar" (dentro de SkillsRadar)
+  // Removido: ToolsGrid → Modal acessível
+  // Removido: ExpertPanel → Integrado ao CallToAdventure
+  // ═══════════════════════════════════════════════════════════════════════════
   {
     id: 'act-5',
     number: 5,
@@ -186,18 +235,22 @@ export const acts: ActDefinition[] = [
     subtitle: 'O Horizonte',
     theme: 'cool',
     sections: [
-      { id: 'brazil', component: 'BrazilFocus', title: 'Foco Brasil' },
-      { id: 'antifragile', component: 'AntifragileProfessional', title: 'Profissional Anti-Frágil' },
-      { id: 'professions', component: 'ProfessionsGuide', title: 'Guia de Profissões' },
-      { id: 'future', component: 'FuturePredictions', title: 'Previsões' },
-      { id: 'skills', component: 'SkillsRadar', title: 'Radar de Habilidades' },
-      { id: 'tools', component: 'ToolsGrid', title: 'Ferramentas' },
-      { id: 'experts', component: 'ExpertPanel', title: 'Painel de Especialistas' }
+      { id: 'brazil', component: 'BrazilFocus', title: 'Foco Brasil', emoji: '🇧🇷' },
+      { id: 'antifragile', component: 'AntifragileProfessional', title: 'Profissional Anti-Frágil', emoji: '💪' },
+      { id: 'skills', component: 'SkillsRadar', title: 'Seu Radar 2025', emoji: '📡' }
     ],
     breatherAfter: {
-      type: 'visual'
+      type: 'question',
+      question: 'Você está pronto para o próximo passo?',
+      subtext: 'O relatório termina. Sua jornada começa.'
     }
   },
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // EPÍLOGO: O CONVITE (1 seção)
+  // Função: CALL TO ACTION - Fechamento + "One More Thing"
+  // Glossary → Modal acessível de qualquer ponto
+  // ═══════════════════════════════════════════════════════════════════════════
   {
     id: 'epilogue',
     number: 6,
@@ -205,11 +258,61 @@ export const acts: ActDefinition[] = [
     subtitle: 'O Convite',
     theme: 'cold',
     sections: [
-      { id: 'adventure', component: 'CallToAdventure', title: 'O Convite à Aventura' },
-      { id: 'glossary', component: 'Glossary', title: 'Glossário' }
+      { id: 'adventure', component: 'CallToAdventure', title: 'O Convite à Aventura', emoji: '🚀' }
     ]
   }
 ];
+
+// =============================================================================
+// ANATOMICAL MAP DATA
+// Para o novo componente de navegação visual (Da Vinci inspired)
+// =============================================================================
+
+export interface AnatomicalNode {
+  id: string;
+  title: string;
+  emoji: string;
+  actNumber: number;
+  actName: string;
+  connections: string[]; // IDs das seções conectadas
+  x: number; // Posição relativa (0-100)
+  y: number; // Posição relativa (0-100)
+}
+
+export function generateAnatomicalMap(): AnatomicalNode[] {
+  const nodes: AnatomicalNode[] = [];
+
+  acts.forEach((act, actIndex) => {
+    act.sections.forEach((section, sectionIndex) => {
+      // Calcula posição em grid orgânico
+      const totalSections = act.sections.length;
+      const y = 10 + (actIndex * 14); // Distribui verticalmente
+      const xSpread = 70 / Math.max(totalSections, 1);
+      const x = 15 + (sectionIndex * xSpread) + (actIndex % 2 === 0 ? 0 : 5);
+
+      // Conexões: seção anterior e próxima
+      const allSectionIds = getAllSectionIds();
+      const currentIndex = allSectionIds.indexOf(section.id);
+      const connections: string[] = [];
+
+      if (currentIndex > 0) connections.push(allSectionIds[currentIndex - 1]);
+      if (currentIndex < allSectionIds.length - 1) connections.push(allSectionIds[currentIndex + 1]);
+
+      nodes.push({
+        id: section.id,
+        title: section.title,
+        emoji: section.emoji || '📄',
+        actNumber: act.number,
+        actName: act.name,
+        connections,
+        x,
+        y
+      });
+    });
+  });
+
+  return nodes;
+}
 
 // =============================================================================
 // UTILITY FUNCTIONS
@@ -259,3 +362,35 @@ export function getAccentClasses(temperature: ThemeTemperature) {
     gradient: `from-${theme.accent}-500 to-${theme.accent}-700`
   };
 }
+
+// =============================================================================
+// READING MODES (Da Vinci - leitura em camadas)
+// =============================================================================
+
+export type ReadingMode = 'surface' | 'depth' | 'immersion';
+
+export const readingModes: Record<ReadingMode, {
+  name: string;
+  duration: string;
+  description: string;
+  includedSections: string[];
+}> = {
+  surface: {
+    name: 'Superfície',
+    duration: '5 min',
+    description: 'Visão geral com os principais insights',
+    includedSections: ['hero', 'compression', 'gap', 'antifragile', 'adventure']
+  },
+  depth: {
+    name: 'Profundidade',
+    duration: '20 min',
+    description: 'Jornada completa pelos 5 atos',
+    includedSections: getAllSectionIds()
+  },
+  immersion: {
+    name: 'Imersão',
+    duration: '60+ min',
+    description: 'Experiência completa com todos os recursos',
+    includedSections: getAllSectionIds() // + modals + extras
+  }
+};

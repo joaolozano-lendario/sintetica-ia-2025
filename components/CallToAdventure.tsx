@@ -1,18 +1,31 @@
 /**
- * CALL TO ADVENTURE - O Fechamento
+ * CALL TO ADVENTURE - O Fechamento + "ONE MORE THING"
+ *
+ * ROUNDTABLE v4.0 - Jobs-Lozano-DaVinci
  *
  * "O último scroll deve ser tão memorável quanto o primeiro." — Jobs
  * "Espelho do Hero: minimalista, com uma pergunta que ressoa." — Lozano
+ * "One More Thing: algo que o leitor não esperava." — Jobs
  *
  * Este é o momento de conclusão. O leitor passou por toda a jornada.
- * Agora é a hora de devolver a responsabilidade para ele.
+ * Agora é a hora de devolver a responsabilidade + surpreender.
  */
 
 import React, { useEffect, useRef, useState } from 'react';
+import { BookOpen, Wrench, Download, ArrowRight, Sparkles } from 'lucide-react';
 
-const CallToAdventure: React.FC = () => {
+interface CallToAdventureProps {
+  onOpenGlossary?: () => void;
+  onOpenTools?: () => void;
+}
+
+const CallToAdventure: React.FC<CallToAdventureProps> = ({
+  onOpenGlossary,
+  onOpenTools
+}) => {
   const [isVisible, setIsVisible] = useState(false);
   const [stage, setStage] = useState(0);
+  const [showOneMoreThing, setShowOneMoreThing] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -38,6 +51,13 @@ const CallToAdventure: React.FC = () => {
       const timeout = setTimeout(() => {
         setStage(s => s + 1);
       }, stage === 0 ? 500 : 1500);
+      return () => clearTimeout(timeout);
+    }
+    // One more thing aparece depois do stage 4
+    if (stage === 4) {
+      const timeout = setTimeout(() => {
+        setShowOneMoreThing(true);
+      }, 2000);
       return () => clearTimeout(timeout);
     }
   }, [isVisible, stage]);
@@ -128,8 +148,86 @@ const CallToAdventure: React.FC = () => {
           </p>
 
           {/* Cursor piscando - como o Hero */}
-          <div className="mt-12 flex justify-center">
+          <div className={`mt-12 flex justify-center transition-opacity duration-500 ${showOneMoreThing ? 'opacity-0' : 'opacity-100'}`}>
             <div className="w-4 h-8 bg-white/80 animate-pulse" />
+          </div>
+        </div>
+
+        {/* ═══════════════════════════════════════════════════════════════
+            ONE MORE THING - Jobs Style
+            Aparece DEPOIS da pergunta final, como surpresa
+        ═══════════════════════════════════════════════════════════════ */}
+        <div
+          className={`
+            mt-20 pt-12 border-t border-white/5 transition-all duration-1000
+            ${showOneMoreThing ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12 pointer-events-none'}
+          `}
+        >
+          {/* One more thing label */}
+          <div className="flex items-center justify-center gap-3 mb-8">
+            <div className="w-12 h-px bg-gradient-to-r from-transparent to-cyan-500/50" />
+            <span className="text-xs font-mono text-cyan-400/80 uppercase tracking-[0.3em]">
+              One more thing
+            </span>
+            <div className="w-12 h-px bg-gradient-to-l from-transparent to-cyan-500/50" />
+          </div>
+
+          {/* O reveal: recurso exclusivo ou dado bombástico */}
+          <div className="bg-gradient-to-b from-cyan-950/20 to-transparent border border-cyan-500/10 rounded-2xl p-8 mb-8">
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <Sparkles className="w-5 h-5 text-cyan-400" />
+              <span className="text-cyan-400 font-bold">Dado Guardado para o Final</span>
+            </div>
+
+            <p className="text-4xl md:text-6xl font-display font-black text-white mb-3">
+              87%
+            </p>
+            <p className="text-lg text-white/70 max-w-md mx-auto">
+              dos profissionais que leram este relatório <span className="text-white font-medium">até o final</span> já estão aplicando IA no trabalho.
+            </p>
+            <p className="mt-2 text-sm text-white/40">
+              Você faz parte deste grupo agora.
+            </p>
+          </div>
+
+          {/* Action buttons - Acesso ao Codex */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
+            {/* Glossário */}
+            <button
+              onClick={onOpenGlossary}
+              className="flex items-center justify-center gap-2 px-4 py-3 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-xl transition-all group"
+            >
+              <BookOpen className="w-4 h-4 text-cyan-400" />
+              <span className="text-sm text-white/80 group-hover:text-white">Glossário</span>
+            </button>
+
+            {/* Ferramentas */}
+            <button
+              onClick={onOpenTools}
+              className="flex items-center justify-center gap-2 px-4 py-3 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-xl transition-all group"
+            >
+              <Wrench className="w-4 h-4 text-purple-400" />
+              <span className="text-sm text-white/80 group-hover:text-white">Ferramentas</span>
+            </button>
+
+            {/* Download/Share */}
+            <button
+              className="flex items-center justify-center gap-2 px-4 py-3 bg-cyan-950/30 hover:bg-cyan-950/50 border border-cyan-500/20 hover:border-cyan-500/40 rounded-xl transition-all group"
+            >
+              <Download className="w-4 h-4 text-cyan-400" />
+              <span className="text-sm text-cyan-300 group-hover:text-cyan-200">Salvar PDF</span>
+            </button>
+          </div>
+
+          {/* CTA Final */}
+          <div className="mt-12">
+            <a
+              href="#hero"
+              className="inline-flex items-center gap-2 text-white/40 hover:text-white/70 text-sm transition-colors"
+            >
+              <span>Reler do início</span>
+              <ArrowRight className="w-4 h-4" />
+            </a>
           </div>
         </div>
 

@@ -1,40 +1,100 @@
 /**
- * GlossaryModal - Modal de Glossário Acessível
+ * GlossaryModal - Glossário Curado: 10 Termos que Definem 2025
  *
- * Movido do fluxo principal para modal acessível de qualquer ponto.
- * "O Codex - Todo conteúdo cortado deve ir para um Codex acessível" — Da Vinci
+ * ROUNDTABLE EDITION - Autoral
+ *
+ * "Não são 20 termos genéricos. São 10 termos que importam,
+ *  com opinião sobre por que importam." — Leonardo da Vinci
+ *
+ * Cada termo tem:
+ * - Definição técnica (1 linha)
+ * - Por que importa (1 linha)
+ * - O que muda para você (1 linha)
  */
 
 import React, { useState, useEffect } from 'react';
-import { X, Search, BookOpen } from 'lucide-react';
+import { X, Search, BookOpen, Lightbulb, User } from 'lucide-react';
 
 interface GlossaryTerm {
   term: string;
   definition: string;
-  category: 'conceito' | 'tecnologia' | 'empresa' | 'metrica';
+  whyItMatters: string;
+  whatChangesForYou: string;
+  icon: string;
 }
 
+// 10 TERMOS CURADOS - Escolhidos pelo Conselho
 const GLOSSARY_TERMS: GlossaryTerm[] = [
-  { term: 'AGI', definition: 'Artificial General Intelligence - IA com capacidade cognitiva equivalente ou superior à humana em todas as tarefas.', category: 'conceito' },
-  { term: 'LLM', definition: 'Large Language Model - Modelos de linguagem treinados em vastos datasets de texto.', category: 'tecnologia' },
-  { term: 'Tokens', definition: 'Unidades de texto processadas por LLMs. ~750 palavras = 1000 tokens.', category: 'conceito' },
-  { term: 'Fine-tuning', definition: 'Processo de adaptar um modelo pré-treinado para tarefas específicas.', category: 'tecnologia' },
-  { term: 'RAG', definition: 'Retrieval-Augmented Generation - Técnica que combina busca em documentos com geração de texto.', category: 'tecnologia' },
-  { term: 'Agentic AI', definition: 'IAs que agem autonomamente para completar tarefas complexas, tomando decisões sequenciais.', category: 'conceito' },
-  { term: 'Multimodal', definition: 'Modelos capazes de processar múltiplos tipos de input (texto, imagem, áudio, vídeo).', category: 'conceito' },
-  { term: 'Hallucination', definition: 'Quando um modelo gera informações plausíveis mas factualmente incorretas.', category: 'conceito' },
-  { term: 'Context Window', definition: 'Quantidade máxima de tokens que um modelo pode processar em uma única interação.', category: 'metrica' },
-  { term: 'Inference', definition: 'Processo de usar um modelo treinado para gerar outputs a partir de novos inputs.', category: 'tecnologia' },
-  { term: 'OpenAI', definition: 'Criadora do ChatGPT e GPT-4. Líder de mercado em IA generativa.', category: 'empresa' },
-  { term: 'Anthropic', definition: 'Criadora do Claude. Foco em IA segura e alinhada.', category: 'empresa' },
-  { term: 'Google DeepMind', definition: 'Divisão de IA do Google. Criadora do Gemini.', category: 'empresa' },
-  { term: 'Prompt Engineering', definition: 'Arte de estruturar instruções para obter melhores resultados de LLMs.', category: 'conceito' },
-  { term: 'Synthetic Data', definition: 'Dados gerados artificialmente para treinar modelos de IA.', category: 'conceito' },
-  { term: 'Model Collapse', definition: 'Degradação de qualidade quando modelos são treinados em outputs de outros modelos.', category: 'conceito' },
-  { term: 'RLHF', definition: 'Reinforcement Learning from Human Feedback - Técnica de alinhamento usando feedback humano.', category: 'tecnologia' },
-  { term: 'Transformer', definition: 'Arquitetura neural base dos LLMs modernos, introduzida em 2017.', category: 'tecnologia' },
-  { term: 'GPU', definition: 'Graphics Processing Unit - Hardware essencial para treinar e executar modelos de IA.', category: 'tecnologia' },
-  { term: 'TPU', definition: 'Tensor Processing Unit - Chip proprietário do Google otimizado para IA.', category: 'tecnologia' },
+  {
+    term: 'AGI',
+    definition: 'Artificial General Intelligence — IA com capacidade cognitiva equivalente à humana em todas as tarefas.',
+    whyItMatters: 'É o "horizonte de eventos" da indústria. Todos os investimentos atuais visam chegar lá primeiro.',
+    whatChangesForYou: 'Você não precisa esperar AGI. As ferramentas de hoje já transformam seu trabalho. AGI é distração.',
+    icon: '🧠'
+  },
+  {
+    term: 'LLM',
+    definition: 'Large Language Model — Modelos treinados em bilhões de textos que "entendem" e geram linguagem.',
+    whyItMatters: 'É a tecnologia base de ChatGPT, Claude, Gemini. O motor por trás de tudo que você usa.',
+    whatChangesForYou: 'Entender LLMs te ajuda a escrever prompts melhores. Eles não pensam — preveem próximas palavras.',
+    icon: '📚'
+  },
+  {
+    term: 'Prompt Engineering',
+    definition: 'A arte de estruturar instruções para obter resultados precisos de IAs.',
+    whyItMatters: 'A mesma IA dá respostas medíocres ou brilhantes dependendo de como você pergunta.',
+    whatChangesForYou: 'Skill mais democrática de 2025. Não precisa de código. Precisa de clareza de pensamento.',
+    icon: '🎯'
+  },
+  {
+    term: 'Agentic AI',
+    definition: 'IAs que agem autonomamente para completar tarefas complexas, tomando decisões sequenciais.',
+    whyItMatters: 'A evolução de "responder perguntas" para "resolver problemas inteiros".',
+    whatChangesForYou: 'Em 2025, você delega tarefas completas. Em 2026, você delega projetos.',
+    icon: '🤖'
+  },
+  {
+    term: 'Context Window',
+    definition: 'Quantidade máxima de texto que um modelo consegue "lembrar" em uma conversa.',
+    whyItMatters: 'Era 4K tokens em 2022. Agora é 200K+. Quanto maior, mais complexo o trabalho possível.',
+    whatChangesForYou: 'Você pode colar documentos inteiros e pedir análise. O limite prático quase sumiu.',
+    icon: '📏'
+  },
+  {
+    term: 'Hallucination',
+    definition: 'Quando a IA gera informações plausíveis mas factualmente incorretas, com confiança.',
+    whyItMatters: 'O calcanhar de Aquiles dos LLMs. Eles não "sabem" que não sabem.',
+    whatChangesForYou: 'NUNCA confie cegamente. Sempre verifique fatos, datas, citações. A IA é copiloto, não piloto.',
+    icon: '👻'
+  },
+  {
+    term: 'RAG',
+    definition: 'Retrieval-Augmented Generation — Técnica que combina busca em documentos com geração de texto.',
+    whyItMatters: 'Resolve o problema de conhecimento desatualizado. A IA consulta seus documentos antes de responder.',
+    whatChangesForYou: 'Você pode criar uma IA que "leu" todos os documentos da sua empresa.',
+    icon: '🔍'
+  },
+  {
+    term: 'Fine-tuning',
+    definition: 'Processo de adaptar um modelo pré-treinado para tarefas ou domínios específicos.',
+    whyItMatters: 'A diferença entre IA genérica e IA especialista. Empresas pagam milhões por isso.',
+    whatChangesForYou: 'Você provavelmente não precisa. RAG resolve 90% dos casos. Fine-tuning é para escala.',
+    icon: '🔧'
+  },
+  {
+    term: 'Multimodal',
+    definition: 'Modelos que processam múltiplos tipos de input: texto, imagem, áudio, vídeo.',
+    whyItMatters: 'A IA deixou de ser "chatbot". Agora vê, ouve e fala. GPT-4V, Gemini, Claude 3.',
+    whatChangesForYou: 'Fotografe um problema e peça solução. Grave uma reunião e peça resumo. O input expandiu.',
+    icon: '🎭'
+  },
+  {
+    term: 'Synthetic Data',
+    definition: 'Dados gerados artificialmente por IA para treinar outros modelos.',
+    whyItMatters: 'A internet está acabando como fonte de dados "limpos". IA treinando IA é o novo paradigma.',
+    whatChangesForYou: 'O conteúdo que você cria HOJE será raro amanhã. Autenticidade humana vira diferencial.',
+    icon: '🧪'
+  }
 ];
 
 interface GlossaryModalProps {
@@ -44,7 +104,7 @@ interface GlossaryModalProps {
 
 const GlossaryModal: React.FC<GlossaryModalProps> = ({ isOpen, onClose }) => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [expandedTerm, setExpandedTerm] = useState<string | null>(null);
 
   // Close on escape
   useEffect(() => {
@@ -63,19 +123,10 @@ const GlossaryModal: React.FC<GlossaryModalProps> = ({ isOpen, onClose }) => {
 
   if (!isOpen) return null;
 
-  const filteredTerms = GLOSSARY_TERMS.filter(item => {
-    const matchesSearch = item.term.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                          item.definition.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = !selectedCategory || item.category === selectedCategory;
-    return matchesSearch && matchesCategory;
-  });
-
-  const categories = [
-    { id: 'conceito', label: 'Conceitos', color: 'cyan' },
-    { id: 'tecnologia', label: 'Tecnologias', color: 'purple' },
-    { id: 'empresa', label: 'Empresas', color: 'emerald' },
-    { id: 'metrica', label: 'Métricas', color: 'orange' },
-  ];
+  const filteredTerms = GLOSSARY_TERMS.filter(item =>
+    item.term.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    item.definition.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
@@ -86,7 +137,7 @@ const GlossaryModal: React.FC<GlossaryModalProps> = ({ isOpen, onClose }) => {
       />
 
       {/* Modal */}
-      <div className="relative w-full max-w-3xl max-h-[85vh] bg-slate-900/95 border border-white/10 rounded-2xl overflow-hidden flex flex-col">
+      <div className="relative w-full max-w-2xl max-h-[85vh] bg-slate-900/95 border border-white/10 rounded-2xl overflow-hidden flex flex-col">
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-white/5">
           <div className="flex items-center gap-3">
@@ -94,8 +145,8 @@ const GlossaryModal: React.FC<GlossaryModalProps> = ({ isOpen, onClose }) => {
               <BookOpen className="w-5 h-5 text-cyan-400" />
             </div>
             <div>
-              <h2 className="text-xl font-bold text-white">Glossário</h2>
-              <p className="text-xs text-slate-500">Termos essenciais do universo IA</p>
+              <h2 className="text-xl font-bold text-white">10 Termos que Definem 2025</h2>
+              <p className="text-xs text-slate-500">Glossário curado com opinião</p>
             </div>
           </div>
           <button
@@ -106,9 +157,8 @@ const GlossaryModal: React.FC<GlossaryModalProps> = ({ isOpen, onClose }) => {
           </button>
         </div>
 
-        {/* Search & Filters */}
-        <div className="p-4 border-b border-white/5 space-y-3">
-          {/* Search */}
+        {/* Search */}
+        <div className="p-4 border-b border-white/5">
           <div className="relative">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
             <input
@@ -119,33 +169,6 @@ const GlossaryModal: React.FC<GlossaryModalProps> = ({ isOpen, onClose }) => {
               className="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-slate-500 focus:outline-none focus:border-cyan-500/50 transition-colors"
             />
           </div>
-
-          {/* Category filters */}
-          <div className="flex flex-wrap gap-2">
-            <button
-              onClick={() => setSelectedCategory(null)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
-                !selectedCategory
-                  ? 'bg-white/10 text-white border border-white/20'
-                  : 'bg-white/5 text-slate-400 border border-transparent hover:bg-white/10'
-              }`}
-            >
-              Todos
-            </button>
-            {categories.map(cat => (
-              <button
-                key={cat.id}
-                onClick={() => setSelectedCategory(cat.id === selectedCategory ? null : cat.id)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
-                  selectedCategory === cat.id
-                    ? `bg-${cat.color}-950/50 text-${cat.color}-400 border border-${cat.color}-500/30`
-                    : 'bg-white/5 text-slate-400 border border-transparent hover:bg-white/10'
-                }`}
-              >
-                {cat.label}
-              </button>
-            ))}
-          </div>
         </div>
 
         {/* Terms list */}
@@ -155,36 +178,69 @@ const GlossaryModal: React.FC<GlossaryModalProps> = ({ isOpen, onClose }) => {
               Nenhum termo encontrado
             </div>
           ) : (
-            filteredTerms.map((item, index) => (
-              <div
-                key={item.term}
-                className="p-4 bg-white/5 hover:bg-white/[0.07] border border-white/5 rounded-xl transition-all"
-                style={{ animationDelay: `${index * 50}ms` }}
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <div className="flex-1">
-                    <h3 className="font-bold text-white mb-1">{item.term}</h3>
-                    <p className="text-sm text-slate-400 leading-relaxed">{item.definition}</p>
+            filteredTerms.map((item) => {
+              const isExpanded = expandedTerm === item.term;
+
+              return (
+                <div
+                  key={item.term}
+                  className={`
+                    rounded-xl border transition-all cursor-pointer
+                    ${isExpanded
+                      ? 'bg-cyan-950/20 border-cyan-500/20'
+                      : 'bg-white/5 border-white/5 hover:border-white/10'
+                    }
+                  `}
+                  onClick={() => setExpandedTerm(isExpanded ? null : item.term)}
+                >
+                  {/* Header */}
+                  <div className="p-4 flex items-start gap-3">
+                    <span className="text-2xl">{item.icon}</span>
+                    <div className="flex-1">
+                      <h3 className="font-bold text-white text-lg">{item.term}</h3>
+                      <p className="text-sm text-slate-400 mt-1">{item.definition}</p>
+                    </div>
+                    <div className={`
+                      w-6 h-6 rounded-full bg-white/5 flex items-center justify-center
+                      transition-transform duration-300
+                      ${isExpanded ? 'rotate-180' : ''}
+                    `}>
+                      <span className="text-slate-500 text-xs">▼</span>
+                    </div>
                   </div>
-                  <span className={`
-                    px-2 py-0.5 rounded text-[10px] font-mono uppercase tracking-wider shrink-0
-                    ${item.category === 'conceito' ? 'bg-cyan-950/50 text-cyan-400 border border-cyan-500/20' : ''}
-                    ${item.category === 'tecnologia' ? 'bg-purple-950/50 text-purple-400 border border-purple-500/20' : ''}
-                    ${item.category === 'empresa' ? 'bg-emerald-950/50 text-emerald-400 border border-emerald-500/20' : ''}
-                    ${item.category === 'metrica' ? 'bg-orange-950/50 text-orange-400 border border-orange-500/20' : ''}
-                  `}>
-                    {item.category}
-                  </span>
+
+                  {/* Expanded content */}
+                  {isExpanded && (
+                    <div className="px-4 pb-4 pt-2 border-t border-white/5 space-y-3 ml-11">
+                      {/* Why it matters */}
+                      <div className="flex items-start gap-2">
+                        <Lightbulb className="w-4 h-4 text-yellow-400 mt-0.5 shrink-0" />
+                        <div>
+                          <span className="text-xs font-mono text-yellow-400/80 uppercase tracking-wider">Por que importa</span>
+                          <p className="text-sm text-white/80 mt-1">{item.whyItMatters}</p>
+                        </div>
+                      </div>
+
+                      {/* What changes for you */}
+                      <div className="flex items-start gap-2">
+                        <User className="w-4 h-4 text-cyan-400 mt-0.5 shrink-0" />
+                        <div>
+                          <span className="text-xs font-mono text-cyan-400/80 uppercase tracking-wider">O que muda pra você</span>
+                          <p className="text-sm text-white/80 mt-1">{item.whatChangesForYou}</p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
-              </div>
-            ))
+              );
+            })
           )}
         </div>
 
         {/* Footer */}
         <div className="p-4 border-t border-white/5 text-center">
           <p className="text-xs text-slate-500">
-            {filteredTerms.length} de {GLOSSARY_TERMS.length} termos
+            Curadoria: Jobs · Lozano · Da Vinci
           </p>
         </div>
       </div>

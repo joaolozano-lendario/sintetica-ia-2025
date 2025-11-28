@@ -172,21 +172,32 @@ const CallToAdventure: React.FC<CallToAdventureProps> = ({
             <div className="w-12 h-px bg-gradient-to-l from-transparent to-cyan-500/50" />
           </div>
 
-          {/* O reveal: recurso exclusivo ou dado bombástico */}
+          {/* O reveal: META - O documento como prova viva */}
           <div className="bg-gradient-to-b from-cyan-950/20 to-transparent border border-cyan-500/10 rounded-2xl p-8 mb-8">
             <div className="flex items-center justify-center gap-2 mb-4">
               <Sparkles className="w-5 h-5 text-cyan-400" />
-              <span className="text-cyan-400 font-bold">Dado Guardado para o Final</span>
+              <span className="text-cyan-400 font-bold">Este Documento é a Prova</span>
             </div>
 
-            <p className="text-4xl md:text-6xl font-display font-black text-white mb-3">
-              87%
+            <p className="text-lg md:text-xl text-white/80 max-w-lg mx-auto leading-relaxed mb-6">
+              Você acabou de ler <span className="text-white font-bold">17 seções</span> sobre a revolução da IA.
             </p>
-            <p className="text-lg text-white/70 max-w-md mx-auto">
-              dos profissionais que leram este relatório <span className="text-white font-medium">até o final</span> já estão aplicando IA no trabalho.
-            </p>
-            <p className="mt-2 text-sm text-white/40">
-              Você faz parte deste grupo agora.
+
+            <div className="grid grid-cols-2 gap-4 max-w-md mx-auto mb-6">
+              <div className="text-center p-4 bg-white/5 rounded-xl border border-white/5">
+                <p className="text-3xl md:text-4xl font-display font-black text-white">72h</p>
+                <p className="text-xs text-white/50 mt-1">para criar este relatório</p>
+              </div>
+              <div className="text-center p-4 bg-white/5 rounded-xl border border-white/5">
+                <p className="text-3xl md:text-4xl font-display font-black text-white/30 line-through">3 meses</p>
+                <p className="text-xs text-white/50 mt-1">há 2 anos atrás</p>
+              </div>
+            </div>
+
+            <p className="text-sm text-white/60 max-w-md mx-auto">
+              Pesquisa, escrita, design, código — tudo feito com IA como copiloto.
+              <br />
+              <span className="text-cyan-400/80">Este documento é o argumento.</span>
             </p>
           </div>
 

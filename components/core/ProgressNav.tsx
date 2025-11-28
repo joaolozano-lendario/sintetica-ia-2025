@@ -31,13 +31,12 @@ const ProgressNav: React.FC<ProgressNavProps> = ({
   useEffect(() => {
     const handleScroll = () => {
       setIsVisible(window.scrollY > 300);
-      if (isMobileOpen) setIsMobileOpen(false);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll(); // Check initial position
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [isMobileOpen]);
+  }, []);
 
   const handleNavigate = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -170,12 +169,15 @@ const ProgressNav: React.FC<ProgressNavProps> = ({
         />
 
         {/* Panel */}
-        <div className={`
-          absolute bottom-24 right-4 left-4 max-h-[65vh] overflow-y-auto
-          bg-slate-900/95 border border-white/10 rounded-2xl p-5
-          transition-all duration-300
-          ${isMobileOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}
-        `}>
+        <div
+          className={`
+            absolute bottom-24 right-4 left-4 max-h-[65vh] overflow-y-auto
+            bg-slate-900/95 border border-white/10 rounded-2xl p-5
+            transition-all duration-300
+            ${isMobileOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0 pointer-events-none'}
+          `}
+          onClick={(e) => e.stopPropagation()}
+        >
           {/* Header */}
           <div className="flex items-center justify-between mb-4 pb-4 border-b border-white/5">
             <span className="text-sm font-medium text-white">Navegação</span>

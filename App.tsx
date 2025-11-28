@@ -19,6 +19,9 @@ import React, { useState, useEffect } from 'react';
 import { Act, Breather, ProgressNav, GlossaryModal, ToolsDrawer } from './components/core';
 import { acts } from './lib/theme';
 
+// Access Gate (isca digital)
+import AccessGate from './components/AccessGate';
+
 // Original Components (preservados 100%)
 import Hero from './components/Hero';
 import Cheatsheet from './components/Cheatsheet';
@@ -40,9 +43,24 @@ import AntifragileProfessional from './components/AntifragileProfessional';
 import TheCompression from './components/TheCompression';
 
 const App: React.FC = () => {
+  const [isUnlocked, setIsUnlocked] = useState(false);
   const [currentSection, setCurrentSection] = useState('hero');
   const [isGlossaryOpen, setIsGlossaryOpen] = useState(false);
   const [isToolsOpen, setIsToolsOpen] = useState(false);
+
+  // Check localStorage for previous unlock
+  useEffect(() => {
+    const unlocked = localStorage.getItem('sintetica-2025-unlocked');
+    if (unlocked === 'true') {
+      setIsUnlocked(true);
+    }
+  }, []);
+
+  // Handle unlock
+  const handleUnlock = () => {
+    setIsUnlocked(true);
+    localStorage.setItem('sintetica-2025-unlocked', 'true');
+  };
 
   // Intersection Observer para detectar seção atual
   useEffect(() => {
@@ -69,6 +87,11 @@ const App: React.FC = () => {
 
     return () => observer.disconnect();
   }, []);
+
+  // Show Access Gate if not unlocked
+  if (!isUnlocked) {
+    return <AccessGate onUnlock={handleUnlock} />;
+  }
 
   return (
     <div className="min-h-screen font-sans selection:bg-cyan-500 selection:text-black bg-[#050b14] text-slate-200 relative overflow-x-hidden">

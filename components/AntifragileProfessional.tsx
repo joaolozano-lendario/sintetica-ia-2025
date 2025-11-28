@@ -220,7 +220,7 @@ const AntifragileProfessional: React.FC = () => {
             </p>
 
             {/* Stats Row */}
-            <div className="mt-8 pt-6 border-t border-white/5 grid grid-cols-3 gap-4">
+            <div className="mt-8 pt-6 border-t border-white/5 grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div>
                 <p className="text-3xl font-display font-bold text-emerald-400">$200k</p>
                 <p className="text-slate-500 text-xs">Salário AI Agent Manager</p>

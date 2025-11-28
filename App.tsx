@@ -16,7 +16,7 @@
 import React, { useState, useEffect } from 'react';
 
 // Core Components (sistema v4)
-import { Act, Breather, ProgressNav, GlossaryModal, ToolsDrawer } from './components/core';
+import { Act, Breather, ProgressNav, GlossaryModal, ToolsDrawer, AnatomicalMap } from './components/core';
 import { acts } from './lib/theme';
 
 // Original Components (preservados 100%)
@@ -94,6 +94,12 @@ const App: React.FC = () => {
       <ToolsDrawer
         isOpen={isToolsOpen}
         onClose={() => setIsToolsOpen(false)}
+      />
+
+      {/* Anatomical Map - Da Vinci Style Navigation */}
+      <AnatomicalMap
+        currentSection={currentSection}
+        onNavigate={setCurrentSection}
       />
 
       {/* Main Content */}

@@ -57,24 +57,14 @@ const events: TimelineEvent[] = [
     id: 6,
     month: 'NOV',
     title: 'O Novembro Vermelho',
-    headline: 'Gemini 3 vs GPT-5.1',
-    description: 'Um mês histórico. Google lançou Gemini 3 (memória infinita, líder em exames humanos). OpenAI respondeu com GPT-5.1 (modos Thinking/Instant). Anthropic lançou Claude 4.5. O estado da arte foi redefinido em 30 dias.',
+    headline: 'A Guerra dos Modelos & Chips',
+    description: 'Um mês histórico em duas frentes. Software: Google lançou Gemini 3, OpenAI respondeu com GPT-5.1, Anthropic lançou Claude 4.5. Hardware: Nvidia perdeu $250 Bi quando Meta e Google revelaram chips próprios competitivos. O monopólio CUDA começou a ruir.',
     icon: 'brain',
     category: 'Infraestrutura',
-    impact: 'Consolidação de Agentes de Raciocínio (S2) confiáveis.'
+    impact: 'Consolidação de modelos S2 confiáveis + fragmentação do mercado de chips.'
   },
   {
     id: 7,
-    month: 'NOV',
-    title: 'O Crash da Nvidia',
-    headline: 'Fragmentação do Mercado',
-    description: 'Ações da Nvidia perderam $250 Bi após revelações de que Meta e Google atingiram SOTA com chips próprios (TPUs/ASICs). O monopólio do hardware CUDA começou a ruir diante do "Silício Soberano".',
-    icon: 'chip',
-    category: 'Infraestrutura',
-    impact: 'Hardware torna-se heterogêneo; Google TPU e Huawei ascendem.'
-  },
-  {
-    id: 8,
     month: 'DEZ',
     title: 'O Fim da Verdade',
     headline: 'Eleições & Deepfakes',
@@ -84,7 +74,7 @@ const events: TimelineEvent[] = [
     impact: 'Necessidade urgente de identidade digital criptográfica.'
   },
   {
-    id: 9,
+    id: 8,
     month: 'FUTURO',
     title: 'O Horizonte AGI',
     headline: 'Previsão: 2026/2027',

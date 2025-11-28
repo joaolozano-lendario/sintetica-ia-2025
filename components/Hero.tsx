@@ -23,6 +23,7 @@ const COMPRESSION_DATA = [
 // =============================================================================
 const Hero: React.FC = () => {
   const [stage, setStage] = useState(0);
+  const [hasAutoScrolled, setHasAutoScrolled] = useState(false);
   // Stages:
   // 0=black
   // 1=academia lendária
@@ -64,6 +65,20 @@ const Hero: React.FC = () => {
     }
   }, [stage]);
 
+  // Auto-scroll to next section after animation completes
+  useEffect(() => {
+    if (stage === 12 && !hasAutoScrolled) {
+      setHasAutoScrolled(true);
+      const timeout = setTimeout(() => {
+        const nextSection = document.getElementById('compression');
+        if (nextSection) {
+          nextSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 2500); // Wait 2.5s after final stage before scrolling
+      return () => clearTimeout(timeout);
+    }
+  }, [stage, hasAutoScrolled]);
+
   // Allow skip on click after stage 1
   const handleSkip = () => {
     if (stage > 0 && stage < 12) {
@@ -85,10 +100,10 @@ const Hero: React.FC = () => {
       {/* Vignette */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.5)_100%)] pointer-events-none" />
 
-      <div className="relative z-10 max-w-4xl mx-auto">
+      <div className="relative z-10 max-w-4xl mx-auto pb-24 md:pb-16">
 
         {/* Opening Sequence - Cada elemento separado */}
-        <div className="mb-16">
+        <div className="mb-12 md:mb-16">
           {/* Stage 1: Academia Lendária */}
           <div className={`transition-all duration-700 ${stage >= 1 && stage < 7 ? 'opacity-100' : 'opacity-0'}`}>
             {stage >= 1 && stage < 7 && (
@@ -118,7 +133,7 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Stage 4-6: The Numbers - Rosling Style */}
-        <div className="space-y-8 mb-16">
+        <div className="space-y-6 md:space-y-8 mb-12 md:mb-16">
 
           {/* Electricity - Stage 4 */}
           <div className={`transition-all duration-1000 ${stage >= 4 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -164,11 +179,11 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Stage 7+: The Reveal - Sequência escalonada */}
-        <div className="space-y-6">
+        <div className="space-y-4 md:space-y-6">
           {/* Title - Stage 7 */}
           <div className={`transition-all duration-1000 ${stage >= 7 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             {stage >= 7 && (
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-black text-white mb-8 tracking-tight">
+              <h1 className="text-4xl md:text-7xl lg:text-8xl font-display font-black text-white mb-6 md:mb-8 tracking-tight">
                 SINTÉTICA
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyan-400 to-purple-500">
                   2025
@@ -180,7 +195,7 @@ const Hero: React.FC = () => {
           {/* Punchline Line 1 - Stage 8 */}
           <div className={`transition-all duration-700 ${stage >= 8 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             {stage >= 8 && (
-              <p className="text-xl md:text-2xl text-white font-medium">
+              <p className="text-lg md:text-2xl text-white font-medium">
                 30 anos de transformação industrial.
               </p>
             )}
@@ -189,7 +204,7 @@ const Hero: React.FC = () => {
           {/* Punchline Line 2 - Stage 9 */}
           <div className={`transition-all duration-700 ${stage >= 9 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             {stage >= 9 && (
-              <p className="text-xl md:text-2xl text-slate-400 font-light">
+              <p className="text-lg md:text-2xl text-slate-400 font-light">
                 36 meses para absorver.
               </p>
             )}
@@ -198,16 +213,16 @@ const Hero: React.FC = () => {
           {/* Punchline Line 3 - Stage 10 */}
           <div className={`transition-all duration-700 ${stage >= 10 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             {stage >= 10 && (
-              <p className="text-lg md:text-xl text-white/60 font-light">
+              <p className="text-base md:text-xl text-white/60 font-light">
                 Bem-vindo ao ponto de inflexão.
               </p>
             )}
           </div>
 
           {/* Meta Statement - Stage 11 */}
-          <div className={`transition-all duration-1000 pt-8 ${stage >= 11 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <div className={`transition-all duration-1000 pt-6 md:pt-8 ${stage >= 11 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             {stage >= 11 && (
-              <p className="text-sm text-slate-500 max-w-xl mx-auto border-l-2 border-cyan-500/30 pl-4 text-left">
+              <p className="text-xs md:text-sm text-slate-500 max-w-xl mx-auto border-l-2 border-cyan-500/30 pl-4 text-left">
                 Este documento foi criado em 48h com IA.
                 <span className="text-slate-400"> Uma demonstração prática de que o futuro já chegou.</span>
               </p>
@@ -218,11 +233,11 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Scroll Indicator - Only after full reveal (Stage 12) */}
-      <div className={`absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 transition-all duration-1000 ${stage >= 12 ? 'opacity-60' : 'opacity-0'}`}>
-        <span className="text-[10px] font-mono text-slate-500 uppercase tracking-[0.3em]">
+      <div className={`absolute bottom-6 md:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 transition-all duration-1000 ${stage >= 12 ? 'opacity-60' : 'opacity-0'}`}>
+        <span className="text-[9px] md:text-[10px] font-mono text-slate-500 uppercase tracking-[0.3em]">
           Scroll
         </span>
-        <ChevronDown className="w-5 h-5 text-slate-500 animate-bounce" />
+        <ChevronDown className="w-4 h-4 md:w-5 md:h-5 text-slate-500 animate-bounce" />
       </div>
 
       {/* Bottom line */}

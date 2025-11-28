@@ -108,14 +108,17 @@ const ProgressNav: React.FC<ProgressNavProps> = ({
 
       {/* Mobile Navigation Button */}
       <button
-        onClick={() => setIsMobileOpen(!isMobileOpen)}
+        onClick={(e) => {
+          e.stopPropagation();
+          setIsMobileOpen(!isMobileOpen);
+        }}
         className={`
-          fixed bottom-6 right-6 z-50 lg:hidden w-14 h-14
+          fixed bottom-6 right-6 z-[60] lg:hidden w-14 h-14
           bg-slate-900/95 backdrop-blur-md border border-white/10 rounded-full
           flex items-center justify-center text-white
           shadow-[0_0_30px_rgba(0,0,0,0.5)]
-          transition-all duration-500
-          ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
+          transition-all duration-500 touch-manipulation
+          ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8 pointer-events-none'}
         `}
       >
         <div className={`transition-transform duration-300 ${isMobileOpen ? 'rotate-90' : ''}`}>
@@ -153,14 +156,17 @@ const ProgressNav: React.FC<ProgressNavProps> = ({
 
       {/* Mobile Navigation Panel */}
       <div className={`
-        fixed inset-0 z-40 lg:hidden
+        fixed inset-0 z-[55] lg:hidden
         transition-opacity duration-300
         ${isMobileOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}
       `}>
         {/* Backdrop */}
         <div
           className="absolute inset-0 bg-black/90 backdrop-blur-md"
-          onClick={() => setIsMobileOpen(false)}
+          onClick={(e) => {
+            e.stopPropagation();
+            setIsMobileOpen(false);
+          }}
         />
 
         {/* Panel */}

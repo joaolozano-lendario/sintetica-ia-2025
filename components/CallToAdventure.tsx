@@ -141,9 +141,12 @@ const CallToAdventure: React.FC<CallToAdventureProps> = ({
             A pergunta final
           </p>
           <p className="text-2xl md:text-4xl lg:text-5xl font-light text-white leading-tight">
-            O relatório termina aqui.
+            O relatório satisfaz a curiosidade.
           </p>
-          <p className="mt-4 text-2xl md:text-4xl lg:text-5xl font-bold text-white">
+          <p className="mt-2 text-xl md:text-2xl lg:text-3xl font-light text-white/50">
+            A jornada exige coragem.
+          </p>
+          <p className="mt-6 text-2xl md:text-4xl lg:text-5xl font-bold text-white">
             E você?
           </p>
 
@@ -180,7 +183,8 @@ const CallToAdventure: React.FC<CallToAdventureProps> = ({
             </div>
 
             <p className="text-lg md:text-xl text-white/80 max-w-lg mx-auto leading-relaxed mb-6">
-              Você acabou de ler <span className="text-white font-bold">17 seções</span> sobre a revolução da IA.
+              Você não leu um relatório.<br />
+              <span className="text-white font-bold">Você testemunhou uma demonstração.</span>
             </p>
 
             <div className="grid grid-cols-2 gap-4 max-w-md mx-auto mb-6">

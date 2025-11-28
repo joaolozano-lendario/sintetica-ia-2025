@@ -63,9 +63,17 @@ const Hero: React.FC = () => {
         {/* Stage 1: The Question */}
         <div className={`transition-all duration-1000 ${stage >= 1 ? 'opacity-100' : 'opacity-0'}`}>
           {stage >= 1 && stage < 5 && (
-            <p className="text-xl md:text-2xl text-slate-400 font-light mb-16">
-              Quanto tempo uma tecnologia leva para mudar o mundo?
-            </p>
+            <div className="mb-16">
+              <p className="text-xs font-mono text-cyan-500/60 uppercase tracking-[0.3em] mb-4">
+                Academia Lendária apresenta
+              </p>
+              <p className="text-2xl md:text-3xl text-white/80 font-light mb-6">
+                Welcome to the Future.
+              </p>
+              <p className="text-lg md:text-xl text-slate-500 font-light">
+                Quanto tempo uma tecnologia leva para mudar o mundo?
+              </p>
+            </div>
           )}
         </div>
 
@@ -129,9 +137,11 @@ const Hero: React.FC = () => {
 
               {/* The Punchline - Dado auditado SINT-001 */}
               <p className="text-xl md:text-2xl text-slate-300 font-light max-w-2xl mx-auto mb-8">
-                <strong className="text-white font-medium">30 anos de transformação industrial</strong>
+                <strong className="text-white font-medium">30 anos de transformação industrial.</strong>
                 <br />
-                <span className="text-slate-400">comprimidos em 36 meses.</span>
+                <span className="text-slate-400">36 meses para absorver.</span>
+                <br />
+                <span className="text-white/60">Bem-vindo ao ponto de inflexão.</span>
               </p>
 
               {/* Meta Statement - Reformulado por Jobs */}

@@ -145,7 +145,7 @@ const PillarCard: React.FC<PillarCardProps> = ({ iconKey, text, sub, color, inde
 const highlights = [
   {
     iconKey: "zap",
-    text: "A Muralha Energética",
+    text: "Quando o Código Pediu Urânio",
     sub: "A física venceu o software. Com a demanda projetada para crescer 30x até 2035, Big Techs estão comprando usinas nucleares. Sem energia, não há IA.",
     color: "emerald"
   },
@@ -157,19 +157,19 @@ const highlights = [
   },
   {
     iconKey: "bot",
-    text: "Materialização Robótica",
+    text: "Metal Pensante",
     sub: "Sai o CGI, entra o metal. A BMW validou robôs Figure 02 operando turnos completos com 99% de sucesso. Mão de obra humanoide virou commodity.",
     color: "cyan"
   },
   {
     iconKey: "trending",
-    text: "A Morte do SaaS",
+    text: "O Funeral do Software por Assento",
     sub: "O modelo 'Service-as-Software' substitui a venda de licenças. Empresas não pagam mais por assento humano, mas pelo resultado do agente.",
     color: "orange"
   },
   {
     iconKey: "shield",
-    text: "Guerra dos Chips",
+    text: "Silício: O Novo Petróleo",
     sub: "Hegemonia fragmentada. Meta e Google provaram independência com chips próprios, causando crash de $250 bi na Nvidia. Soberania de silício é o novo ouro.",
     color: "blue"
   }

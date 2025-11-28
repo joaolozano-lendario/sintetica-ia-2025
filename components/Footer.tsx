@@ -27,9 +27,9 @@ const Footer: React.FC = () => {
 
         {/* A conclusão */}
         <h2 className="text-2xl md:text-3xl font-display font-bold text-white/80 leading-relaxed mb-8">
-          "A IA deixou de ser código.
+          "A IA saiu da tela.
           <br />
-          Agora é concreto, urânio e decisão."
+          Agora disputa eletricidade, território e atenção."
         </h2>
 
         {/* Linha divisória */}

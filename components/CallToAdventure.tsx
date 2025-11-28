@@ -189,7 +189,7 @@ const CallToAdventure: React.FC<CallToAdventureProps> = ({
 
             <div className="grid grid-cols-2 gap-4 max-w-md mx-auto mb-6">
               <div className="text-center p-4 bg-white/5 rounded-xl border border-white/5">
-                <p className="text-3xl md:text-4xl font-display font-black text-white">72h</p>
+                <p className="text-3xl md:text-4xl font-display font-black text-white">48h</p>
                 <p className="text-xs text-white/50 mt-1">para criar este relatório</p>
               </div>
               <div className="text-center p-4 bg-white/5 rounded-xl border border-white/5">

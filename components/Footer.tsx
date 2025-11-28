@@ -79,7 +79,7 @@ const Footer: React.FC = () => {
             SINTÉTICA 2025 • 30 anos em 36 meses
           </p>
           <p className="text-white/10 text-xs font-mono leading-relaxed">
-            Produzido pela Academia Lendár[IA] em 72 horas.
+            Produzido pela Academia Lendária em 48 horas.
             <br />
             Pesquisa, escrita, design, código — tudo com IA como copiloto.
           </p>

@@ -23,15 +23,16 @@ const COMPRESSION_DATA = [
 // =============================================================================
 const Hero: React.FC = () => {
   const [stage, setStage] = useState(0);
-  // Stages: 0=black, 1=question, 2=electricity, 3=internet, 4=ai, 5=reveal, 6=full
+  // Stages: 0=black, 1=question, 2=electricity, 3=internet, 4=ai, 5=title, 6=line1, 7=line2, 8=line3, 9=meta, 10=full
 
   useEffect(() => {
-    const timings = [1500, 2500, 2000, 2000, 2000, 2500];
+    // Timings for each stage transition
+    const timings = [1500, 2500, 2000, 2000, 2000, 1200, 800, 800, 800, 1500];
 
-    if (stage < 6) {
+    if (stage < 10) {
       const timeout = setTimeout(() => {
         setStage(s => s + 1);
-      }, timings[stage] || 2000);
+      }, timings[stage] || 1000);
 
       return () => clearTimeout(timeout);
     }
@@ -39,8 +40,8 @@ const Hero: React.FC = () => {
 
   // Allow skip on click/scroll after stage 1
   const handleSkip = () => {
-    if (stage > 0 && stage < 6) {
-      setStage(6);
+    if (stage > 0 && stage < 10) {
+      setStage(10);
     }
   };
 
@@ -123,44 +124,64 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Stage 5-6: The Reveal */}
-        <div className={`transition-all duration-1000 delay-300 ${stage >= 5 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          {stage >= 5 && (
-            <>
-              {/* Title */}
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-black text-white mb-6 tracking-tight">
+        {/* Stage 5+: The Reveal - Sequência escalonada */}
+        <div className="space-y-6">
+          {/* Title - Stage 5 */}
+          <div className={`transition-all duration-1000 ${stage >= 5 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            {stage >= 5 && (
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-black text-white mb-8 tracking-tight">
                 SINTÉTICA
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyan-400 to-purple-500">
                   2025
                 </span>
               </h1>
+            )}
+          </div>
 
-              {/* The Punchline - Dado auditado SINT-001 */}
-              <p className="text-xl md:text-2xl text-slate-300 font-light max-w-2xl mx-auto mb-8">
-                <strong className="text-white font-medium">30 anos de transformação industrial.</strong>
-                <br />
-                <span className="text-slate-400">36 meses para absorver.</span>
-                <br />
-                <span className="text-white/60">Bem-vindo ao ponto de inflexão.</span>
+          {/* Punchline Line 1 - Stage 6 */}
+          <div className={`transition-all duration-700 ${stage >= 6 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            {stage >= 6 && (
+              <p className="text-xl md:text-2xl text-white font-medium">
+                30 anos de transformação industrial.
               </p>
+            )}
+          </div>
 
-              {/* Meta Statement - Reformulado por Jobs */}
-              <div className={`transition-all duration-1000 delay-500 ${stage >= 6 ? 'opacity-100' : 'opacity-0'}`}>
-                <p className="text-sm text-slate-500 max-w-xl mx-auto border-l-2 border-cyan-500/30 pl-4 text-left">
-                  Este documento foi criado em 72h com IA.
-                  <span className="text-slate-400"> Uma demonstração prática de que o futuro já chegou.</span>
-                </p>
-              </div>
-            </>
-          )}
+          {/* Punchline Line 2 - Stage 7 */}
+          <div className={`transition-all duration-700 ${stage >= 7 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            {stage >= 7 && (
+              <p className="text-xl md:text-2xl text-slate-400 font-light">
+                36 meses para absorver.
+              </p>
+            )}
+          </div>
+
+          {/* Punchline Line 3 - Stage 8 */}
+          <div className={`transition-all duration-700 ${stage >= 8 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            {stage >= 8 && (
+              <p className="text-lg md:text-xl text-white/60 font-light">
+                Bem-vindo ao ponto de inflexão.
+              </p>
+            )}
+          </div>
+
+          {/* Meta Statement - Stage 9 */}
+          <div className={`transition-all duration-1000 pt-8 ${stage >= 9 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            {stage >= 9 && (
+              <p className="text-sm text-slate-500 max-w-xl mx-auto border-l-2 border-cyan-500/30 pl-4 text-left">
+                Este documento foi criado em 48h com IA.
+                <span className="text-slate-400"> Uma demonstração prática de que o futuro já chegou.</span>
+              </p>
+            )}
+          </div>
         </div>
 
       </div>
 
       {/* Scroll Indicator - Only after full reveal */}
-      <div className={`absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 transition-all duration-1000 ${stage >= 6 ? 'opacity-60' : 'opacity-0'}`}>
+      <div className={`absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 transition-all duration-1000 ${stage >= 10 ? 'opacity-60' : 'opacity-0'}`}>
         <span className="text-[10px] font-mono text-slate-500 uppercase tracking-[0.3em]">
-          {stage < 6 ? 'Clique para pular' : 'Scroll'}
+          Scroll
         </span>
         <ChevronDown className="w-5 h-5 text-slate-500 animate-bounce" />
       </div>

@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
                 🧠
               </div>
               <p className="text-white/80 font-medium text-sm">João Lozano</p>
-              <p className="text-white/30 text-xs">Cognitive Architecture</p>
+              <p className="text-white/30 text-xs">Academia Lendár[IA]</p>
             </div>
 
             {/* Da Vinci */}
@@ -79,10 +79,32 @@ const Footer: React.FC = () => {
             SINTÉTICA 2025 • 30 anos em 36 meses
           </p>
           <p className="text-white/10 text-xs font-mono leading-relaxed">
-            Este documento foi co-criado com IA em 72 horas.
+            Produzido pela Academia Lendár[IA] em 72 horas.
             <br />
-            Pesquisa, escrita, design, código — tudo com Claude como copiloto.
+            Pesquisa, escrita, design, código — tudo com IA como copiloto.
           </p>
+
+          {/* CTA Buttons */}
+          <div className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href="https://chatlendario.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 hover:from-cyan-500/30 hover:to-blue-500/30 border border-cyan-500/30 hover:border-cyan-400/50 rounded-full text-cyan-300 hover:text-cyan-200 font-medium transition-all"
+            >
+              <span>💬</span>
+              <span>Fale com nossa IA</span>
+            </a>
+            <a
+              href="https://academialendaria.ai/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-full text-white/70 hover:text-white font-medium transition-all"
+            >
+              <span>🎓</span>
+              <span>Conheça a Academia</span>
+            </a>
+          </div>
 
           {/* Build signature */}
           <div className="pt-4">

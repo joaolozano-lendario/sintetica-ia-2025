@@ -199,6 +199,22 @@ const CallToAdventure: React.FC<CallToAdventureProps> = ({
               <br />
               <span className="text-cyan-400/80">Este documento é o argumento.</span>
             </p>
+
+            {/* CTA */}
+            <div className="mt-8 pt-6 border-t border-cyan-500/10">
+              <p className="text-sm text-white/50 mb-4">
+                Quer criar documentos, sistemas e soluções assim?
+              </p>
+              <a
+                href="https://academialendaria.ai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 hover:from-cyan-500/30 hover:to-purple-500/30 border border-cyan-500/30 hover:border-cyan-400/50 rounded-full text-cyan-300 hover:text-cyan-200 font-medium transition-all"
+              >
+                <span>🚀</span>
+                <span>Conheça a Academia Lendár[IA]</span>
+              </a>
+            </div>
           </div>
 
           {/* Action buttons - Acesso ao Codex */}

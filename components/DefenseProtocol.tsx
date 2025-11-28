@@ -23,6 +23,14 @@ const DefenseProtocol: React.FC = () => {
             <p className="text-slate-300 leading-relaxed">
               O relatório detectou uma epidemia de 28 milhões de fraudes. Sua voz pode ser clonada em 3 segundos. <strong className="text-white">Procedimentos padrão de 2024 não funcionam mais.</strong>
             </p>
+            <div className="mt-4 border-l-2 border-red-500/40 pl-3 py-1">
+              <p className="text-xs text-red-300/70 italic">
+                "Clareza é poder. Confusão é prisão."
+              </p>
+              <p className="text-[10px] text-red-400/40 mt-1 font-mono">
+                — Academia Lendár[IA]
+              </p>
+            </div>
           </div>
 
           <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6">

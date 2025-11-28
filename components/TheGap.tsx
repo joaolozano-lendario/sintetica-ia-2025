@@ -51,6 +51,14 @@ const TheGap: React.FC = () => {
               <p>
                 O "GAP" real não é a tecnologia, é a <strong>reengenharia de processos</strong>. As empresas que venceram em 2025 não usaram IA para "ajudar" humanos velhos processos, mas para criar processos novos onde a IA executa e o humano supervisiona.
               </p>
+              <div className="border-l-2 border-cyan-500/40 pl-4 py-2">
+                <p className="text-sm text-cyan-300/80 italic">
+                  "IA não é tecnologia. É espelho. Amplifica clareza ou confusão."
+                </p>
+                <p className="text-xs text-cyan-400/50 mt-1 font-mono">
+                  — Academia Lendár[IA]
+                </p>
+              </div>
               <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-lg text-sm text-red-200">
                 <strong>Aviso Estratégico:</strong> Quem ficar preso no "Workslop" (trabalho lixo gerado por IA) será engolido por quem dominar a orquestração agêntica.
               </div>

@@ -137,8 +137,8 @@ const Hero: React.FC = () => {
               {/* Meta Statement - Reformulado por Jobs */}
               <div className={`transition-all duration-1000 delay-500 ${stage >= 6 ? 'opacity-100' : 'opacity-0'}`}>
                 <p className="text-sm text-slate-500 max-w-xl mx-auto border-l-2 border-cyan-500/30 pl-4 text-left">
-                  Este documento foi escrito com IA.
-                  <span className="text-slate-400"> Você está lendo o futuro, criado pelo futuro.</span>
+                  Este documento foi criado em 72h com IA.
+                  <span className="text-slate-400"> Uma demonstração prática de que o futuro já chegou.</span>
                 </p>
               </div>
             </>

@@ -171,6 +171,16 @@ const AntifragileProfessional: React.FC = () => {
                 IA amplifica quem <span className="text-emerald-400">vende julgamento</span>.
               </p>
             </div>
+
+            {/* Citação Academia */}
+            <div className="mt-6 border-l-2 border-emerald-500/40 pl-4 py-2">
+              <p className="text-sm text-emerald-300/70 italic">
+                "Conhecimento sem sistema é ruído. Sistema sem comunidade é solidão."
+              </p>
+              <p className="text-xs text-emerald-400/40 mt-1 font-mono">
+                — Academia Lendár[IA]
+              </p>
+            </div>
           </div>
 
         </div>
@@ -218,6 +228,20 @@ const AntifragileProfessional: React.FC = () => {
                 {' '}"Como uso IA para me tornar insubstituível?"
               </span>
             </p>
+            <div className="mt-6 p-4 bg-gradient-to-r from-emerald-950/30 to-cyan-950/30 border border-emerald-500/20 rounded-xl">
+              <p className="text-sm text-white/70 mb-3">
+                Essa é exatamente a pergunta que respondemos na Academia Lendár[IA].
+              </p>
+              <a
+                href="https://academialendaria.ai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-500/20 hover:bg-emerald-500/30 border border-emerald-500/30 hover:border-emerald-400/50 rounded-full text-emerald-300 hover:text-emerald-200 text-sm font-medium transition-all"
+              >
+                <span>🧠</span>
+                <span>Desenvolva essas skills</span>
+              </a>
+            </div>
 
             {/* Stats Row */}
             <div className="mt-8 pt-6 border-t border-white/5 grid grid-cols-1 sm:grid-cols-3 gap-4">

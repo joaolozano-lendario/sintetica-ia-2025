@@ -19,17 +19,17 @@ const ComparisonChart: React.FC = () => {
         {/* Header Section */}
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-6">
-            <div className="flex items-center gap-3 mb-2">
-              <div className="h-px w-8 bg-purple-500"></div>
-              <span className="text-purple-400 font-mono text-xs tracking-[0.2em] uppercase">Aceleração Histórica</span>
-            </div>
-            <h3 className="text-4xl md:text-6xl font-display font-bold text-white leading-tight">
-              A Compressão <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">Temporal</span>
+            <p className="text-white/40 text-sm font-mono uppercase tracking-[0.2em]">
+              A física da adoção mudou
+            </p>
+            <h3 className="text-3xl md:text-5xl font-display font-bold text-white leading-tight">
+              75 anos para o telefone.
+              <br />
+              <span className="text-white/40">2 dias para o Threads.</span>
             </h3>
-            <p className="text-lg text-slate-300 font-light leading-relaxed max-w-md">
-              O tempo necessário para uma tecnologia atingir <strong className="text-white font-semibold">100 milhões de usuários</strong> colapsou. 
-              <br/><br/>
-              O que levava uma vida inteira de nossos avós (Telefone), hoje acontece em um fim de semana. Não é apenas velocidade; é uma mudança na física da adoção humana.
+            <p className="text-white/50 text-base leading-relaxed max-w-md">
+              O tempo para atingir 100 milhões de usuários colapsou.
+              O que levava uma vida inteira agora acontece em um fim de semana.
             </p>
           </div>
           

@@ -11,16 +11,18 @@ const PhysicalLayer: React.FC = () => {
       <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-emerald-900/10 to-transparent"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="mb-16 md:text-center">
-          <div className="flex items-center justify-center gap-2 text-emerald-500 font-mono text-xs font-bold uppercase tracking-widest mb-4">
-            <Zap size={14} />
-            Camada Física 2025
-          </div>
-          <h2 className="text-4xl md:text-6xl font-display font-bold text-white leading-tight">
-            A Muralha <span className="text-emerald-400">Energética</span>
+        <div className="mb-16 text-center">
+          <p className="text-white/40 text-sm font-mono uppercase tracking-[0.2em] mb-6">
+            Quando o software encontrou a física
+          </p>
+          <h2 className="text-3xl md:text-5xl font-display font-bold text-white leading-tight mb-6">
+            Concreto. Urânio. Água.
+            <br />
+            <span className="text-white/40">A IA ficou pesada.</span>
           </h2>
-          <p className="text-slate-400 mt-6 max-w-3xl mx-auto text-xl font-light">
-            O software colidiu com a termodinâmica. Pela primeira vez na história da computação, o gargalo não é a inteligência do código, é a quantidade de eletricidade que conseguimos extrair da Terra.
+          <p className="text-white/50 mt-6 max-w-2xl mx-auto text-base leading-relaxed">
+            Pela primeira vez, o gargalo não é a inteligência do código.
+            É a quantidade de eletricidade que conseguimos extrair da Terra.
           </p>
         </div>
 

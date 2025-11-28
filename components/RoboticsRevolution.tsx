@@ -12,17 +12,19 @@ const RoboticsRevolution: React.FC = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
 
-        {/* Header */}
-        <div className="mb-16">
-          <div className="flex items-center gap-2 text-orange-400 font-mono text-xs font-bold uppercase tracking-widest mb-4">
-            <Bot size={14} />
-            A Materialização
-          </div>
-          <h2 className="text-4xl md:text-6xl font-display font-bold text-white leading-tight mb-6">
-            Do Software ao <span className="text-orange-400">Metal</span>
+        {/* Header consistente */}
+        <div className="mb-16 text-center md:text-left">
+          <p className="text-white/40 text-sm font-mono uppercase tracking-[0.2em] mb-6">
+            De ficção científica a commodity
+          </p>
+          <h2 className="text-3xl md:text-5xl font-display font-bold text-white leading-tight mb-6">
+            A IA ganhou corpo.
+            <br />
+            <span className="text-white/40">E preço de carro popular.</span>
           </h2>
-          <p className="text-slate-400 max-w-3xl text-lg font-light">
-            2025 foi o ano em que a IA ganhou corpo. Robôs humanoides deixaram de ser ficção científica para se tornarem commodity industrial — com preço de carro popular.
+          <p className="text-white/50 max-w-2xl text-base leading-relaxed">
+            Em 2025, robôs humanoides saíram dos laboratórios e entraram nas fábricas.
+            Em 2027, estarão nas casas. A materialização começou.
           </p>
         </div>
 

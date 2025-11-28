@@ -117,16 +117,18 @@ const Timeline: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         
-        <div className="mb-16">
-          <div className="flex items-center gap-4 mb-4">
-             <div className="h-px w-12 bg-cyan-500"></div>
-             <span className="text-cyan-400 font-mono text-sm tracking-widest uppercase">Cronologia 2025</span>
-          </div>
-          <h3 className="text-4xl md:text-6xl font-display font-bold text-white leading-tight">
-            A Aceleração <span className="text-slate-600">Exponencial</span>
+        <div className="mb-16 text-center md:text-left">
+          <p className="text-white/40 text-sm font-mono uppercase tracking-[0.2em] mb-6">
+            Janeiro a Dezembro
+          </p>
+          <h3 className="text-3xl md:text-5xl font-display font-bold text-white leading-tight mb-6">
+            12 meses.
+            <br />
+            <span className="text-white/40">Uma década de mudanças.</span>
           </h3>
-          <p className="text-slate-400 mt-6 text-xl max-w-2xl font-light">
-            Do choque do DeepSeek em janeiro à batalha dos titãs em novembro. Uma retrospectiva do ano que mudou a história humana.
+          <p className="text-white/50 max-w-2xl text-base leading-relaxed">
+            Cada mês de 2025 trouxe um marco que, em outras épocas,
+            levaria anos para acontecer. Esta é a cronologia da aceleração.
           </p>
         </div>
 

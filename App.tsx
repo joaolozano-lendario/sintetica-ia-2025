@@ -10,7 +10,7 @@
 import React, { useState, useEffect } from 'react';
 
 // Core Components (novo sistema)
-import { Act, Breather, ProgressNav, HeroNumbersGrid } from './components/core';
+import { Act, Breather, ProgressNav } from './components/core';
 import { acts } from './lib/theme';
 
 // Original Components (preservados 100%)
@@ -19,7 +19,6 @@ import Cheatsheet from './components/Cheatsheet';
 import Timeline from './components/Timeline';
 import ComparisonChart from './components/ComparisonChart';
 import SkillsRadar from './components/SkillsRadar';
-import ImpactStats from './components/ImpactStats';
 import RealWorldCases from './components/RealWorldCases';
 import TheGap from './components/TheGap';
 import ProfessionsGuide from './components/ProfessionsGuide';
@@ -41,6 +40,8 @@ import ContentCrisis from './components/ContentCrisis';
 import RoboticsRevolution from './components/RoboticsRevolution';
 import GlobalRegulation from './components/GlobalRegulation';
 import MarketPulse from './components/MarketPulse';
+import TheCompression from './components/TheCompression';
+import AntifragileProfessional from './components/AntifragileProfessional';
 
 const App: React.FC = () => {
   const [currentSection, setCurrentSection] = useState('hero');
@@ -118,18 +119,13 @@ const App: React.FC = () => {
           theme="cool"
           showHeader={true}
         >
+          {/* The Compression - PRIMEIRO após Hero (Jobs + Lozano) */}
+          <section id="compression" data-section="compression">
+            <TheCompression />
+          </section>
+
           <section id="cheatsheet" data-section="cheatsheet">
             <Cheatsheet />
-          </section>
-
-          {/* Os 5 Números Âncora - Deep Dive recommendation */}
-          <section id="hero-numbers" data-section="hero-numbers">
-            <HeroNumbersGrid />
-          </section>
-
-          {/* ImpactStats original mantido para dados complementares */}
-          <section id="stats" data-section="stats">
-            <ImpactStats />
           </section>
 
           <section id="timeline" data-section="timeline" className="relative">
@@ -138,11 +134,10 @@ const App: React.FC = () => {
           </section>
         </Act>
 
-        {/* Breather: Citação de transição */}
+        {/* Manifesto I: Após A Fundação */}
         <Breather
-          type="quote"
-          content="O ano em que a humanidade deixou de perguntar 'se a IA pode' e começou a perguntar 'o que fazemos agora'."
-          author="Síntese do momento histórico"
+          type="manifesto"
+          content="Você não está lendo sobre o futuro. Você está lendo o presente que ainda não percebeu."
         />
 
         {/* ════════════════════════════════════════════════════════════════
@@ -174,11 +169,11 @@ const App: React.FC = () => {
           </section>
         </Act>
 
-        {/* Breather: Estatística de impacto */}
+        {/* Manifesto II: Após A Materialização - mantém o stat mas adiciona contexto humano */}
         <Breather
           type="stat"
           stat="30x"
-          statLabel="Crescimento de demanda energética até 2035. A IA deixou de ser software para virar concreto, urânio e robôs."
+          statLabel="Crescimento de demanda energética até 2035. A IA deixou de ser código. Agora ela precisa de eletricidade, água e aço. Isso muda tudo."
         />
 
         {/* ════════════════════════════════════════════════════════════════
@@ -214,11 +209,10 @@ const App: React.FC = () => {
           </section>
         </Act>
 
-        {/* Breather: Citação provocadora */}
+        {/* Manifesto III: Após A Transformação */}
         <Breather
-          type="quote"
-          content="Não estamos testemunhando uma evolução tecnológica. Estamos vivendo uma revolução cognitiva."
-          author="A nova realidade"
+          type="manifesto"
+          content="O trabalho não vai desaparecer. Vai se transformar. A pergunta é: você vai junto?"
         />
 
         {/* ════════════════════════════════════════════════════════════════
@@ -254,8 +248,11 @@ const App: React.FC = () => {
           </section>
         </Act>
 
-        {/* Breather: Silêncio para processar */}
-        <Breather type="silence" />
+        {/* Manifesto IV: Após A Tensão - O risco real */}
+        <Breather
+          type="manifesto"
+          content="O risco não é a IA ser muito inteligente. É você não saber distinguir o real do sintético. A curadoria da verdade virou skill de sobrevivência."
+        />
 
         {/* ════════════════════════════════════════════════════════════════
             ATO V: O HORIZONTE
@@ -271,6 +268,11 @@ const App: React.FC = () => {
         >
           <section id="brazil" data-section="brazil">
             <BrazilFocus />
+          </section>
+
+          {/* Profissional Anti-Frágil - PRIMEIRO do Ato V (Jobs + Lozano) */}
+          <section id="antifragile" data-section="antifragile">
+            <AntifragileProfessional />
           </section>
 
           <section id="professions" data-section="professions">
@@ -294,8 +296,11 @@ const App: React.FC = () => {
           </section>
         </Act>
 
-        {/* Breather: Visual transition */}
-        <Breather type="visual" />
+        {/* Manifesto V: Após O Horizonte - A escolha final */}
+        <Breather
+          type="manifesto"
+          content="Você tem escolha. Resistir ou surfar. O relatório termina aqui. Sua decisão começa agora."
+        />
 
         {/* ════════════════════════════════════════════════════════════════
             EPÍLOGO: O CONVITE

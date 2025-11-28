@@ -210,27 +210,26 @@ const Cheatsheet: React.FC = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
 
-        {/* Header */}
+        {/* Header - Tom conectado com Hero */}
         <div
           ref={headerRef}
           className={`
-            flex flex-col md:flex-row md:items-end justify-between gap-8 mb-14
+            text-center mb-16
             transition-all duration-1000
             ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
           `}
         >
-          <div className="space-y-4">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-950/40 border border-cyan-500/20 text-cyan-400 text-xs font-mono uppercase tracking-widest">
-              <AlertCircle size={14} />
-              <span>Executive Summary</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-white leading-[1.1]">
-              Os 5 Pilares do <br />
-              <span className="text-slate-500">Novo Mundo</span>
-            </h2>
-          </div>
-          <p className="text-slate-500 max-w-sm text-sm md:text-right leading-relaxed">
-            Síntese tática do relatório "Grande Ponto de Inflexão". O que você precisa saber para não ser obsoleto em 2026.
+          <p className="text-white/40 text-sm font-mono uppercase tracking-[0.2em] mb-6">
+            O que mudou em 2025
+          </p>
+          <h2 className="text-3xl md:text-5xl font-display font-bold text-white leading-tight mb-6">
+            Cinco transformações.
+            <br />
+            <span className="text-white/40">Nenhuma reversível.</span>
+          </h2>
+          <p className="text-white/50 max-w-xl mx-auto text-base leading-relaxed">
+            Cada uma dessas mudanças, sozinha, redefiniu indústrias inteiras.
+            Em 2025, aconteceram simultaneamente.
           </p>
         </div>
 

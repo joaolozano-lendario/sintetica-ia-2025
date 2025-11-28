@@ -11,15 +11,24 @@ const TheGap: React.FC = () => {
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-900/10 rounded-full blur-[120px] pointer-events-none translate-y-1/2 -translate-x-1/2"></div>
 
         <div className="relative z-10">
+          {/* Header consistente */}
+          <div className="text-center mb-12">
+            <p className="text-white/40 text-sm font-mono uppercase tracking-[0.2em] mb-6">
+              O paradoxo de 2025
+            </p>
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-white leading-tight mb-6">
+              76% temem a máquina.
+              <br />
+              <span className="text-white/40">90% não vivem sem ela.</span>
+            </h2>
+          </div>
+
           <div className="flex flex-col md:flex-row gap-12 items-center">
-            
+
             <div className="md:w-1/2 space-y-6">
-              <h2 className="text-sm font-bold text-red-400 uppercase tracking-widest">O Paradoxo Humano</h2>
-              <h3 className="text-4xl md:text-5xl font-display font-bold text-white leading-tight">
-                Medo vs. <br/><span className="text-emerald-400">Eficácia</span>
-              </h3>
               <p className="text-slate-300 text-lg">
-                O trabalhador brasileiro vive uma dissonância cognitiva. Ele teme a máquina, mas já não consegue viver sem ela.
+                Essa é a dissonância cognitiva que define nossa era.
+                Medo e dependência coexistindo no mesmo cérebro.
               </p>
               
               <div className="space-y-4 pt-4">

@@ -7,19 +7,19 @@ const FuturePredictions: React.FC = () => {
     <section className="py-24 px-4 bg-[#050b14] relative">
       <div className="max-w-7xl mx-auto">
         
-        <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
-           <div className="space-y-4">
-             <div className="inline-flex items-center gap-2 text-purple-400 font-mono text-xs font-bold uppercase tracking-widest">
-               <Telescope size={16} />
-               <span>Visão 2026</span>
-             </div>
-             <h2 className="text-4xl md:text-5xl font-display font-bold text-white">
-               O Que Vem <span className="text-purple-500">A Seguir?</span>
-             </h2>
-           </div>
-           <p className="text-slate-400 max-w-md text-sm md:text-right">
-             Baseado na trajetória atual de infraestrutura e modelos, estas são as projeções de alta probabilidade para os próximos 12 meses.
-           </p>
+        <div className="mb-16 text-center">
+          <p className="text-white/40 text-sm font-mono uppercase tracking-[0.2em] mb-6">
+            Os próximos 12 meses
+          </p>
+          <h2 className="text-3xl md:text-5xl font-display font-bold text-white leading-tight mb-6">
+            Uma pessoa. 500 agentes.
+            <br />
+            <span className="text-white/40">Empresa de $10 milhões.</span>
+          </h2>
+          <p className="text-white/50 max-w-2xl mx-auto text-base leading-relaxed">
+            Baseado na trajetória atual, estas são as projeções de alta probabilidade.
+            Não são previsões — são extrapolações do que já está acontecendo.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

@@ -60,12 +60,17 @@ const ProfessionsGuide: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-8">
           <div>
-            <h2 className="text-sm font-bold text-cyan-400 uppercase tracking-widest mb-2 font-mono">Carreiras 2026</h2>
-            <h3 className="text-4xl md:text-5xl font-display font-bold text-white">
-              A Ascensão do <span className="text-cyan-500">Agent Manager</span>
-            </h3>
-            <p className="text-slate-400 mt-6 max-w-xl text-lg font-light">
-              A classe média criativa sofre erosão massiva, enquanto gestores de frotas digitais tornam-se a nova elite econômica.
+            <p className="text-white/40 text-sm font-mono uppercase tracking-[0.2em] mb-6">
+              O mapa das profissões
+            </p>
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-white leading-tight mb-4">
+              Uns sobem. Outros descem.
+              <br />
+              <span className="text-white/40">Saiba onde você está.</span>
+            </h2>
+            <p className="text-white/50 max-w-xl text-base leading-relaxed">
+              A classe média criativa sofre erosão. Gestores de agentes viram elite.
+              O mercado está se polarizando em tempo real.
             </p>
           </div>
           

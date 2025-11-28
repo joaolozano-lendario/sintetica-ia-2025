@@ -13,17 +13,19 @@ const DeepScience: React.FC = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
 
-        {/* Header */}
+        {/* Header consistente */}
         <div className="mb-16 text-center">
-          <div className="flex items-center justify-center gap-2 text-blue-400 font-mono text-xs font-bold uppercase tracking-widest mb-4">
-            <Microscope size={14} />
-            O Lado Luminoso
-          </div>
-          <h2 className="text-4xl md:text-6xl font-display font-bold text-white leading-tight mb-6">
-            Deep Science: <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Salvando Vidas</span>
+          <p className="text-white/40 text-sm font-mono uppercase tracking-[0.2em] mb-6">
+            A história que menos se conta
+          </p>
+          <h2 className="text-3xl md:text-5xl font-display font-bold text-white leading-tight mb-6">
+            Enquanto debatemos empregos,
+            <br />
+            <span className="text-white/40">a IA está salvando vidas.</span>
           </h2>
-          <p className="text-slate-400 max-w-3xl mx-auto text-lg font-light">
-            Enquanto o mundo debate empregos e deepfakes, a IA está silenciosamente revolucionando a medicina, descobrindo novos materiais e prevendo desastres naturais. Esta é a história que menos se conta.
+          <p className="text-white/50 max-w-2xl mx-auto text-base leading-relaxed">
+            Novos medicamentos. Previsão de desastres. Materiais impossíveis.
+            O lado luminoso da revolução, longe dos holofotes.
           </p>
         </div>
 

@@ -45,10 +45,14 @@ const Glossary: React.FC = () => {
   return (
     <section className="py-24 px-4 bg-[#050b14]">
       <div className="max-w-6xl mx-auto">
-        <div className="flex items-center gap-3 mb-12">
-          <BookOpen className="text-slate-500" />
-          <h2 className="text-2xl font-display font-bold text-white">
-            Glossário Definitivo <span className="text-slate-600">2025</span>
+        <div className="text-center mb-16">
+          <p className="text-white/40 text-sm font-mono uppercase tracking-[0.2em] mb-6">
+            O vocabulário de 2025
+          </p>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-white leading-tight mb-4">
+            9 termos que não existiam.
+            <br />
+            <span className="text-white/40">Agora definem o mundo.</span>
           </h2>
         </div>
 

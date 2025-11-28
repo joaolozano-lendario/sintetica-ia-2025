@@ -55,21 +55,17 @@ const EvolutionaryScale: React.FC = () => {
       <div className="max-w-6xl mx-auto relative z-10">
         
         <div className="mb-20 text-center">
-           <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-slate-400 text-xs font-mono uppercase tracking-widest mb-6">
-             <Database size={14} />
-             <span>Escala Macro-Histórica</span>
-           </div>
-           <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-6">
-             A Compressão das <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-500">Eras Humanas</span>
-           </h2>
-           <p className="text-slate-400 max-w-2xl mx-auto text-lg leading-relaxed font-light">
-             Note como os intervalos de tempo encolhem. Levamos milênios para sair da caverna, décadas para conectar o mundo, e apenas <strong className="text-white">3 anos</strong> para criar inteligência sintética.
-           </p>
-           <div className="mt-6 inline-flex items-center gap-3 px-5 py-3 bg-cyan-950/30 border border-cyan-500/20 rounded-xl">
-             <span className="text-cyan-400 text-sm font-medium">
-               Estamos vivendo <strong className="text-white">30 anos de mudança industrial</strong> comprimidos em <strong className="text-white">36 meses</strong>.
-             </span>
-           </div>
+          <p className="text-white/40 text-sm font-mono uppercase tracking-[0.2em] mb-6">
+            300.000 anos em perspectiva
+          </p>
+          <h2 className="text-3xl md:text-5xl font-display font-bold text-white leading-tight mb-6">
+            Milênios para sair da caverna.
+            <br />
+            <span className="text-white/40">3 anos para criar inteligência.</span>
+          </h2>
+          <p className="text-white/50 max-w-2xl mx-auto text-base leading-relaxed">
+            A cada era, o tempo acelera. Agora, a aceleração virou o normal.
+          </p>
         </div>
 
         <div className="relative">

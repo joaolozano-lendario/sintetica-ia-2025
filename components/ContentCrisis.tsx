@@ -12,17 +12,19 @@ const ContentCrisis: React.FC = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
 
-        {/* Header */}
+        {/* Header consistente */}
         <div className="mb-16 text-center">
-          <div className="flex items-center justify-center gap-2 text-red-400 font-mono text-xs font-bold uppercase tracking-widest mb-4">
-            <Ghost size={14} />
-            A Crise Silenciosa
-          </div>
-          <h2 className="text-4xl md:text-6xl font-display font-bold text-white leading-tight mb-6">
-            A <span className="text-red-500">Internet Morta</span>
+          <p className="text-white/40 text-sm font-mono uppercase tracking-[0.2em] mb-6">
+            O que ninguém está falando
+          </p>
+          <h2 className="text-3xl md:text-5xl font-display font-bold text-white leading-tight mb-6">
+            74% do conteúdo novo é sintético.
+            <br />
+            <span className="text-white/40">A internet como conhecíamos morreu.</span>
           </h2>
-          <p className="text-slate-400 max-w-3xl mx-auto text-lg font-light">
-            Um estudo da Ahrefs revelou um número que deveria estar em manchetes: quase 3/4 de todo novo conteúdo publicado online é gerado por IA. A web como conhecíamos está morrendo.
+          <p className="text-white/50 max-w-2xl mx-auto text-base leading-relaxed">
+            Artigos, reviews, posts. A maioria não foi escrita por humanos.
+            A web virou um espelho de si mesma.
           </p>
         </div>
 

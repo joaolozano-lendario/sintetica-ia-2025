@@ -260,6 +260,49 @@ const Breather: React.FC<BreatherProps> = ({
     );
   }
 
+  // Manifesto: Voz direta do documento ao leitor - Jobs + Lozano
+  if (type === 'manifesto') {
+    return (
+      <div
+        ref={ref}
+        className={`
+          relative min-h-[50vh] flex items-center justify-center
+          bg-[#020408]
+          ${className}
+        `}
+      >
+        {/* Atmospheric layers */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#050b14] to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#050b14] to-transparent" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-purple-500/5 blur-[150px] rounded-full" />
+        </div>
+
+        <div className="relative z-10 max-w-4xl mx-auto px-8 text-center">
+          {/* Direct statement - no quote marks, this is the document speaking */}
+          <p
+            className={`
+              text-xl md:text-2xl lg:text-3xl text-slate-300 leading-relaxed font-light
+              transition-all duration-1000
+              ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
+            `}
+          >
+            {content}
+          </p>
+
+          {/* Accent line */}
+          <div
+            className={`
+              mt-8 mx-auto h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent
+              transition-all duration-1000 delay-300
+              ${isVisible ? 'w-24 opacity-100' : 'w-0 opacity-0'}
+            `}
+          />
+        </div>
+      </div>
+    );
+  }
+
   // Silence: Espaço vazio intencional - Momento de processamento
   if (type === 'silence') {
     return (

@@ -100,13 +100,18 @@ const colorMap: Record<string, StyleConfig> = {
 const RealWorldCases: React.FC = () => {
   return (
     <section className="py-24 px-4 max-w-7xl mx-auto bg-slate-900/30 border-y border-white/5">
-      <div className="mb-16 md:text-center">
-        <h2 className="text-sm font-bold text-cyan-400 uppercase tracking-widest mb-2 font-mono">Realidade Aplicada 2025</h2>
-        <h3 className="text-4xl md:text-5xl font-display font-bold text-white">
-          Do ROI Industrial ao <span className="text-red-500">Risco Existencial</span>
-        </h3>
-        <p className="text-slate-400 mt-4 max-w-2xl mx-auto font-light">
-          Enquanto robôs provam seu valor na linha de montagem, a "Shadow AI" e Deepfakes expõem a fragilidade de empresas e democracias.
+      <div className="mb-16 text-center">
+        <p className="text-white/40 text-sm font-mono uppercase tracking-[0.2em] mb-6">
+          O que realmente aconteceu
+        </p>
+        <h2 className="text-3xl md:text-5xl font-display font-bold text-white leading-tight mb-6">
+          Robôs validaram o ROI.
+          <br />
+          <span className="text-white/40">Deepfakes quase derrubaram eleições.</span>
+        </h2>
+        <p className="text-white/50 max-w-2xl mx-auto text-base leading-relaxed">
+          4 casos reais que definiram 2025.
+          Do chão de fábrica ao colapso de segurança.
         </p>
       </div>
 

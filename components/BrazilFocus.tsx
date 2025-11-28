@@ -13,15 +13,17 @@ const BrazilFocus: React.FC = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="mb-16 text-center">
-          <div className="flex items-center justify-center gap-2 text-green-500 font-mono text-xs font-bold uppercase tracking-widest mb-4">
-            <MapPin size={14} />
-            Cenário Nacional
-          </div>
-          <h2 className="text-4xl md:text-6xl font-display font-bold text-white leading-tight">
-            Brasil na <span className="text-green-400">Corrida da IA</span>
+          <p className="text-white/40 text-sm font-mono uppercase tracking-[0.2em] mb-6">
+            E o Brasil nisso tudo?
+          </p>
+          <h2 className="text-3xl md:text-5xl font-display font-bold text-white leading-tight mb-6">
+            72% das empresas já usam IA.
+            <br />
+            <span className="text-white/40">28 milhões de fraudes com Pix.</span>
           </h2>
-          <p className="text-slate-400 mt-6 max-w-3xl mx-auto text-xl font-light">
-            A maior economia da América Latina não está de fora. Com 9 milhões de empresas usando IA e investimentos bilionários, o país vive sua própria revolução.
+          <p className="text-white/50 max-w-2xl mx-auto text-base leading-relaxed">
+            A maior economia da América Latina não está de fora.
+            Está no meio do furacão — com todas as oportunidades e todos os riscos.
           </p>
         </div>
 

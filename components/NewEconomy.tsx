@@ -5,13 +5,18 @@ const NewEconomy: React.FC = () => {
   return (
     <section className="py-24 px-4 bg-[#050b14] relative">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-16 md:text-center">
-          <h2 className="text-sm font-bold text-purple-400 uppercase tracking-widest mb-2 font-mono">Business Intelligence</h2>
-          <h3 className="text-4xl md:text-6xl font-display font-bold text-white">
-            A Morte do <span className="text-slate-600 line-through decoration-red-500 decoration-4">SaaS</span>
-          </h3>
-          <p className="text-slate-400 mt-6 max-w-2xl mx-auto text-lg">
-            O modelo de negócios de software mudou radicalmente em 2025. Se a IA faz o trabalho de 10 pessoas, vender licenças "por cabeça" tornou-se um suicídio econômico.
+        <div className="mb-16 text-center">
+          <p className="text-white/40 text-sm font-mono uppercase tracking-[0.2em] mb-6">
+            A economia mudou de modelo
+          </p>
+          <h2 className="text-3xl md:text-5xl font-display font-bold text-white leading-tight mb-6">
+            Você não paga mais pela ferramenta.
+            <br />
+            <span className="text-white/40">Você paga pelo resultado.</span>
+          </h2>
+          <p className="text-white/50 max-w-2xl mx-auto text-base leading-relaxed">
+            Se a IA faz o trabalho de 10 pessoas, vender licenças "por cabeça" é suicídio.
+            O modelo morreu. Nasce o Service-as-Software.
           </p>
         </div>
 

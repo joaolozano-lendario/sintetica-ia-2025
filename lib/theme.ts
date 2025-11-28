@@ -84,7 +84,7 @@ export interface ActDefinition {
 }
 
 export interface BreatherConfig {
-  type: 'quote' | 'stat' | 'visual' | 'silence';
+  type: 'quote' | 'stat' | 'visual' | 'silence' | 'manifesto';
   content?: string;
   author?: string;
   stat?: string;
@@ -113,9 +113,8 @@ export const acts: ActDefinition[] = [
     subtitle: 'A Fundação',
     theme: 'cool',
     sections: [
+      { id: 'compression', component: 'TheCompression', title: 'A Compressão do Tempo' },
       { id: 'cheatsheet', component: 'Cheatsheet', title: 'Os 5 Pilares' },
-      { id: 'hero-numbers', component: 'HeroNumbersGrid', title: 'Os 5 Números' },
-      { id: 'stats', component: 'ImpactStats', title: 'Mais Dados' },
       { id: 'timeline', component: 'Timeline', title: 'Cronologia 2025' }
     ],
     breatherAfter: {
@@ -175,7 +174,9 @@ export const acts: ActDefinition[] = [
       { id: 'regulation', component: 'GlobalRegulation', title: 'Regulação Global' }
     ],
     breatherAfter: {
-      type: 'silence'
+      type: 'quote',
+      content: 'Em 2025, a pergunta mudou. Não é mais "isso foi feito por máquina?" É "isso foi feito por alguém que se importa?"',
+      author: 'A Nova Economia da Autenticidade'
     }
   },
   {
@@ -186,6 +187,7 @@ export const acts: ActDefinition[] = [
     theme: 'cool',
     sections: [
       { id: 'brazil', component: 'BrazilFocus', title: 'Foco Brasil' },
+      { id: 'antifragile', component: 'AntifragileProfessional', title: 'Profissional Anti-Frágil' },
       { id: 'professions', component: 'ProfessionsGuide', title: 'Guia de Profissões' },
       { id: 'future', component: 'FuturePredictions', title: 'Previsões' },
       { id: 'skills', component: 'SkillsRadar', title: 'Radar de Habilidades' },

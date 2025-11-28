@@ -12,17 +12,19 @@ const ConsumerAI: React.FC = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
 
-        {/* Header */}
-        <div className="mb-16">
-          <div className="flex items-center gap-2 text-purple-400 font-mono text-xs font-bold uppercase tracking-widest mb-4">
-            <Smartphone size={14} />
-            IA no Bolso
-          </div>
-          <h2 className="text-4xl md:text-6xl font-display font-bold text-white leading-tight mb-6">
-            A IA Saiu do <span className="text-purple-400">Navegador</span>
+        {/* Header consistente */}
+        <div className="mb-16 text-center md:text-left">
+          <p className="text-white/40 text-sm font-mono uppercase tracking-[0.2em] mb-6">
+            De site a sistema operacional
+          </p>
+          <h2 className="text-3xl md:text-5xl font-display font-bold text-white leading-tight mb-6">
+            Seu próximo celular não terá IA.
+            <br />
+            <span className="text-white/40">Ele será IA.</span>
           </h2>
-          <p className="text-slate-400 max-w-3xl text-lg font-light">
-            2025 foi o ano em que a IA deixou de ser um site que você visita para se tornar uma camada invisível em cada dispositivo. Seu próximo celular não terá IA — ele será IA.
+          <p className="text-white/50 max-w-2xl text-base leading-relaxed">
+            A IA deixou de ser um site que você visita.
+            Virou uma camada invisível em cada dispositivo que você toca.
           </p>
         </div>
 
